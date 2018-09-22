@@ -1,3 +1,1 @@
-### SpiralPill
-SpiralPill-WEB后台组件库 Website background component library
 #Testing...
