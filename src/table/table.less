@@ -77,8 +77,8 @@ body {background-color: #f0f5fa; color:@color_font; }
    .false_table {.transition(0s)}
 
     table {
-        width: 100%;
-        &.true_table { max-height: 500px; display: block;  overflow: auto; border-bottom: 1px solid @table_color03;}
+        width: 100%; display: block;
+        &.true_table { height: 700px;  overflow: auto; border-bottom: 1px solid @table_color03;}
         tr { 
             background-color: #fff; border-top: 1px solid #c6cbd1; 
             &:nth-child(2n){
@@ -109,6 +109,10 @@ body {background-color: #f0f5fa; color:@color_font; }
             }
         }
         th,td{padding: 6px 13px; border: 1px solid @table_color03;}
+        .actionbut {
+            span { padding:@font; margin-left:@font;  background-color: lighten(@table_color02, 70%); }
+            .del{}
+        }
     }
     
     .page123 {
@@ -118,6 +122,10 @@ body {background-color: #f0f5fa; color:@color_font; }
         .pagenum {
             float: left;
             select { width: 100px; height: 30px; margin-top: -10px; border:none; .bg(); font-size:@font3*1.6; font-weight: 900; }
+            span {
+                font-size: @font3*1.6; padding-left: @font3*1.6;
+                b { color:red; }
+            }
         }
         .pagebox {
             float: right; 

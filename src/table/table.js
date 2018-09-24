@@ -1,39 +1,34 @@
 $(document).ready(function(){
+var date1=Date.now();  //开始时间
 
 var $table =$(".SP_tableContent")
 $table.find('table').addClass('true_table')
 $table.find('[type=checkbox]').before("<div class=\"tbcheckbox\"></div>")
-$table.prepend("<table class='false_table' style='position: absolute; z-index:10; left: 0; top: 30px'><tr>"+$table.find("tr:nth-child(1)").html()+"</tr></table>")
-
+$table.prepend("<table class='false_table' style='position: absolute; z-index:10; left: 0; top: 0'><tr>"+$table.find("tr:nth-child(1)").html()+"</tr></table>")
 
 
 //分页
 !function(){
 	//测试函数
-	var test = function (ttt){
-		var date1=new Date();  //开始时间
-		ttt
-		var date2=new Date();    //结束时间
-		var date3=date2.getTime()-date1.getTime()  //时间差的毫秒数
-		console.log(date3)
-	}
+
 	var newtest = function () {
-		for (var test = 0; test < 100; test++) {
+		for (var test = 0; test < 3000; test++) {
 
 			var testcon = "<tr>\
-			  <td></div><input name='checkboxbut'  type='checkbox'></td><td>"+test+"</td>\
+			  <td></div><input name='checkboxbut'  type='checkbox'></td><td>"+test+Math.random()*8378392+"</td>\
 			  <td>2018/9/22 9:56:11</td>\
 			  <td>"+test*111+"</td>\
 			  <td>update HRGroupMenu set ActionStr=@actionStr where RoleID=@RoleID and mIndex=@mIndex</td>\
 			  <td>/SystemManage/CurrentAction.aspx</td>\
 			  <td>192.168.3.12</td>\
+			  <td width=100><div class='actionbut'><span class='del'>删除</span><span class='edit'>编辑</span></div></td>\
 			</tr>"
 			$table.find('.true_table').append(testcon)
 		}
 	}
-	test(newtest())
+	newtest()
 	
-	var pagenum =10 //每页数量
+	var pagenum =100 //每页数量
 	var pagenum_but = 10 // 按钮最多
 	var pageswitch = true //是否开启分页
 	var $pagetotal=$table.find(".true_table tr").not("tr:first")
@@ -61,8 +56,8 @@ $table.prepend("<table class='false_table' style='position: absolute; z-index:10
 					<tt class='pagelist'>\
 						"+pagelicon+"\
 					</tt>\
-					<span class='prev not'>上一页</span>\
-					<span class='next yes'>下一页</span>\
+					<span class='prev'>上一页</span>\
+					<span class='next'>下一页</span>\
 				</div>\
 			</div>"
 		$table.append(newpage123)
@@ -178,5 +173,6 @@ tableHead()
 	// }
 	//添加
 }()
-
+var date2=Date.now();    //结束时间
+console.log ( (date2-date1)+"ms")	
 });
