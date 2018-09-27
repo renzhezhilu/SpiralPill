@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+////////////前缀添加
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+         -o-@{style}: @value;
+            @{style}: @value;
+}
+.animation(@value){
+    .pre(animation,@value);
+}
+.transition(@arg){
+    .pre(transition,@arg);
+}
+.transform(@d2d3){
+    .pre(transform,@d2d3);
+}
+.box-shadow(@yy){
+    .pre(box-shadow,@yy);
+}
+.border-radius(@yj){
+    .pre(border-radius,@yj);
+}
+
+
+// .animation(telmov 2s infinite);
+////////////初始化
+//配色
+@color_font:#212b42;//
+@color_bg:@color_font;
+@color_blue:rgba(57, 125, 255, 1);//#3779ff;
+
+//内容未完阴影
+
+.jianbian(@c){
+    background: linear-gradient(0deg, @c-10, @c); 
+}
+
+//字体
+@font10:10px;
+.fontsize (@fs) {font-size:10px * @fs;}
+.lineheight (@lh) { line-height:10px * @lh;}
+.bold {font-weight: bold;}
+//阴影
+@shadow:0 0 100px rgba(0, 0, 0, 0.2);
+@shadow02:0 0 100px rgba(0, 0, 0, 0.4);
+//清除浮动
+.clearfloat(){display: block; content: ''; clear: both; height: 0;}
+//按钮
+.but01 (){
+    .border-radius(6px);
+    color:#fff;
+    background-color: @color_blue;
+    .box-shadow(3px 9px 20px rgba(58, 155, 255, 0.26));
+    background: linear-gradient(0deg, #4494ff, @color_blue);
+    /* 渐变轴为45度，从蓝色渐变到红色 *///linear-gradient(45deg, blue, red);
+    /* 从右下到左上、从蓝色渐变到红色 *///linear-gradient(to left top, blue, red); 
+}
+
+body {background-color: #f0f5fa; color:@color_font; }
+
+.SP-date-selection {
+   min-height: 100px; min-width: 100px; width: 280px; padding: 20px; background-color: #fff; 
+   .box-shadow(3px 9px 20px rgba(57, 125, 255, 0.3)); display: inline-block; .border-radius(6px);
+   .year,.month { 
+        @size:30px; position:relative;
+        font-weight: bold;
+        font-size: @size; line-height: @size; padding: 0 @size*.6;
+        .ago,.after { position: absolute; width: @size*.7; height: @size*.7; line-height: @size*.7; 
+            font-weight: normal; text-align: center; right: 5px;  
+            top: @size*.3;  opacity: .3; cursor: pointer;.border-radius(100px); }
+        .ago {left: 0;}
+        & .ago:hover,& .after:hover { color:#fff;  opacity: 1; background-color: @color_blue; padding: 3px; }
+        & .ago:hover{ left: -4px; top: 8px;}
+        & .after:hover {right: 2px;top: 8px;}
+        input { width: 86px; text-align: center; border: none; }
+    }
+   .month { 
+        @size:20px;
+        font-size: @size; line-height: @size; padding: 0 @size*1.6 0 @size; margin: 0 0 0 20px;
+        .ago,.after { top: 3px; }
+        & .ago:hover,& .after:hover {  padding: 2px; }
+        & .ago:hover{ left: -3px; top: 2px;}
+        & .after:hover {right: 2px;top: 2px;}
+        input { width: 30px;  }
+    }
+   ul.day {
+        .clearfloat(); padding: 10px 0;
+        li { 
+            @size:34px; margin: 3px;
+            float: left; width: @size; height: @size; line-height: @size; text-align: center; .border-radius(6px); cursor: pointer; 
+            &:hover { background-color: rgba(57, 125, 255, 0.2); }
+            &.on { background-color: @color_blue; color:#fff; }
+        }
+   }
+   
+}
+
+
+
+
+
+
+
+

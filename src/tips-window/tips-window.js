@@ -12,7 +12,7 @@ $table.prepend("<table class='false_table' style='position: absolute; z-index:10
 	//测试函数
 
 	var newtest = function () {
-		for (var test = 0; test < 3000; test++) {
+		for (var test = 0; test < 100; test++) {
 
 			var testcon = "<tr>\
 			  <td></div><input name='checkboxbut'  type='checkbox'></td><td>"+test+Math.random()*8378392+"</td>\

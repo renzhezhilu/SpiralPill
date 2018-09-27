@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日期选择</title>
+<link rel="stylesheet/less" type="text/css" href="date-selection.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="date-selection.js"></script>
+</head>
+<body>
+
+
+<input type="text" class="date-input"></input>
+<input type="text" class="date-input"></input>
+<!-- <div class="SP-date-selection">
+	<span class="year">
+		<tt class="ago">-</tt>
+		<input type="text" value="2018"></input>
+		<tt class="after">+</tt>
+	</span> 
+	<span class="month">
+		<tt class="ago">-</tt>
+		<input type="text" value="9"></input><label>月</label>
+		<tt class="after">+</tt>
+	</span>
+	<ul class="day">
+	</ul>
+</div> -->
+
+
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+
+<script type="text/javascript">
+
+
+//设置日期
+function showDate () {
+	$(".date-input").click(function(event) {
+		
+		var xy = $(this).offset()
+		var x = xy.left+$(this).outerWidth()
+		var y = xy.top+$(this).outerHeight()
+		var date = new Date()
+		var year = date.getFullYear()
+		var month = date.getMonth()
+		var day = date.getDate()
+
+	});
+}
+
+
+
+//获取月份天数
+function monthHowDay (datestring) {
+	var date = new Date(datestring)
+	var year = date.getFullYear()
+	var month = date.getMonth()
+	var day = date.getDate()
+	for (var i = 1; i < 33; i++) {
+		date.setDate(i)
+		if (date.getMonth()!==month) {
+			break
+		}
+	}
+ 	console.log (  (month+1)+"月有"+(i-1)+"天"  )
+	return i-1
+}
+
+
+
+
+//点击触发获取
+function triggerDate (){
+	var $date = $(".SP-date-selection")
+	$date.find("ul.day li").click(function() {
+		$(this).addClass("on").siblings().removeClass('on')
+		//var data_jg = new Date(  )
+		console.log (obtainDate($(this).index()))
+		$date.prev(".date-input ").val(obtainDate($(this).index()))
+	});
+}
+
+
+//获取日期值
+function obtainDate (dayindex){
+	var $date = $(".SP-date-selection")
+	var year = $date.find(".year input").val()
+	var month = $date.find(".month input").val()
+	var day = $date.find(".day >li").eq(dayindex).text()
+	
+
+	if ((year<2100&&year>1900) && (month>0&&month<13)) {
+		return year+"/"+month+"/"+day
+	}
+	else  alert('日期选择错误,请重新选择 '+year+"/"+month+"/"+day)
+}
+
+
+
+
+function htmlDate (element,x,y) {
+	if ($(element).next().attr("class")!=="SP-date-selection") {
+		var _class = "SP-date-selection"+ ~(Math.random()*100000)
+		var _htmlDate = "\
+		<div style='position: fixed;' class='SP-date-selection "+_class+"'>\
+			<span class='year'>\
+				<tt class='ago'>-</tt>\
+				<input class='yearinput' type='text' value='2018'></input>\
+				<tt class='after'>+</tt>\
+			</span> \
+			<span class='month'>\
+				<tt class='ago'>-</tt>\
+				<input class='monthinput' type='text' value='9'></input>月\
+				<tt class='after'>+</tt>\
+			</span>\
+			<ul class='day'>\
+			</ul>\
+		</div>"
+
+		$(element).after(_htmlDate)
+		var today = new Date().getDate()
+		function daynum (time) {
+			for (var i = 1; i < monthHowDay(time)+1; i++) {
+				if (i==today) { 
+					$(element).next().find(".day").append("<li class='on'>"+i+"</li>")
+				}
+				else {
+					$(element).next().find(".day").append("<li>"+i+"</li>")
+				}
+			}
+		}
+		$(element).next(".SP-date-selection").css({
+			top: y+"px",
+			left: x+"px"
+		});
+		daynum(new Date())
+
+		//点击获取日期
+		function getDateToValue(){
+			$date = $(".SP-date-selection")
+			$date.find("ul.day li").click(function() {
+				$(this).addClass("on").siblings().removeClass('on')
+				
+				$(element).val(obtainDate($(this).index()))
+				$date.remove()
+			});
+		}
+		getDateToValue()
+		//刷新天数
+		function newDayList () {
+			$date.find(".day").html("")
+			daynum($date.find("input.yearinput").val()+"/"+$date.find("input.monthinput").val())
+		}
+		//加减年
+		var $yearinput = $date.find("input.yearinput")
+		$yearinput.prev(".ago").click(function(){
+			var value =$(this).next().val()-0
+			if (value<2100&&value>1970&& value !== NaN) { 
+				$(this).next().val(value-1) 
+				newDayList ()
+				getDateToValue()
+			}
+			else{ $(this).prev().val(new Date().getFullYear())   }
+			
+		})
+		$yearinput.next(".after").click(function(){
+			var value =$(this).prev().val()-0
+			if (value<2100&&value>1970&& value !== NaN) { 
+				$(this).prev().val(value+1) 
+				newDayList ()
+				getDateToValue()
+			}
+			else{ $(this).prev().val(new Date().getFullYear())   }
+			
+		})
+		//加减月
+		var $monthinput = $date.find("input.monthinput")
+		$monthinput.prev(".ago").click(function(){
+			var value =$(this).next().val()-0
+			if (value<13&&value>1&& value !== NaN) { 
+				$(this).next().val(value-1) 
+				newDayList ()
+				getDateToValue()
+			}
+			else if (value==1){
+				$(this).next().val(12)
+				$yearinput.val(  ($yearinput.val()-0)-1  )
+			}
+			else { $(this).next().val(new Date().getMonth()) }
+			
+		})
+		$monthinput.next(".after").click(function(){
+			var value =$(this).prev().val()-0
+			console.log ( value)
+			if (value<12&&value>0&& value !== NaN) { 
+				$(this).prev().val(value+1) 
+				newDayList ()
+				getDateToValue()
+			}
+			else if (value==12) {
+				$(this).prev().val(1)
+				$yearinput.val(  ($yearinput.val()-0)+1  )
+			}
+			else  { $(this).prev().val(new Date().getMonth()) }
+			
+		})
+		//var $date = $(".SP-date-selection")
+	}
+}
+
+$("input.date-input").click(function(){
+  var xy = $(this).offset()
+
+  var x = xy.left
+  var y = xy.top + $(this).height()+10
+
+
+
+  htmlDate ($(this),x,y)
+
+});
+
+
+
+
+
+</script>
+</body>
+</html>

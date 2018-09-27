@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>弹窗提示</title>
+<link rel="stylesheet/less" type="text/css" href="tips-window.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="tips-window.js"></script>
+</head>
+<body>
+
+<!--*****************************-->
+<!-- 忽略 -->
+<iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe>
+<!--*****************************-->
+
+<script type="text/javascript">
+
+var tipsnum =1;
+	function tipsWindow (con,classname,icon) {
+		if (!con) {con="平平无奇的提示框!"; classname="gray"; icon="<i class='fa fa-angellist'></i>"}
+		else if (con=="ok") {con="操作成功!"; classname="green"; icon="<i class='fa fa-check-circle'></i>"}
+		else if (con=="no") {con="操作失败!"; classname="red"; icon="<i class='fa fa-window-close'></i>"}
+		else if (con=="alert") {
+			con="前方高能!"; 
+			classname="orange"; 
+			icon="<i class='fa fa-warning'></i>"
+		}
+		else {
+			con=con
+			icon="<i class='fa fa-"+icon+"'></i>"
+			classname= classname
+		}
+		var newclass="SP-tips-window"+tipsnum
+		$("body").append('<div class="SP-tips-window '+newclass+'"><p><span></span></p></div>')
+		newclass="."+newclass
+		var tips_h = $(".SP-tips-window").outerHeight()
+		for (var i = 0; i < $(".SP-tips-window").size(); i++) {
+			var jl = (tips_h+10)*i;
+		}
+		console.log (jl)
+		$(newclass).css('top', jl);
+		$(newclass).addClass(classname)
+		$(newclass).find("span").text(con).before(icon)
+		$(newclass).delay(100).animate({height:"auto"}, function() {
+        	$(this).addClass("on")
+    	})
+    	$(newclass).delay(1800).animate({height:"auto"}, function() {
+        	$(this).removeClass("on")
+    	}).delay(2000).animate({height:"auto"}, function() {
+        	$(this).remove()
+
+    	})
+    	tipsnum++
+	}
+	tipsWindow("事实上","red","plug")
+	//tipsWindow("ok","red")
+	
+
+</script>
+</body>
+</html>
