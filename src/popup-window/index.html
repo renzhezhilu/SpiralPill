@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>弹窗</title>
+<link rel="stylesheet" type="text/css" href="popup-window.css">
+
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="popup-window.js"></script>
+
+</head>
+<body>
+
+
+
+
+<!-- <div class="popup-window">
+	<div class="content">
+		<div class="top">
+			<div class="title">
+				<h3>
+					<i class="fa fa-heart"></i>
+					<strong>标题</strong>
+					<span>辅助标题</span>
+				</h3>
+			</div>
+			
+			<div class="windowbut">
+				<i title="恢复" class="fa fa-window-restore" aria-hidden="true"></i>
+				<i title="全屏" class="fa fa-window-maximize"></i>
+				<i title="关闭" class="fa fa-times" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="center">
+			内容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗内容弹容弹窗
+		</div>
+		<div class="bottom">
+			<div class="text">文字说明文字说明文字说明</div>
+			<div class="button">
+				<div class="okbut">确认</div>
+				<div class="nobut">取消</div>
+				<div class="otherbut">其他按钮</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg"></div>
+</div> -->
+
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<small><h2 >sssss收起</h2>
+	<h2 >ssss收起</h2></small>
+<div class="test" style="position: fixed; z-index: 10000; left: 0; top: 0; width: 100px;  height: 300px; background-color: #fff">
+	<h3 >展开</h3>
+
+	<h2 >收起</h2>
+	<h2 class="" >收起</h2>
+	<h2 >收起</h2>
+	
+</div>
+
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%;  height: 1000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+
+<script type="text/javascript">
+
+$("h2").click(function() {
+	var popUpWindowId =this.tagName+"-"+$(this).index( this.tagName )
+	
+	$(this).attr("popUpWindowId", popUpWindowId )
+	new_popUpWindow (popUpWindowId,"htmltem_simple01")
+	
+
+});
+
+function new_popUpWindow (elementid,tem) {
+	//判断是否已经创建过
+	var windowsid = "popup-window-"+elementid
+	if ( $("body").find("."+windowsid).length  ) {
+		console.log("已经创建过"+windowsid)
+		$(".popup-window-"+elementid).fadeTo(10,1)
+	}
+	else {
+		var setting = {
+			top:{
+				title:"标题",
+				subtitle:"标题",
+				titleicon:"heart"
+			},
+			center:"okok",
+			bottom:{
+				unimportanttext:" ",
+				okbut:"确认",
+			    nobut:"取消",
+			    otherbut:""
+			},
+			other:{
+				width:"",
+				height:"",
+				content_full:""
+			}
+		}
+		
+		var htmltem_complex = "\
+			<div popUpWindowId='"+windowsid+"' class='popup-window "+windowsid+"'>\
+				<div class='content "+setting.other.content_full+"' style='width:"+setting.other.width+"; height:"+setting.other.height+";'>\
+					<div class='top'>\
+						<div class='title'>\
+							<h3>\
+								<i class='fa fa-"+setting.top.titleicon+"'></i>\
+								<strong>"+setting.top.title+"</strong>\
+								<span>"+setting.top.subtitle+"</span>\
+							</h3>\
+						</div>\
+						\
+						<div class='windowbut'>\
+							<i title='全屏' class='fa fa-window-maximize full_but'></i>\
+							<i title='关闭' class='fa fa-times close_but'></i>\
+						</div>\
+					</div>\
+					<div class='center'>\
+						"+setting.center+"\
+					</div>\
+					<div class='bottom'>\
+						<div class='text'>"+setting.bottom.unimportanttext+"</div>\
+						<div class='button'>\
+							<div class='okbut'>"+setting.bottom.okbut+"</div>\
+							<div class='nobut'>"+setting.bottom.nobut+"</div>\
+							<div class='otherbut'>"+setting.bottom.otherbut+"</div>\
+						</div>\
+					</div>\
+				</div>\
+				<div class='bg'></div>\
+			</div>\
+		"
+		var htmltem_simple01 = "\
+			<div popUpWindowId='"+windowsid+"' class='popup-window "+windowsid+"'>\
+				<div class='content "+setting.other.content_full+"' style='width:"+setting.other.width+"; height:"+setting.other.height+";'>\
+					<div class='top'>\
+						<div class='title'>\
+							<h3>\
+								<strong>"+setting.top.title+"</strong>\
+							</h3>\
+						</div>\
+						\
+						<div class='windowbut'>\
+							<i title='全屏' class='fa fa-window-maximize full_but'></i>\
+							<i title='关闭' class='fa fa-times close_but'></i>\
+						</div>\
+					</div>\
+					<div class='center'>\
+						"+setting.center+"\
+					</div>\
+					<div class='bottom'>\
+						<div class='text'>"+setting.bottom.unimportanttext+"</div>\
+						<div class='button'>\
+							<div class='okbut'>"+setting.bottom.okbut+"</div>\
+							<div class='nobut'>"+setting.bottom.nobut+"</div>\
+						</div>\
+					</div>\
+				</div>\
+				<div class='bg'></div>\
+			</div>\
+		"
+		if (tem=="htmltem_simple01") tem=htmltem_simple01
+		
+		$("body").append(tem).show(0, function() {
+			var $_this = $("."+windowsid)
+			//关闭
+			function closeWindow () {
+				$_this.fadeTo(10,0).hide(0)
+			}
+			$_this.find(".close_but").click(function(event) {
+				closeWindow()
+			});
+			//全屏
+			$_this.find(".full_but").click(function(event) {
+				$_this.find('.content').toggleClass("content_full")
+				$(this).toggleClass("fa-window-restore")
+			});
+
+			$_this.show(0).fadeTo(10,1)
+		});
+	} //else-end
+}
+
+
+
+var popUpWindowOpen = function(element){
+
+}
+
+
+	
+
+</script>
+</body>
+</html>

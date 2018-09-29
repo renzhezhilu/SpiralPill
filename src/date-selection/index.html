@@ -104,10 +104,10 @@ function obtainDate (dayindex){
 
 
 function htmlDate (element,x,y) {
-	if ($(element).next().attr("class")!=="SP-date-selection") {
+	if (!$(element).next(".SP-date-selection").length) {
 		var _class = "SP-date-selection"+ ~(Math.random()*100000)
 		var _htmlDate = "\
-		<div style='position: fixed;' class='SP-date-selection "+_class+"'>\
+		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
 			<span class='year'>\
 				<tt class='ago'>-</tt>\
 				<input class='yearinput' type='text' value='2018'></input>\
@@ -138,16 +138,18 @@ function htmlDate (element,x,y) {
 			top: y+"px",
 			left: x+"px"
 		});
+
 		daynum(new Date())
 
 		//点击获取日期
 		function getDateToValue(){
-			$date = $(".SP-date-selection")
+			$date = $(element).next(".SP-date-selection")
+			$date[0].onselectstart = function(){return false;}
 			$date.find("ul.day li").click(function() {
 				$(this).addClass("on").siblings().removeClass('on')
 				
 				$(element).val(obtainDate($(this).index()))
-				$date.remove()
+				$("."+_class).remove()
 			});
 		}
 		getDateToValue()
@@ -158,6 +160,7 @@ function htmlDate (element,x,y) {
 		}
 		//加减年
 		var $yearinput = $date.find("input.yearinput")
+
 		$yearinput.prev(".ago").click(function(){
 			var value =$(this).next().val()-0
 			if (value<2100&&value>1970&& value !== NaN) { 

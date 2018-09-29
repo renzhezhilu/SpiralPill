@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+////////////前缀添加
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+         -o-@{style}: @value;
+            @{style}: @value;
+}
+.animation(@value){
+    .pre(animation,@value);
+}
+.transition(@arg){
+    .pre(transition,@arg);
+}
+.transform(@d2d3){
+    .pre(transform,@d2d3);
+}
+.box-shadow(@yy){
+    .pre(box-shadow,@yy);
+}
+.border-radius(@yj){
+    .pre(border-radius,@yj);
+}
+
+
+.keyframes(@name) { 
+    @-webkit-keyframes @name {
+        .-framddes(-webkit-)
+    }
+    @-moz-keyframes @name {
+        .-framddes(-moz-)
+    }
+    @-o-keyframes @name {
+        .-framddes(-o-)
+    }
+    @-ms-keyframes @name {
+        .-framddes(-ms-)
+    }
+    @keyframes @name {
+        .-framddes()
+    }
+}
+// .animation(telmov 2s infinite);
+////////////初始化
+//配色
+@color_bg01: #e22e2e;//主色
+@color_bg02: #edb447;//辐色
+@color_bg03: #f1f1f1; //浅色背景
+@color_bg04: #373737; //深色背景
+@color_f1: #353535;//字体深
+@color_f2: #9e9e9e;//字体浅
+@color_b: #000;
+@color_w: #fff;
+
+@color_nav:#51699b; //中灰蓝
+@color_1:#3779ff; //主色蓝
+@color_2:#212b42; //深色
+
+@color_font:#212b42;//
+@color_bg:@color_font;
+@color_blue:rgba(57, 125, 255, 1);//#3779ff;
+
+
+.jianbian(@c){
+    background: linear-gradient(0deg, @c-10, @c);
+}
+
+//字体
+@font10:10px;
+.fontsize (@fs) {font-size:10px * @fs;}
+.lineheight (@lh) { line-height:10px * @lh;}
+.bold {font-weight: bold;}
+//阴影
+@shadow:0 0 100px rgba(0, 0, 0, 0.2);
+@shadow02:0 0 100px rgba(0, 0, 0, 0.4);
+//清除浮动
+.clearfloat(){display: block; content: ''; clear: both; height: 0;}
+//按钮
+.but01 (){
+    .border-radius(6px);
+    color:#fff;
+    background-color: @color_blue;
+    .box-shadow(3px 9px 20px rgba(58, 155, 255, 0.26));
+    background: linear-gradient(0deg, #4494ff, @color_blue);
+    /* 渐变轴为45度，从蓝色渐变到红色 *///linear-gradient(45deg, blue, red);
+    /* 从右下到左上、从蓝色渐变到红色 *///linear-gradient(to left top, blue, red); 
+}
+
+
+
+body {background-color: #f0f5fa; color:@color_2; }
+
+//公用属性集
+#bundle {
+    .full () {width: 100%;height: 100%;left: 0; top: 0;}
+    .tab { }
+}
+
+.popup-window {
+    @fontsize:20px; opacity: 0; display: none;
+    position: fixed; z-index: 100; #bundle > .full; .transition(.2s ease);
+    .content {
+        position: absolute;z-index: 10;top:50%;left:50%;.transform(translate(-50%,-50%));.border-radius(6px);
+        background-color: #fff;min-width: 300px; max-width: 80%;min-height: 200px; max-height: 80%;padding: 20px;
+        .box-shadow(3px 9px 100px rgba(27, 33, 45, .5)); overflow: hidden;
+        .top {
+            position: relative; z-index: 10; .box-shadow(0px 15px 22px #fff); background-color: #fff;
+            .title {
+                    h3 {
+                        font-size: @fontsize;
+                        i {font-size:@fontsize*.8;}
+                        span {font-size:@fontsize*.7; opacity: .6; font-weight: normal;padding-left: @fontsize*.2;}
+                    }
+            }
+            .windowbut {
+                position: absolute;right: 0;top: -@fontsize*.2;font-size: @fontsize*.8;
+                i {
+                    padding: @fontsize*0.3 @fontsize*0.6;cursor: pointer;border-radius: 100px;
+                    ;
+                    
+                    &:hover { color:@color_blue; .transition(0.01s ease) }  
+                }    
+            }
+        }
+        .center {
+            padding: 13px 10px 20px 10px;overflow-y:auto; max-height: 500px ; padding-bottom: 100px;
+            //滚动条
+            &::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1);}
+            &::-webkit-scrollbar{width: 6px;background-color: transparent;}
+            &::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.2); border-radius: 100px; }  
+        }
+        
+        .bottom {
+            position: absolute; z-index: 10; bottom: 0; right: 0; width: 100%; height:@fontsize*3;  
+            padding: @fontsize*.6 0 0 0; background-color: #fff; overflow: hidden; .box-shadow(0px -20px 30px #fff);
+            .text { padding-left: 20px; font-size: @fontsize*.7; float: left; line-height: @fontsize*2}
+            .button {
+                float: right; padding-right: 20px;
+                &>* { padding:@fontsize*.5 @fontsize; margin-left: @fontsize*.7; color:#fff; background-color: #b2b4bc; 
+                    .border-radius(6px); font-size:@fontsize*.7; cursor: pointer;  
+                    &:hover { opacity: 0.9; }
+                }
+                .okbut {.but01; float: right;}
+                .nobut {float: right;}
+                .otherbut {float: right;}
+            }
+            &:after{ .clearfloat()}
+        }
+    }
+    .content_full { 
+         width: 96%; max-width: 100%; height: 94%; max-height: 100%; left: 0; top: 0;
+         padding: 2%; .transform(translate(0,0)); .border-radius(0);
+        .center{max-height: 80%;  }
+    }
+    .bg {
+        position: absolute; z-index: 1;#bundle > .full;background-color:darken(@color_bg, 10%);opacity: 0.7  
+    }
+    &.popupwindow_hide { opacity: 0}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
