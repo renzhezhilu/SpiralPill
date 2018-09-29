@@ -14,7 +14,9 @@
 
 <input type="text" class="date-input"></input>
 <input type="text" class="date-input"></input>
-<!-- <div class="SP-date-selection">
+
+<!-- 
+<div class="SP-date-selection">
 	<span class="year">
 		<tt class="ago">-</tt>
 		<input type="text" value="2018"></input>
@@ -26,9 +28,24 @@
 		<tt class="after">+</tt>
 	</span>
 	<ul class="day">
+		<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li class="on">29</li><li>30</li>
 	</ul>
-</div> -->
-
+	<div class="hours">
+		<select class="h">
+			<option>13</option>
+		</select>
+		时
+		<select class="m">
+			<option>56</option>
+		</select>
+		分
+		<select class="s">
+			<option>13</option>
+		</select>
+		秒
+	</div>
+</div>
+ -->
 
 <!--*****************************-->
 <!-- 忽略 -->
@@ -41,7 +58,6 @@
 //设置日期
 function showDate () {
 	$(".date-input").click(function(event) {
-		
 		var xy = $(this).offset()
 		var x = xy.left+$(this).outerWidth()
 		var y = xy.top+$(this).outerHeight()
@@ -49,11 +65,8 @@ function showDate () {
 		var year = date.getFullYear()
 		var month = date.getMonth()
 		var day = date.getDate()
-
 	});
 }
-
-
 
 //获取月份天数
 function monthHowDay (datestring) {
@@ -92,17 +105,30 @@ function obtainDate (dayindex){
 	var year = $date.find(".year input").val()
 	var month = $date.find(".month input").val()
 	var day = $date.find(".day >li").eq(dayindex).text()
-	
 
 	if ((year<2100&&year>1900) && (month>0&&month<13)) {
 		return year+"/"+month+"/"+day
 	}
 	else  alert('日期选择错误,请重新选择 '+year+"/"+month+"/"+day)
 }
+//获取日期值+时分秒
+function obtainDateAnd_H_M_S (dayindex){
+	var $date = $(".SP-date-selection")
+	var year = $date.find(".year input").val()
+	var month = $date.find(".month input").val()
+	var day = $date.find(".day >li").eq(dayindex).text()
 
+	var hours = $date.find("select.h").val()
+	var minute = $date.find("select.m").val()
+	var second = $date.find("select.s").val()
+	
+	if ((year<2100&&year>1900) && (month>0&&month<13)) {
+		return year+"/"+month+"/"+day +" " +hours+":"+minute+":"+second
+	}
+	else  alert('日期选择错误,请重新选择 '+year+"/"+month+"/"+day)
+}
 
-
-
+//生成html
 function htmlDate (element,x,y) {
 	if (!$(element).next(".SP-date-selection").length) {
 		var _class = "SP-date-selection"+ ~(Math.random()*100000)
@@ -121,8 +147,35 @@ function htmlDate (element,x,y) {
 			<ul class='day'>\
 			</ul>\
 		</div>"
+		var _htmlhours = "\
+		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
+			<span class='year'>\
+				<tt class='ago'>-</tt>\
+				<input class='yearinput' type='text' value='2018'></input>\
+				<tt class='after'>+</tt>\
+			</span> \
+			<span class='month'>\
+				<tt class='ago'>-</tt>\
+				<input class='monthinput' type='text' value='9'></input>月\
+				<tt class='after'>+</tt>\
+			</span>\
+			<ul class='day'>\
+			</ul>\
+			<div class='hours'>\
+				<select class='h'>\
+				</select>\
+				时\
+				<select class='m'>\
+				</select>\
+				分\
+				<select  class='s'>\
+				</select>\
+				秒\
+			</div>\
+		</div>"
 
-		$(element).after(_htmlDate)
+		$(element).after(_htmlhours)
+		//遍历天数 并选择今日年月日
 		var today = new Date().getDate()
 		function daynum (time) {
 			for (var i = 1; i < monthHowDay(time)+1; i++) {
@@ -134,21 +187,43 @@ function htmlDate (element,x,y) {
 				}
 			}
 		}
+		daynum(new Date())
+		//遍历时分秒 并选择今日时分秒
+		function h_m_s_num (time) {
+			var now_h = time.getHours()
+			var now_m = time.getMinutes()
+			var now_s = time.getSeconds()
+			if (now_h<10) {now_h="0"+now_h}
+			if (now_m<10) {now_m="0"+now_m}
+			if (now_s<10) {now_s="0"+now_s}
+			for (var h = 0; h < 24; h++) {
+				if (h<10) {h="0"+h}
+				$(element).next().find("select.h").append("<option value ='"+h+"'>"+h+"</option>")
+			}
+			for (var ms = 0; ms < 60; ms++) {
+				if (ms<10) {ms="0"+ms}
+				$(element).next().find("select.m").append("<option value ='"+ms+"'>"+ms+"</option>")
+				$(element).next().find("select.s").append("<option value ='"+ms+"'>"+ms+"</option>")
+			}
+			$(element).next().find("select.h").val(now_h)
+			$(element).next().find("select.m").val(now_m)
+			$(element).next().find("select.s").val(now_s)
+		}
+		h_m_s_num(new Date())
+
+		//设置显示在input正下方
 		$(element).next(".SP-date-selection").css({
 			top: y+"px",
 			left: x+"px"
 		});
-
-		daynum(new Date())
 
 		//点击获取日期
 		function getDateToValue(){
 			$date = $(element).next(".SP-date-selection")
 			$date[0].onselectstart = function(){return false;}
 			$date.find("ul.day li").click(function() {
-				$(this).addClass("on").siblings().removeClass('on')
-				
-				$(element).val(obtainDate($(this).index()))
+				//$(this).addClass("on").siblings().removeClass('on')
+				$(element).val(obtainDateAnd_H_M_S($(this).index()))
 				$("."+_class).remove()
 			});
 		}
@@ -216,14 +291,11 @@ function htmlDate (element,x,y) {
 	}
 }
 
+//调用
 $("input.date-input").click(function(){
   var xy = $(this).offset()
-
   var x = xy.left
   var y = xy.top + $(this).height()+10
-
-
-
   htmlDate ($(this),x,y)
 
 });

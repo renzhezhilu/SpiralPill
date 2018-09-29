@@ -87,13 +87,18 @@ body {background-color: #f0f5fa; color:@color_font; }
         input { width: 30px;  }
     }
    ul.day {
-        .clearfloat(); padding: 10px 0;
+        padding: 10px 0;
+        &:after {.clearfloat(); }
         li { 
             @size:34px; margin: 3px;
             float: left; width: @size; height: @size; line-height: @size; text-align: center; .border-radius(6px); cursor: pointer; 
             &:hover { background-color: rgba(57, 125, 255, 0.2); }
             &.on { background-color: @color_blue; color:#fff; }
         }
+   }
+   .hours {
+        clear: both; font-size: 14px; text-align: right;
+        select { width: 46px; }
    }
    
 }
