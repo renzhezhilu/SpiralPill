@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>区域选中</title>
+
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+
+</head>
+<body>
+ <style type="text/css">  
+ *,*:before,*:after{transition:0s ease;}
+/*模块拖拽*/  
+.drag{
+  position:absolute;
+  border:1px solid rgba(57, 125, 255, 0.3);
+  background:rgba(57, 125, 255, 0.1);
+  text-align:center;
+  padding:0;top:0;left:0;
+  cursor:move;
+  
+}  
+    ul li {  width:50px; height:50px; background:#333; float:left; margin:40px}
+
+
+    .dark { background-color: #333 }
+    .blue { background-color: blue }
+     .red { background-color: red }
+</style>  
+  <!--模块拖拽--> <div class="drag" style="position:absolute; border:1px solid rgba(57, 125, 255, 0.3); background:rgba(57, 125, 255, 0.1);padding:0;top:0;left:0;"></div>  
+  <ul>
+    <li>1</li>
+    <li>2</li>
+     <li>3</li>
+      <div class="clear"></div>
+     </ul>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>
+      <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>  <li>1</li>
+    <li>2</li>
+     <li>3</li>
+    <li>4</li>
+    <div class="clear"></div>
+  </ul>
+
+
+
+<style type="text/css">
+	
+	 #SP_drag_element_move {
+	 	position:absolute; 
+	 	z-index: 100;
+	 	border:1px solid rgba(57, 125, 255, 0.3); 
+	 	background:rgba(57, 125, 255, 0.1);
+	 	padding:0;
+	 	top:0;
+	 	left:0; 
+
+	 }
+</style>
+
+<script type="text/javascript">  
+// 模块拖拽  
+
+var selectRange_jg=0;
+function selectRange (Range,Element,Onclass){
+	if (!$(Range).find(Element).length) {return alert("参数有误！Range必须是Element的父层以上\n 当前设置：Range=>"+Range+" Element=>"+Element)}
+	var moveing = false
+	var x1,x2,y1,y2
+	$("body").append("<div id='SP_drag_element_move'></div>")
+	$movediv = $("#SP_drag_element_move")
+	
+	$(Range).mousedown(function(e) {
+		moveing = true
+		$movediv.fadeTo(20, 1)
+	 	x1 = e.pageX //初始位置位置  
+	 	y1 = e.pageY 
+		$(Range).on('mousemove', function(e) {
+			if (moveing) {
+				x2 = e.pageX-x1 //新位置  
+				y2 = e.pageY-y1
+				deviation = 10 //偏差
+				if (x2>0 || y2>0 ) {
+					$movediv.css({left:x1,top:y1,width:x2-deviation,height:y2-deviation,transform:"translate(0,0)"})
+
+				}
+				else { 
+					$movediv.css({left:x1+deviation,top:y1+deviation,width:-x2,height:-y2,transform:"translate("+x2+"px"+", "+y2+"px"+")"}) 
+						
+				}
+				console.log(x2+"---"+y2)	
+			}
+		})
+	})
+	$(Range).mouseup(function(e) {
+		moveing=false
+		$(this).unbind('mousemove')
+		var X1 = $movediv.offset().left
+		var X2 = $movediv.width()
+		var Y1 = $movediv.offset().top
+		var Y2 = $movediv.height()
+		//console.log("X1:"+X1+ "Y1:" +Y1)
+		//判断是否选中
+		!function (){
+			var $_this = $(Range).find(Element)
+			var eleOffset = function(index){ 
+				return $_this.eq(index).offset() 
+			}
+			//左上角=>右下角
+			if (X2>50||Y2>50){
+				
+				for (var g = 0; g < $_this.length; g++) {
+				  	if (eleOffset(g).left< (X2+X1) && eleOffset(g).left>X1 && eleOffset(g).top< (Y2+Y1) && eleOffset(g).top> Y1 ) {
+			  			if ($_this.eq(g)[0].className==Onclass) {
+			  				$_this.eq(g).removeClass(Onclass)
+			  			}
+				  	 	else $_this.eq(g).addClass(Onclass) 
+				  	}
+				  
+				}
+			}
+			//右下角=>左上角
+			if (X2<-50|| Y2<50){
+				for (var g = 0; g < $_this.length; g++) {
+				  	if (eleOffset(g).left< X1 && eleOffset(g).left>(X2+X1) && eleOffset(g).top< Y1 && eleOffset(g).top> (Y2+Y1) ) {
+			  			if ($_this.eq(g)[0].className==Onclass) {
+			  				$_this.eq(g).removeClass(Onclass)
+			  			}
+				  	 	else $_this.eq(g).addClass(Onclass) 
+				  	}
+				  
+				}
+			}
+		}()
+		$movediv.css({height:0,width:0,left:0,top:0,opacity:0})	
+	})
+	//双击全选
+	var Togglegovalue=1
+	$(Range).dblclick(function() {
+		if (Togglegovalue==1){
+			Togglegovalue=2
+			$(this).find(Element).addClass(Onclass)
+		}
+		else {
+			Togglegovalue=1
+			$(this).find(Element).removeClass(Onclass)
+		}
+	})
+	//单机选中
+	$(Range).find(Element).click(function() {
+		$(this).toggleClass(Onclass)
+	})	
+
+	
+}
+var fff = function(){
+
+}
+selectRange("ul","li","red")
+
+
+
+
+
+//可选元素的位置信息
+function selectElement (classname) {
+	var ele_array = [] 
+	var $ele_classname = $(classname) //可选元素
+	let ele_offset //位置
+	for (var i = 0; i < $ele_classname.size(); i++) {
+		ele_offset =$ele_classname.eq(i).offset()
+		ele_array.push({index:i,top:ele_offset.top,left:ele_offset.left})
+	}
+	return console.log(ele_array)
+}
+// selectElement ("li")
+</script> 
+</body>
+</html>
