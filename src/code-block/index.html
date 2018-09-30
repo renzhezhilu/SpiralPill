@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切换内容</title>
+<!-- <link rel="stylesheet/less" type="text/css" href="code-block.less"> -->
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="code-block.js"></script>
+</head>
+<body>
+
+
+<ul class="sp_tab">
+	<li>标签01</li>
+	<li>标签0102</li>
+	<li>标签0103</li>
+	<li>标签0104</li>
+</ul>
+
+<ul class="sp_con">
+	<li><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div></li>
+	<li><div>22222222</div></li>
+	<li>内容0333333</li>
+</ul>
+
+<style type="text/css">
+	.sp_tab .on { color: red }
+</style>
+
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+
+<script type="text/javascript">
+
+	var contentSwitch = function (tabclass,conclass,index) {
+		var go = function (_index){
+			$(tabclass).children().eq(_index).addClass("on").siblings().removeClass('on')
+			$(conclass).children().eq(_index).show(300).siblings().hide()
+		}
+		
+		go(index)
+		$(tabclass).children().click(function() {
+			go($(this).index())
+			console.log ($(this).index())
+		});
+	}
+	contentSwitch(".sp_tab",".sp_con",0)
+
+	
+
+</script>
+</body>
+</html>
