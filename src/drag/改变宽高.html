@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>改变宽高</title>
+</head>
+<body> 
+  <!--模块拖拽--> 
+<div class="changediv3" style="width:240px; height: 160px;  background-color: rgba(67,183,211,0.3); transition: 0s; float: right; padding: 30px;margin: 10px; border:10px solid rgba(67,183,211,0.6);">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+
+<div class="changediv3_1" style="width:240px; height: 160px;  background-color: rgba(67,183,211,0.3); transition: 0s; padding: 30px;margin: 10px; border:10px solid rgba(67,183,211,0.6);">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+
+<div class="changediv1" style="width:330px; height: 140px;  background-color: rgba(34,143,132,0.3); transition: .3s; padding: 30px;margin: 10px; border:10px solid rgba(34,143,132,0.6); float: right; position: absolute; top: 333px; right: 222px;">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+<div class="changediv1_1" style="width:220px; height: 110px;  background-color: rgba(34,143,132,0.3); transition: .3s; padding: 30px;margin: 10px; border:10px solid rgba(34,143,132,0.6);">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+
+
+
+
+<div class="changediv2_1" style="width:550px; height: 120px; background-color: rgba(134,113,232,0.3); transition: 0s; padding: 30px;margin: 10px 10px 100px 10px; border:10px solid rgba(134,113,232,0.6);">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+
+
+<div class="changediv2" style="width:111px; height: 220px; background-color: rgba(134,113,232,0.3); transition: 0s; position: absolute; bottom: 10px; right: 10px; padding: 30px;margin: 10px 10px 0 10px; border:10px solid rgba(134,113,232,0.6);">
+	<h1>PPPD-639 </h1> 
+	<p>我等的车还没来-双击变回原来宽高
+	</p>
+</div>
+
+<style type="text/css">
+	table td,table th { border:2px solid #ddd; padding: 30px; }
+	th { background-color: rgba(134,113,232,0.6) }
+
+</style>
+<table>
+	<tr>
+		<th>表头</th>
+		<th>可以</th>
+		<th>拖动</th>
+		<th>宽度</th>
+	</tr>
+	<tr>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+	</tr>
+	<tr>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+	</tr>
+	<tr>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+		<td>fff</td>
+	</tr>
+</table>
+
+
+
+<!-- ************************* -->
+<link rel="stylesheet/less" type="text/css" href="drag.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="drag.js"></script>
+<script type="text/javascript">
+	SP_changeWidthHeight (".changediv1","w","r")
+	SP_changeWidthHeight (".changediv1_1","w")
+	SP_changeWidthHeight (".changediv2","h","t")
+	SP_changeWidthHeight (".changediv2_1","h")
+	SP_changeWidthHeight (".changediv3_1")
+	SP_changeWidthHeight (".changediv3","","r_b")
+
+	//SP_changeWidthHeight ("table th")
+	SP_changeWidthHeight ("table th","w")
+
+
+</script>
+</body>
+</html>
