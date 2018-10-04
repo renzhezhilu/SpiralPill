@@ -22,6 +22,7 @@ function SP_dragAndDrop(Container,Element,Changethis) {
 		$(this).find(Element).removeClass('on')
 	}).find(Element).mouseover( function(){		
 		ind02 =  ($(this).parents(Container).find(Element)).index(this)
+	
 		console.log(ind01+"--"+ind02+"---"+Element)	
 	});
 
@@ -46,7 +47,7 @@ function SP_dragAndDrop(Container,Element,Changethis) {
 
 			document.onselectstart = function(){return false} //禁选文本
 			//console.log(index01+"--"+index02)
-			var $that = $(this)
+		
 			$(document).mousemove(function(e) {
 				if (elementup) {
 					x2=e.pageX-$(document).scrollLeft()
@@ -58,11 +59,17 @@ function SP_dragAndDrop(Container,Element,Changethis) {
 					
 					if (!Changethis) {
 						if (ind01!==index01) {
-							$(Container).eq(ind01).find(Element).eq(ind02).addClass('on')	
+							if (!$(Container).eq(ind01).find(Element).eq(ind02).addClass('on').length) {
+								$(Container).eq(ind01).find(Element).eq(ind02).addClass('on')
+
+							}
 						}
 					}
 					else {
-						$(Container).eq(ind01).find(Element).eq(ind02).addClass('on')	
+						if (!$(Container).eq(ind01).find(Element).eq(ind02).addClass('on').length) {
+							$(Container).eq(ind01).find(Element).eq(ind02).addClass('on')
+						}
+						
 					}
 				}
 				console.log("document")
@@ -74,31 +81,30 @@ function SP_dragAndDrop(Container,Element,Changethis) {
 				var pos01 = $(Container).eq(index01).find(Element).eq(index02)
 				var pos02 = $(Container).eq(ind01).find(Element).eq(ind02)
 				function replaceEle (){
-					if ($(Container).eq(ind01).find(Element).length) {
-						goBack (pos01)
-						pos02.after(pos01.clone(true).show(0).stop().fadeTo(300, 0.2).fadeTo(300, 1) )
-						pos01.remove()
-					}
-					else {
-						goBack (pos01)
-						$(Container).eq(ind01).append(pos01.clone(true).show(0).stop().fadeTo(300, 0.2).fadeTo(300, 1))
-						pos01.remove()
-					}
-				}
-				//在不同的容器
-				if (index01 !== ind01) {
-					replaceEle ()
-				}
-				//相同的容器/可选是否自身改变
-				if (Changethis) {
-					if (index01==ind01) {
-						goBack (pos01)
-						pos02.after(pos01.clone(true).show(0).stop().fadeTo(300, 0.2).fadeTo(300, 1) )
-						pos01.remove()
-					}
+					goBack (pos01)
+					pos02.after(pos01.clone(true).show(0).stop().fadeTo(300, 0.2).fadeTo(300, 1) )
+					pos01.remove()
 				}
 				//容器外
-				else {goBack (pos01)}
+				if (pos01.index()<0 || pos02.index()<0 ) {
+					goBack (pos01)
+					$(Container).eq(ind01).append(pos01.clone(true).show(0).stop().fadeTo(300, 0.2).fadeTo(300, 1))
+					pos01.remove()	
+					console.log(pos01.index()+"---"+pos02.index())
+				}
+				//容器外
+				else {
+					//在不同的容器
+					if (index01 !== ind01) {
+						replaceEle ()
+					}
+					//相同的容器/可选是否自身改变
+					if (Changethis) {
+						if (index01==ind01) {
+							replaceEle ()
+						}
+					}
+				}
 				
 			})
 		})
