@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+////////////前缀添加
+.pre(@style,@value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+         -o-@{style}: @value;
+            @{style}: @value;
+}
+.animation(@value){
+    .pre(animation,@value);
+}
+.transition(@arg){
+    .pre(transition,@arg);
+}
+.transform(@d2d3){
+    .pre(transform,@d2d3);
+}
+.box-shadow(@yy){
+    .pre(box-shadow,@yy);
+}
+.border-radius(@yj){
+    .pre(border-radius,@yj);
+}
+
+
+// .animation(telmov 2s infinite);
+////////////初始化
+//配色
+@color_font:#212b42;//
+@color_bg:@color_font;
+@color_blue:rgba(57, 125, 255, 1);//#3779ff;
+
+//内容未完阴影
+.jianbian(@c){
+    background: linear-gradient(0deg, @c-10, @c);
+}
+//字体
+@font10:10px;
+.fontsize (@fs) {font-size:10px * @fs;}
+.lineheight (@lh) { line-height:10px * @lh;}
+.bold {font-weight: bold;}
+//阴影
+@shadow:0 0 100px rgba(0, 0, 0, 0.2);
+@shadow02:0 0 100px rgba(0, 0, 0, 0.4);
+//清除浮动
+.clearfloat(){display: block; content: ''; clear: both; height: 0;}
+
+
+
+////////////////////// 拖动放置
+.SP_dragAndDrop { 
+    
+}
+
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>切换内容</title>
+<title>代码块</title>
 <!-- <link rel="stylesheet/less" type="text/css" href="code-block.less"> -->
 <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
 <script type="text/javascript" src="code-block.js"></script>
@@ -12,46 +12,71 @@
 <body>
 
 
-<ul class="sp_tab">
-	<li>标签01</li>
-	<li>标签0102</li>
-	<li>标签0103</li>
-	<li>标签0104</li>
-</ul>
-
-<ul class="sp_con">
-	<li><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div></li>
-	<li><div>22222222</div></li>
-	<li>内容0333333</li>
-</ul>
-
-<style type="text/css">
+<style>
 	.sp_tab .on { color: red }
 </style>
 
-<!--*****************************-->
-<!-- 忽略 -->
-<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
-<!--*****************************-->
 
-<script type="text/javascript">
-
-	var contentSwitch = function (tabclass,conclass,index) {
-		var go = function (_index){
-			$(tabclass).children().eq(_index).addClass("on").siblings().removeClass('on')
-			$(conclass).children().eq(_index).show(300).siblings().hide()
+<script>
+// var obj01 = function(){ return console.log("obj01") }
+// var obj02 = function(){ return console.log("obj02") }
+//不做判断，逐个执行
+var toggleFun = (function(){
+	var num = true
+	return function () {
+		if (num) {
+			console.log("1")
+			num = !num
 		}
-		
-		go(index)
-		$(tabclass).children().click(function() {
-			go($(this).index())
-			console.log ($(this).index())
-		});
+		else  {
+			console.log("2")
+			num = true
+		}
 	}
-	contentSwitch(".sp_tab",".sp_con",0)
+}())
+//不做判断，逐个执行，2一个以上
+var toggleFunMore = (function(){
+	var num = 1
+	return function () {
+		switch(num){
+			case 1:
+				console.log("1")
+				num ++
+				break
+			case 2:
+				console.log("2")
+				num ++
+				break 
+			case 3:
+				console.log("3")
+				num ++
+				break 
+			case 4:
+				console.log("4")
+				num =1
+				break 
+		}
+	}
+}())
 
-	
+//随机颜色
+
+
+
 
 </script>
+
+
+
+
+<!--
+<style>
+</style>
+<script>
+</script> 
+-->
+
+
+
 </body>
 </html>

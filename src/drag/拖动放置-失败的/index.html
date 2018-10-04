@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拖动放置</title>
+<style type="text/css">
+html,body{margin:0;padding:0;font-size:12px;color:#a7a7a7; font-weight: 400;}
+h1,h2,h3,h4,h5,h6,span,p,ul,li,table,tr,td,input,a,dl,dt,dd{font-family: 'Lato', sans-serif;margin:0;padding:0;text-decoration:none;list-style:none; /* text-shadow: rgba(0,0,0,0.08) 0px 1px 2px;*/}
+img{vertical-align:top;border:none}
+body { background-color: #fff;  color: #212b42; font-size: 16px;}
+
+</style>
+</head>
+<body> 
+
+
+<ul class="sm_mune sm_mune01">
+	<li>阿黄</li>
+	<li>小白</li>
+	<li>阿花</li>
+	<li>阿黄222</li>
+	<li>小白222</li>
+	<li>阿花222</li>
+</ul>
+
+<ul class="sm_mune sm_mune02">
+	<li>空111</li>
+	<li>空222</li>
+	<li>空333</li>
+
+</ul>
+
+<ul class="sm_mune sm_mune02">
+	<li>3333333</li>
+	<li>空233333322</li>
+	<li>空333333333</li>
+
+</ul>
+
+
+<style type="text/css">
+	.sm_mune { width: 200px; position: relative; padding: 30px 10px; margin: 40px; background-color: rgba(211,163,89,0.1); border: 4px solid  rgba(211,163,89,0.2); font-size: 16px; float: left; text-indent: 30px;}
+	.sm_mune li { padding: 10px 0; margin: 10px;  background-color: rgba(211,163,89,0.5); border: 4px solid  rgba(211,163,89,0.7); position: relative;	}
+	.sm_mune li i { padding: 0 0 0 30px; }
+	.sm_mune02 {background-color: rgba(111,73,189,0.1); border: 4px solid  rgba(111,73,189,0.3);}
+	.sm_mune02 li { background-color: rgba(111,73,189,0.4); border: 4px solid  rgba(111,73,189,0.6); }
+	
+	li.on:after { position: absolute; content: ''; left: -10%; bottom: -25%; width: 120%; height: 3px; background-color: blue; box-shadow: 3px 9px 20px rgba(58, 155, 255, 1); }
+
+	{position: fixed;}
+</style>
+
+<!-- ************************* -->
+<link rel="stylesheet/less" type="text/css" href="SP_dragAndDrop.less">
+<script type="text/javascript" src="../../PUBLIC/js/less.min.js"></script>
+<script type="text/javascript" src="../../PUBLIC/js/jquery.min.js"></script>
+<script type="text/javascript" src="SP_dragAndDrop.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拖动放置</title>
+<style type="text/css">
+html,body{margin:0;padding:0;font-size:12px;color:#a7a7a7; font-weight: 400;}
+h1,h2,h3,h4,h5,h6,span,p,ul,li,table,tr,td,input,a,dl,dt,dd{font-family: 'Lato', sans-serif;margin:0;padding:0;text-decoration:none;list-style:none; /* text-shadow: rgba(0,0,0,0.08) 0px 1px 2px;*/}
+img{vertical-align:top;border:none}
+body { background-color: #fff;  color: #212b42; font-size: 16px;  }
+
+*,*:before,*:after{transition:0s;}
+
+</style>
+</head>
+<body> 
+<h2><code>SP_dragAndDrop(".sm_mune,.whoiam","li,p",true)</code></h2>
+<ul class="sm_mune sm_mune01">
+	<h1>容器01</h1>
+	<li>A1</li>
+	<li>B1</li>
+	<li>C1</li>
+	<li>D1</li>
+	<li>E1</li>
+	<li>F1</li><li>A1</li>
+	<li>B1</li>
+	<li>C1</li>
+	<li>D1</li>
+	<li>E1</li>
+	<li>F1</li><li>A1</li>
+	<li>B1</li>
+	<li>C1</li>
+	<li>D1</li>
+	<li>E1</li>
+	<li>F1</li><li>A1</li>
+	<li>B1</li>
+	<li>C1</li>
+	<li>D1</li>
+	<li>E1</li>
+	<li>F1</li>
+</ul>
+
+<ul class="sm_mune sm_mune02">
+	<h2>容器02</h2>
+	<li>AAA3</li>
+	<li>BBB3</li>
+	<li>CCC3</li>
+
+</ul>
+
+<ul class="sm_mune sm_mune03">
+	<h3>容器03</h3>
+	<li>绿帽子</li>
+	<li>绿巨人</li>
+	<li>绿神</li>
+</ul>
+
+<div class="whoiam" style="font-size: 20px; line-height: 50px;">
+	<h3>不同class不同tag的容器04</h3>
+	<p>友田彩也香</p>
+	<h4>受人尊敬的老师</h4>
+	<p>永崎文</p>
+	<p>七咲楓花</p>
+	<p>京香JULIA </p>
+	<p>三上悠亚</p>
+	<p>秋月小町 </p>
+</div>
+
+<style type="text/css">
+	.sm_mune,.whoiam { float: left; }
+	.whoiam {width: 200px;}
+	.whoiam p, .whoiam li { height: 30px; background-color: #eee; margin: 10px;  }
+	.sm_mune p.on ,.whoiam p.on {background-color: red;}
+
+	.sm_mune {   width: 200px; position: relative; padding: 30px 10px; margin: 40px; background-color: rgba(211,163,89,0.1); border: 4px solid  rgba(211,163,89,0.2); font-size: 16px; float: left; text-indent: 30px;}
+	.sm_mune li,.sm_mune p { padding: 10px 0; margin: 10px;  background-color: rgba(211,163,89,1); border: 4px solid  rgba(211,163,89,0.7); position: relative;	}
+
+	.sm_mune02 { width: 400px; background-color: rgba(111,73,189,0.1); border: 4px solid  rgba(111,73,189,0.3);}
+	.sm_mune02 li { background-color: rgba(111,73,189,1); border: 4px solid  rgba(111,13,189,0.6); color: #fff; }
+	.sm_mune03 {background-color: rgba(11,173,19,0.1); border: 4px solid  rgba(11,173,19,0.4);}
+	.sm_mune03 li { background-color: rgba(11,173,19,1); border: 4px solid  rgba(11,173,19,1);; color: #fff; }
+
+	
+	.sm_mune li.on:after { position: absolute; content: ''; left: -10%; bottom: -25%; width: 120%; height: 3px; background-color: blue; box-shadow: 3px 9px 20px rgba(58, 155, 255, 1); }
+
+	{position: fixed; width: }
+	 position: 'fixed', width: w, height: h,left:pos.left,top:pos.top,zIndex:'-1',opacity:'0.4'
+</style>
+
+<!-- ************************* -->
+<link rel="stylesheet/less" type="text/css" href="SP_dragAndDrop.less">
+<script type="text/javascript" src="../../PUBLIC/js/less.min.js"></script>
+<script type="text/javascript" src="../../PUBLIC/js/jquery.min.js"></script>
+<script type="text/javascript" src="SP_dragAndDrop.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
