@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>点击折叠</title>
+<link rel="stylesheet/less" type="text/css" href="switch.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="switch.js"></script>
+</head>
+<body>
+
+
+<ul class="">搜索
+	<h1 class="fold_tab">fold_tab</h1>
+	<ul class="fold_con">
+	
+		<li>标签01</li>
+		<li>标签0102</li>
+		<li>标签0103</li>
+		<li>标签0104</li>
+	</ul>
+	<ul class="fold_con">
+	
+		<li>标签01</li>
+		<li>标签0102</li>
+		<li>标签0103</li>
+		<li>标签0104</li>
+	</ul>
+</ul>
+
+<ul class="">
+	<li><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div><div>ssssdsd</div></li>
+	<li><div>22222222</div></li>
+	<li>内容0333333</li>
+</ul>
+
+<style type="text/css">
+	
+</style>
+
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+
+<script type="text/javascript">
+	//点击折叠
+	var contentFold = function (tabclass,conclass,all) {
+		
+		if (all=="all") { $(tabclass).click(function() {   $(conclass).toggle(300)   }) }
+		else { $(tabclass).click(function() {   $(tabclass).next(conclass).toggle(300)   })}
+	}
+	contentFold(".fold_tab",".fold_con")
+
+	
+
+</script>
+</body>
+</html>

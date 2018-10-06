@@ -5,7 +5,7 @@ img{vertical-align:top;border:none}
 body { background-color: #fff;  color: #212b42; font-size: 16px;}
 a {  color: #212b42; cursor: pointer;}
 a:hover { font-weight: bold; color: #3779ff; }
-*,*:before,*:after{transition:0.2s ease;}/*所以变化动画过度*/
+*,*:before,*:after{transition:0.2s;}/*所以变化动画过度ease*/
 /*通用*/
 .left{float:left}
 .right{float:right}

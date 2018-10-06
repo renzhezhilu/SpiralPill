@@ -2,7 +2,7 @@
 
 
 ////////////////////// 拖动放置
-SP_dragAndDrop(".sm_mune,.whoiam","li,p",true)
+//SP_dragAndDrop(".sm_mune,.whoiam","li,p",true)
 
 
 //Container多个容器 Element多个容器内可选的元素   Changethis是否可改变自己 "Elemen".on是位置的提示自定义
@@ -53,8 +53,8 @@ function SP_dragAndDrop(Container,Element,Changethis) {
 					x2=e.pageX-$(document).scrollLeft()
 					y2=e.pageY-$(document).scrollTop()
 					$(Container).eq(index01).find(Element).eq(index02).css({
-						left: x2,
-						top: y2
+						left: x2+10,
+						top: y2+10
 					})
 					
 					if (!Changethis) {

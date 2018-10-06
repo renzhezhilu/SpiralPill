@@ -17,6 +17,18 @@ body { background-color: #fff;  color: #212b42; font-size: 16px;  }
 </head>
 <body> 
 <h2><code>SP_dragAndDrop(".sm_mune,.whoiam","li,p",true)</code></h2>
+<table class="sm_mune sm_mune_table">
+	<tr>
+		<th>标题</th>
+		<th>标题</th>
+		<th>标题</th>
+	</tr>
+	<tr>
+		<td>内容01</td>
+		<td>内容02</td>
+		<td>内容03</td>
+	</tr>
+</table>
 <ul class="sm_mune sm_mune01">
 	<h1>容器01</h1>
 	<li>A1</li>
@@ -69,6 +81,8 @@ body { background-color: #fff;  color: #212b42; font-size: 16px;  }
 </div>
 
 <style type="text/css">
+	table.sm_mune_table { display: block; width:400px; }
+	table.sm_mune_table td {  height: 30px; line-height: 40px; background-color: red }
 	.sm_mune,.whoiam { float: left; }
 	.whoiam {width: 200px;}
 	.whoiam p, .whoiam li { height: 30px; background-color: #eee; margin: 10px;  }
@@ -95,7 +109,7 @@ body { background-color: #fff;  color: #212b42; font-size: 16px;  }
 <script type="text/javascript" src="../../PUBLIC/js/jquery.min.js"></script>
 <script type="text/javascript" src="SP_dragAndDrop.js"></script>
 <script type="text/javascript">
-
+SP_dragAndDrop(".sm_mune,.whoiam","li,p,td",true)
 </script>
 </body>
 </html>
