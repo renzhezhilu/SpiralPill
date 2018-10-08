@@ -98,9 +98,10 @@ body {background-color: #f0f5fa; color:@color_2; }
     .tab { }
 }
 
+//弹窗
 .popup-window {
     @fontsize:20px; opacity: 0; display: none;
-    position: fixed; z-index: 100; #bundle > .full; .transition(.2s ease);
+    position: fixed; z-index: 100; width: 100%;height: 100%;left: 0; top: 0; .transition(.2s ease);
     .content {
         position: absolute;z-index: 10;top:50%;left:50%;.transform(translate(-50%,-50%));.border-radius(6px);
         background-color: #fff;min-width: 300px; max-width: 80%;min-height: 200px; max-height: 80%;padding: 20px;
@@ -142,11 +143,12 @@ body {background-color: #f0f5fa; color:@color_2; }
                     .border-radius(6px); font-size:@fontsize*.7; cursor: pointer;  
                     &:hover { opacity: 0.9; }
                 }
-                .okbut {.but01; float: right;}
+                .okbut{.but01; float: right; border:none;}
                 .nobut {float: right;}
                 .otherbut {float: right;}
             }
             &:after{ .clearfloat()}
+           
         }
     }
     .content_full { 
@@ -155,7 +157,7 @@ body {background-color: #f0f5fa; color:@color_2; }
         .center{max-height: 80%;  }
     }
     .bg {
-        position: absolute; z-index: 1;#bundle > .full;background-color:darken(@color_bg, 10%);opacity: 0.7  
+        position: absolute; z-index: 1;width: 100%;height: 100%;left: 0; top: 0;;background-color:darken(@color_bg, 10%);opacity: 0.7  
     }
     &.popupwindow_hide { opacity: 0}
 }

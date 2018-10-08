@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>弹窗</title>
-<link rel="stylesheet" type="text/css" href="popup-window.css">
 
+<link rel="stylesheet" type="text/less" href="popup-window.less">
 <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
 <script type="text/javascript" src="popup-window.js"></script>
 
@@ -70,14 +70,12 @@
 
 $("h2").click(function() {
 	var popUpWindowId =this.tagName+"-"+$(this).index( this.tagName )
-	
 	$(this).attr("popUpWindowId", popUpWindowId )
-	new_popUpWindow (popUpWindowId,"htmltem_simple01")
-	
-
+	var htmlssd = $(".test").html()
+	new_popUpWindow (popUpWindowId,"标题生生世世",htmlssd,"1000px","500px","search")
 });
 
-function new_popUpWindow (elementid,tem) {
+function new_popUpWindow (elementid,title,con,w_width,w_height,titleicon,tem) {
 	//判断是否已经创建过
 	var windowsid = "popup-window-"+elementid
 	if ( $("body").find("."+windowsid).length  ) {
@@ -87,11 +85,11 @@ function new_popUpWindow (elementid,tem) {
 	else {
 		var setting = {
 			top:{
-				title:"标题",
+				title:title,
 				subtitle:"标题",
-				titleicon:"heart"
+				titleicon:titleicon
 			},
-			center:"okok",
+			center:con,
 			bottom:{
 				unimportanttext:" ",
 				okbut:"确认",
@@ -99,15 +97,15 @@ function new_popUpWindow (elementid,tem) {
 			    otherbut:""
 			},
 			other:{
-				width:"",
-				height:"",
+				width:w_width,
+				height:w_height,
 				content_full:""
 			}
 		}
 		
 		var htmltem_complex = "\
 			<div popUpWindowId='"+windowsid+"' class='popup-window "+windowsid+"'>\
-				<div class='content "+setting.other.content_full+"' style='width:"+setting.other.width+"; height:"+setting.other.height+";'>\
+				<div class='content "+setting.other.content_full+"' style='min-width:"+setting.other.width+"; min-height:"+setting.other.height+";'>\
 					<div class='top'>\
 						<div class='title'>\
 							<h3>\
@@ -139,10 +137,11 @@ function new_popUpWindow (elementid,tem) {
 		"
 		var htmltem_simple01 = "\
 			<div popUpWindowId='"+windowsid+"' class='popup-window "+windowsid+"'>\
-				<div class='content "+setting.other.content_full+"' style='width:"+setting.other.width+"; height:"+setting.other.height+";'>\
+				<div class='content "+setting.other.content_full+"' style='min-width:"+setting.other.width+"; min-height:"+setting.other.height+";'>\
 					<div class='top'>\
 						<div class='title'>\
 							<h3>\
+								<i class='fa fa-"+setting.top.titleicon+"'></i>\
 								<strong>"+setting.top.title+"</strong>\
 							</h3>\
 						</div>\
@@ -158,7 +157,7 @@ function new_popUpWindow (elementid,tem) {
 					<div class='bottom'>\
 						<div class='text'>"+setting.bottom.unimportanttext+"</div>\
 						<div class='button'>\
-							<div class='okbut'>"+setting.bottom.okbut+"</div>\
+							<input type='button' class='okbut' value='"+setting.bottom.okbut+"'>\
 							<div class='nobut'>"+setting.bottom.nobut+"</div>\
 						</div>\
 					</div>\
@@ -166,15 +165,15 @@ function new_popUpWindow (elementid,tem) {
 				<div class='bg'></div>\
 			</div>\
 		"
-		if (tem=="htmltem_simple01") tem=htmltem_simple01
-		
+		if (tem=="htmltem_complex") tem=htmltem_complex
+		else tem=htmltem_simple01
 		$("body").append(tem).show(0, function() {
 			var $_this = $("."+windowsid)
 			//关闭
 			function closeWindow () {
 				$_this.fadeTo(10,0).hide(0)
 			}
-			$_this.find(".close_but").click(function(event) {
+			$_this.find(".close_but,.nobut").click(function(event) {
 				closeWindow()
 			});
 			//全屏

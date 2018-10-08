@@ -55,6 +55,7 @@
 <script type="text/javascript">
 
 
+function SP_dateObtain( classname,hours) {
 //设置日期
 function showDate () {
 	$(".date-input").click(function(event) {
@@ -84,9 +85,6 @@ function monthHowDay (datestring) {
 	return i-1
 }
 
-
-
-
 //点击触发获取
 function triggerDate (){
 	var $date = $(".SP-date-selection")
@@ -97,7 +95,6 @@ function triggerDate (){
 		$date.prev(".date-input ").val(obtainDate($(this).index()))
 	});
 }
-
 
 //获取日期值
 function obtainDate (dayindex){
@@ -129,19 +126,20 @@ function obtainDateAnd_H_M_S (dayindex){
 }
 
 //生成html
-function htmlDate (element,x,y) {
+function htmlDate (element,x,y,html) {
+	var chushitime = new Date();
 	if (!$(element).next(".SP-date-selection").length) {
 		var _class = "SP-date-selection"+ ~(Math.random()*100000)
 		var _htmlDate = "\
 		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
 			<span class='year'>\
 				<tt class='ago'>-</tt>\
-				<input class='yearinput' type='text' value='2018'></input>\
+				<input class='yearinput' type='text' value='"+ chushitime.getFullYear() +"'></input>\
 				<tt class='after'>+</tt>\
 			</span> \
 			<span class='month'>\
 				<tt class='ago'>-</tt>\
-				<input class='monthinput' type='text' value='9'></input>月\
+				<input class='monthinput' type='text' value='"+(chushitime.getMonth()+1)+"'></input>月\
 				<tt class='after'>+</tt>\
 			</span>\
 			<ul class='day'>\
@@ -151,12 +149,12 @@ function htmlDate (element,x,y) {
 		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
 			<span class='year'>\
 				<tt class='ago'>-</tt>\
-				<input class='yearinput' type='text' value='2018'></input>\
+				<input class='yearinput' type='text' value='"+ chushitime.getFullYear() +"'></input>\
 				<tt class='after'>+</tt>\
 			</span> \
 			<span class='month'>\
 				<tt class='ago'>-</tt>\
-				<input class='monthinput' type='text' value='9'></input>月\
+				<input class='monthinput' type='text' value='"+ (chushitime.getMonth()+1) +"'></input>月\
 				<tt class='after'>+</tt>\
 			</span>\
 			<ul class='day'>\
@@ -174,7 +172,9 @@ function htmlDate (element,x,y) {
 			</div>\
 		</div>"
 
-		$(element).after(_htmlhours)
+		if (html=="hours") { $(element).after(_htmlhours) }
+		else $(element).after(_htmlDate)
+		
 		//遍历天数 并选择今日年月日
 		var today = new Date().getDate()
 		function daynum (time) {
@@ -223,10 +223,19 @@ function htmlDate (element,x,y) {
 			$date[0].onselectstart = function(){return false;}
 			$date.find("ul.day li").click(function() {
 				//$(this).addClass("on").siblings().removeClass('on')
-				$(element).val(obtainDateAnd_H_M_S($(this).index()))
+
+				if (html=="hours") { 
+					$(element).val(obtainDateAnd_H_M_S($(this).index()))
+				}
+				else $(element).val(obtainDate($(this).index()))
+
+
+				
 				$("."+_class).remove()
 			});
 		}
+
+		
 		getDateToValue()
 		//刷新天数
 		function newDayList () {
@@ -290,18 +299,16 @@ function htmlDate (element,x,y) {
 		//var $date = $(".SP-date-selection")
 	}
 }
-
 //调用
-$("input.date-input").click(function(){
+$(classname).click(function(){
   var xy = $(this).offset()
   var x = xy.left
   var y = xy.top + $(this).height()+10
-  htmlDate ($(this),x,y)
-
+  htmlDate ($(this),x,y,hours)
 });
-
-
-
+}
+SP_dateObtain ("input.date-input")
+// 
 
 
 </script>
