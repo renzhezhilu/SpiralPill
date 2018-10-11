@@ -12,9 +12,12 @@
 <body>
 
 
-<input type="text" class="date-input"></input>
-<input type="text" class="date-input"></input>
-
+<input type="text" class="date-input01" placeholder="日期"></input>
+<input type="text" class="date-input02" placeholder="日期加时分秒"></input>
+<input type="text" class="date-input03" placeholder="时分秒"></input>
+<br><br><br>
+<input type="text" class="date-input04" placeholder="设置年月日"></input>
+<input type="text" class="date-input05" placeholder="设置年月日-时分秒"></input>
 <!-- 
 <div class="SP-date-selection">
 	<span class="year">
@@ -55,7 +58,7 @@
 <script type="text/javascript">
 
 
-function SP_dateObtain( classname,hours) {
+function SP_dateObtain( classname,hours,setdate) {
 //设置日期
 function showDate () {
 	$(".date-input").click(function(event) {
@@ -118,16 +121,33 @@ function obtainDateAnd_H_M_S (dayindex){
 	var hours = $date.find("select.h").val()
 	var minute = $date.find("select.m").val()
 	var second = $date.find("select.s").val()
-	
+
 	if ((year<2100&&year>1900) && (month>0&&month<13)) {
 		return year+"/"+month+"/"+day +" " +hours+":"+minute+":"+second
 	}
 	else  alert('日期选择错误,请重新选择 '+year+"/"+month+"/"+day)
 }
+//获取时分秒
+function obtain_H_M_S (){
+	var $date = $(".SP-date-selection")
+	
+	var hours = $date.find("select.h").val()
+	var minute = $date.find("select.m").val()
+	var second = $date.find("select.s").val()
+	
+	return hours+":"+minute+":"+second
+}
+//是否设置日期时间
 
-//生成html
+
+//初始化年月-生成html
 function htmlDate (element,x,y,html) {
-	var chushitime = new Date();
+	var chushitime
+	if (setdate) {
+		chushitime = new Date(setdate)
+	}
+	else chushitime = new Date()
+	
 	if (!$(element).next(".SP-date-selection").length) {
 		var _class = "SP-date-selection"+ ~(Math.random()*100000)
 		var _htmlDate = "\
@@ -144,6 +164,10 @@ function htmlDate (element,x,y,html) {
 			</span>\
 			<ul class='day'>\
 			</ul>\
+			<div class='butbox'>\
+				<a class='close'>关闭</a>\
+				<a class='ok'>确定</a>\
+			</div>\
 		</div>"
 		var _htmlhours = "\
 		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
@@ -170,13 +194,39 @@ function htmlDate (element,x,y,html) {
 				</select>\
 				秒\
 			</div>\
+			<div class='butbox'>\
+				<a class='close'>关闭</a>\
+				<a class='ok'>确定</a>\
+			</div>\
 		</div>"
-
+		var _htmlseconds = "\
+		<div style='position: fixed; z-index:"+ 10+($(".SP-date-selection").size())+";' class='SP-date-selection "+_class+"'>\
+			<div class='hours'>\
+				<select class='h'>\
+				</select>\
+				时\
+				<select class='m'>\
+				</select>\
+				分\
+				<select  class='s'>\
+				</select>\
+				秒\
+			</div>\
+			<div class='butbox'>\
+				<a class='close'>关闭</a>\
+				<a class='ok'>确定</a>\
+			</div>\
+		</div>"
 		if (html=="hours") { $(element).after(_htmlhours) }
+		else if (html=="seconds") { $(element).after(_htmlseconds) }
 		else $(element).after(_htmlDate)
 		
 		//遍历天数 并选择今日年月日
-		var today = new Date().getDate()
+		var today
+		if (setdate) {
+			today = new Date(setdate).getDate()
+		}
+		else today = new Date().getDate()
 		function daynum (time) {
 			for (var i = 1; i < monthHowDay(time)+1; i++) {
 				if (i==today) { 
@@ -187,7 +237,11 @@ function htmlDate (element,x,y,html) {
 				}
 			}
 		}
-		daynum(new Date())
+		if (setdate) {
+			daynum(new Date(setdate))
+		}
+		else daynum(new Date())
+		
 		//遍历时分秒 并选择今日时分秒
 		function h_m_s_num (time) {
 			var now_h = time.getHours()
@@ -209,7 +263,11 @@ function htmlDate (element,x,y,html) {
 			$(element).next().find("select.m").val(now_m)
 			$(element).next().find("select.s").val(now_s)
 		}
-		h_m_s_num(new Date())
+		if (setdate && new Date(setdate).getHours() || new Date(setdate).getMinutes() || new Date(setdate).getSeconds() ) {
+			h_m_s_num(new Date(setdate))
+		}
+		else h_m_s_num(new Date())
+		
 
 		//设置显示在input正下方
 		$(element).next(".SP-date-selection").css({
@@ -221,18 +279,36 @@ function htmlDate (element,x,y,html) {
 		function getDateToValue(){
 			$date = $(element).next(".SP-date-selection")
 			$date[0].onselectstart = function(){return false;}
+			function outputFormat(){
+
+			}
 			$date.find("ul.day li").click(function() {
 				//$(this).addClass("on").siblings().removeClass('on')
-
 				if (html=="hours") { 
 					$(element).val(obtainDateAnd_H_M_S($(this).index()))
 				}
+				else if (html=="seconds") { 
+					$(element).val(obtain_H_M_S())
+				}
 				else $(element).val(obtainDate($(this).index()))
-
-
-				
 				$("."+_class).remove()
-			});
+
+			})
+			$date.find(".ok").click(function() {
+				if (html=="hours") { 
+					$(element).val(obtainDateAnd_H_M_S( $date.find(".day").find('.on').index()))
+				}
+				else if (html=="seconds") { 
+					$(element).val(obtain_H_M_S())
+				}
+				else $(element).val(obtainDate($date.find(".day").find('.on').index()))
+				$("."+_class).remove()
+			})
+			$date.find(".close").click(function() {
+				$("."+_class).remove()
+			})
+
+			
 		}
 
 		
@@ -307,7 +383,12 @@ $(classname).click(function(){
   htmlDate ($(this),x,y,hours)
 });
 }
-SP_dateObtain ("input.date-input")
+SP_dateObtain ("input.date-input01")
+SP_dateObtain ("input.date-input02","hours")
+SP_dateObtain ("input.date-input03","seconds")
+
+SP_dateObtain ("input.date-input04","","1990/01/19")
+SP_dateObtain ("input.date-input05","hours","2015/6/13 14:22:11")
 // 
 
 
