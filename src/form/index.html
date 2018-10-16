@@ -7,8 +7,59 @@
 <title>form</title>
 
 </head>
-<body>
+<body style=" width: 40%; margin: 100px auto;     background-color: #f4f8fb;">
 
+<div class="SP_from">
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请输入..."></input>
+
+	<input type="text" placeholder="请输入..."></input>
+	<i class="fa fa-search"></i>
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请选择日期..."></input>
+	<i class="fa fa-calendar"></i>
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请选择部门..."></input>
+	<i class="fa fa-sitemap"></i>
+
+	<input type="text" placeholder="请选择员工..."></input>
+	<i class="fa fa-user-circle-o"></i>
+
+	<input name="xxx" type="checkbox">
+	<label>十分现实</label>
+	<input name="xxx" type="checkbox">
+	<label>菜单选择</label>
+	<input name="xxx" type="checkbox">
+	<label>屠龙宝刀</label>
+	<input name="xxx" type="checkbox">
+	<label>点击就送</label>
+	
+
+	<select>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+		<option value="04">04</option>
+	</select>
+	
+	<br>
+<input type="text" icon="date" placeholder="请输入..."></input>
+	<i style="" class="fa fa-search"></i>
+	<input name="xx" type="radio">
+	<label>xx</label>
+	<input name="xx" type="radio">
+	<label>xx</label>
+	<input name="xx" type="radio"> <label>xx</label>
+
+	<input name="xx2" type="radio"> <label>xx2</label>
+	<input name="xx2" type="radio"> <label>xx2</label>
+	<input name="xx2" type="radio"> <label>xx2</label>
+	
+	<input type="text" icon="date" placeholder="请输入..."></input>
+	<i style="" class="fa fa-search"></i>
+
+
+</div>
 
 <!--*****************************-->
 <!-- 忽略 -->
@@ -18,7 +69,44 @@
 <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
 <script type="text/javascript" src="form.js"></script>
 <script type="text/javascript">
+function SP_from (classname) {
+	//复选框
+	$(classname).find("[type=checkbox]").hide('0', function() {
+		_that = $(this)
+		_that.before('<div class="input_checkbox"></div>')
+		var name = _that.attr("name")
+		_that.prev(".input_checkbox").click(function() {
+			if ( !~(this.className.indexOf("on")) ) {
+				$(this).addClass("on").next("[type=checkbox]").prop("checked",true)
+			}
+			else {
+				$(this).removeClass("on").next("[type=checkbox]").prop("checked",false)
+			}
+			console.log($(this).next("[type=checkbox]").prop('checked'))
+		})
 
+	})
+	// 单选框
+	$(classname).find("[type=radio]").hide('0', function() {
+		_that = $(this)
+		_that.before('<div class="input_radio"></div>')
+
+		var name = _that.attr("name")
+		_that.prev(".input_radio").click(function() {
+			
+
+			$(this).addClass("on").next("[type=radio][name="+name+"]").prop("checked",true)
+			$(this).siblings().next("[type=radio][name="+name+"]").prev(".input_radio").removeClass("on")
+			
+			console.log(_that.attr("name"))
+		})
+	})
+	//divselect
+
+	
+
+}
+SP_from (".SP_from")
 </script>
 </body>
 </html>
