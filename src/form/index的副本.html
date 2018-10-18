@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>form</title>
+
+</head>
+<body style=" width: 40%; margin: 100px auto;     background-color: #f4f8fb;">
+
+<style>
+	.ruzhi_butbox { position: fixed; right: 0; top: 0; width: 160px;  border-left: 1px solid #bbb; height: 100%; background: #fff;}	
+	.ruzhi_butbox li { line-height: 50px; background: #fff;position: relative; opacity: .7; }	
+	.ruzhi_butbox li.on { line-height: 50px; background: #f4f8fb; color: blue; left: -1px; border-top: 1px solid #bbb;  border-bottom: 1px solid #bbb; opacity: 1; font-weight: bold;}	
+	.ruzhi_butbox li span { position: absolute; right: 10px; top: 0; font-size: 10px; opacity: .2;}
+	.ruzhi_butbox li.on span {  font-size: 40px; opacity: .1;}
+	.ruzhi_butbox li.on span b { opacity: .4;}
+
+	.ruzhi_butbox li i { padding: 0 5px 0 20px;}	
+	.ruzhi_butbox li:hover { background: #eee;}	
+	.ruzhi_butbox h3 { font-size: 18px; line-height: 30px; text-indent: 20px; opacity: .6;}	
+	.ruzhi_butbox ul { padding: 20px 0;}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+
+</style>
+<div class="ruzhi_butbox">
+	<div class="but"><i class="fa fa-search"></i>设置</div>
+
+	<ul>
+	
+		<li class="on"><span><b>0</b>1</span><i class="fa fa-search"></i><b></b>员工资料</b></li>
+		<li><span><b>0</b>2</span><i class="fa fa-search"></i><b></b>合同登记</b></li>
+		<li><span><b>0</b>3</span><i class="fa fa-search"></i><b></b>家庭成员</b></li>
+		<li><span><b>0</b>4</span><i class="fa fa-search"></i><b></b>教育经历</b></li>
+		<li><span><b>0</b>5</span><i class="fa fa-search"></i><b></b>工作经历</b></li>
+		<li><span><b>0</b>6</span><i class="fa fa-search"></i><b></b>培训经历</b></li>
+		<li><span><b>0</b>7</span><i class="fa fa-search"></i><b></b>获奖记录</b></li>
+		<li><span><b>0</b>8</span><i class="fa fa-search"></i><b></b>证件</b></li>
+	</ul>
+</div>
+<div class="SP_from">
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请输入..."></input>
+
+	<input type="text" placeholder="请输入..."></input>
+	<i class="fa fa-search"></i>
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请选择日期..."></input>
+	<i class="fa fa-calendar"></i>
+	<label>十分现实</label><br>
+	<input type="text" placeholder="请选择部门..."></input>
+	<i class="fa fa-sitemap"></i>
+
+	<input type="text" placeholder="请选择员工..."></input>
+	<i class="fa fa-user-circle-o"></i>
+
+	<input name="xxx" type="checkbox">
+	<label>十分现实</label>
+	<input name="xxx" type="checkbox">
+	<label>菜单选择</label>
+	<input name="xxx" type="checkbox">
+	<label>屠龙宝刀</label>
+	<input name="xxx" type="checkbox">
+	<label>点击就送</label>
+	
+
+	<select>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+		<option value="04">04</option>
+	</select>
+	
+	<br>
+<input type="text" icon="date" placeholder="请输入..."></input>
+	<i style="" class="fa fa-search"></i>
+	<input name="xx" type="radio">
+	<label>xx</label>
+	<input name="xx" type="radio">
+	<label>xx</label>
+	<input name="xx" type="radio"> <label>xx</label>
+
+	<input name="xx2" type="radio"> <label>xx2</label>
+	<input name="xx2" type="radio"> <label>xx2</label>
+	<input name="xx2" type="radio"> <label>xx2</label>
+	
+	<input type="text" icon="date" placeholder="请输入..."></input>
+	<i style="" class="fa fa-search"></i>
+
+
+</div>
+
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+<link rel="stylesheet/less" type="text/css" href="form.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="form.js"></script>
+<script type="text/javascript">
+function SP_from (classname) {
+	//复选框
+	$(classname).find("[type=checkbox]").hide('0', function() {
+		_that = $(this)
+		_that.before('<div class="input_checkbox"></div>')
+		var name = _that.attr("name")
+		_that.prev(".input_checkbox").click(function() {
+			if ( !~(this.className.indexOf("on")) ) {
+				$(this).addClass("on").next("[type=checkbox]").prop("checked",true)
+			}
+			else {
+				$(this).removeClass("on").next("[type=checkbox]").prop("checked",false)
+			}
+			console.log($(this).next("[type=checkbox]").prop('checked'))
+		})
+
+	})
+	// 单选框
+	$(classname).find("[type=radio]").hide('0', function() {
+		_that = $(this)
+		_that.before('<div class="input_radio"></div>')
+
+		var name = _that.attr("name")
+		_that.prev(".input_radio").click(function() {
+			
+
+			$(this).addClass("on").next("[type=radio][name="+name+"]").prop("checked",true)
+			$(this).siblings().next("[type=radio][name="+name+"]").prev(".input_radio").removeClass("on")
+			
+			console.log(_that.attr("name"))
+		})
+	})
+}
+SP_from (".SP_from")
+</script>
+</body>
+</html>

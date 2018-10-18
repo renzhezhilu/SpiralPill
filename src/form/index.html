@@ -7,9 +7,153 @@
 <title>form</title>
 
 </head>
-<body style=" width: 40%; margin: 100px auto;     background-color: #f4f8fb;">
+<body style=" padding: 20px;  background-color: #f4f8fb;">
 
-<div class="SP_from">
+<style>
+	.ruzhi_butbox { position: fixed; right: 0; top: 0; width: 160px;  border-left: 1px solid #ccc; height: 100%; background: #fff; }	
+	.ruzhi_butbox li {font-size: 14px; line-height: 40px; margin: 10px 0; position: relative; color: #555;}	
+	.ruzhi_butbox li.on { 
+	box-shadow: 3px 9px 20px rgba(58, 155, 255, 0.2); border-radius: 6px;
+    background-color: #3779ff;color: #fff; background: linear-gradient(0deg, #4496ff, #326fff);
+	 font-weight: bold; margin: 15px 10%; line-height: 47px; font-size: 16px;}	
+	.ruzhi_butbox li span { position: absolute; right: 10px; top: 0; font-size: 10px; opacity: .2;}
+	.ruzhi_butbox li.on span {  font-size: 40px; opacity: .1;}
+	.ruzhi_butbox li.on span b { opacity: .4;}
+
+	.ruzhi_butbox li i { padding: 0 5px 0 30px; width: 20px; text-align: center; font-size: 14px; opacity: .7;}
+	.ruzhi_butbox li.on i {padding: 0 5px 0 15px;}
+	.ruzhi_butbox li:not(.on):hover { background: #eee; color: #326fff}	
+	.ruzhi_butbox h3 { font-size: 18px; line-height: 30px; text-indent: 20px; opacity: .6;}	
+	.ruzhi_butbox ul { padding: 20px 0;}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox  {}
+	.ruzhi_butbox .but { font-size: 12px; padding: 10px; }
+	table {}
+	table tr td:first-of-type{ text-align: right;}
+	table tr td:last-of-type{ display: block; width: 80%;}
+	table {  width:30%; padding: 0 10%; float: left;}
+	table caption { display: block; height: 20px; line-height: 20px; margin: 10px 0; font-size: 18px; font-weight: bold; border-left: 3px solid #326fff; text-align: left; text-indent: 14px;}
+
+</style>
+<div class="ruzhi_butbox">
+	<a class="btn btn-default btn-sm but" href="#">
+			<i class="fa fa-cog"></i> Settings</a>
+
+	<ul>
+	
+		<li class="on"><span><b>0</b>1</span><i class="fa fa-user-plus"></i><b></b>员工资料</b></li>
+		<li><span><b>0</b>2</span><i class="fa fa-file-text-o"></i><b></b>合同登记</b></li>
+		<li><span><b>0</b>3</span><i class="fa fa-users"></i><b></b>家庭成员</b></li>
+		<li><span><b>0</b>4</span><i class="fa fa-mortar-board"></i><b></b>教育经历</b></li>
+		<li><span><b>0</b>5</span><i class="fa fa-bookmark"></i><b></b>工作经历</b></li>
+		<li><span><b>0</b>6</span><i class="fa fa-lightbulb-o"></i><b></b>培训经历</b></li>
+		<li><span><b>0</b>7</span><i class="fa fa-tags"></i><b></b>获奖记录</b></li>
+		<li><span><b>0</b>8</span><i class="fa fa-vcard"></i><b></b>证件</b></li>
+	</ul>
+</div>
+
+<div class="SP_from" style="width:80%; margin: 0 auto; position: relative; left: -60px;">
+	
+	<table >
+		<caption>个人信息</caption>
+		<tr>
+			<th width="90"></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><label><span>*</span>十分现实</label> </td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+	</table>
+	<table >
+		<caption>职位信息</caption>
+		<tr>
+			<th width="100"></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><label><span>*</span>十分现实</label> </td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+	</table>
+	<table>
+		<caption>其他信息</caption>
+
+		<tr>
+			<th width="100"></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><label><span>*</span>十分现实</label> </td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+	</table>
+</div>
+<a class="but green"><i class="fa fa-arrow-circle-o-up"></i>上传用户信息</a>
+<!-- <div class="SP_from">
+	<table>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td><label>十分现实</label></td>
+			<td><input type="text" placeholder="请输入..."></input></td>
+		</tr>
+	</table>
 	<label>十分现实</label><br>
 	<input type="text" placeholder="请输入..."></input>
 
@@ -59,7 +203,7 @@
 	<i style="" class="fa fa-search"></i>
 
 
-</div>
+</div> -->
 
 <!--*****************************-->
 <!-- 忽略 -->
@@ -101,10 +245,6 @@ function SP_from (classname) {
 			console.log(_that.attr("name"))
 		})
 	})
-	//divselect
-
-	
-
 }
 SP_from (".SP_from")
 </script>
