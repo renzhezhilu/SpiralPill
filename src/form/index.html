@@ -213,40 +213,7 @@
 <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
 <script type="text/javascript" src="form.js"></script>
 <script type="text/javascript">
-function SP_from (classname) {
-	//复选框
-	$(classname).find("[type=checkbox]").hide('0', function() {
-		_that = $(this)
-		_that.before('<div class="input_checkbox"></div>')
-		var name = _that.attr("name")
-		_that.prev(".input_checkbox").click(function() {
-			if ( !~(this.className.indexOf("on")) ) {
-				$(this).addClass("on").next("[type=checkbox]").prop("checked",true)
-			}
-			else {
-				$(this).removeClass("on").next("[type=checkbox]").prop("checked",false)
-			}
-			console.log($(this).next("[type=checkbox]").prop('checked'))
-		})
 
-	})
-	// 单选框
-	$(classname).find("[type=radio]").hide('0', function() {
-		_that = $(this)
-		_that.before('<div class="input_radio"></div>')
-
-		var name = _that.attr("name")
-		_that.prev(".input_radio").click(function() {
-			
-
-			$(this).addClass("on").next("[type=radio][name="+name+"]").prop("checked",true)
-			$(this).siblings().next("[type=radio][name="+name+"]").prev(".input_radio").removeClass("on")
-			
-			console.log(_that.attr("name"))
-		})
-	})
-}
-SP_from (".SP_from")
 </script>
 </body>
 </html>
