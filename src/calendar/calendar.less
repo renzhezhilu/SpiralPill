@@ -54,51 +54,62 @@
     .border-radius(6px);
     color:#fff;
     background-color: @color_blue;
-    .box-shadow(3px 9px 20px rgba(58, 155, 255, 0.26));
+    .box-shadow(3px 6px 20px rgba(58, 155, 255, 0.6));
     background: linear-gradient(0deg, #4494ff, @color_blue);
     /* 渐变轴为45度，从蓝色渐变到红色 *///linear-gradient(45deg, blue, red);
     /* 从右下到左上、从蓝色渐变到红色 *///linear-gradient(to left top, blue, red); 
 }
 
+
+
 .SP_calendar {
-    border: 1px solid #eee; border-left: none; min-width: 700px; position: relative;  
-    -moz-user-select:none;-webkit-user-select:none;user-select:none;   text-align: center;  
+    border: 1px solid #eee; background-color: #fff; border-left: none; min-width: 700px; position: relative;  
+    -moz-user-select:none;-webkit-user-select:none;user-select:none; text-align: center; 
+    box-shadow: 10px 20px 100px rgba(0, 0, 0, .2),3px 9px 20px rgba(57, 125, 255, 0.1); border-radius: 6px; 
+    box-shadow: ;
     .title {
-        li { font-size: 16px; min-height: 30px; line-height: 30px; opacity: .6;  }
+        li { font-size: 12px; font-weight: 900; min-height: 30px; border: none; line-height: 30px; opacity: .3;  }
     }
     li { 
-        float: left; position: relative;  width: 14.14%; min-height: 100px; 
+        float: left; position: relative;  width: 14.14%; min-height: 70px; 
         border-left: 1px solid #eee; border-bottom: 1px solid #eee;  
-        &.nowweekend { background-color: #ddd; }
-        &.othermonth { opacity: .5}
-        &.nowmonth{ background-color: rgba(23,45,134,.2); }
-        &.nowmonth.on { background-color: blue; }
+        &.nowweekend { background-color: #fcfcfc; }
+        &.othermonth { opacity: .2}
+        &.nowmonth{ background-color: #d5e4fd; border-left: 1px solid #c5d4ec;
+    border-bottom: 1px solid #c5d4ec; }
+        &.nowmonth.on {  }
+        &.nowmonth.on:after { 
+            content: ''; position: absolute; bottom: -4px; left: 10%; width: 80%;  height: 10px; .but01 ();
+            
+        }
+        &:hover { background-color:rgba(214, 229, 252,.6); }
         span { 
             font-size: 13px; display: block;
         }
         i.fa {
-            position: absolute; right: 10px; top: 0; color:red;
+            position: absolute; right: 5px; top: 0; color:red;
         }
         
         .getDate { font-size: 24px; font-weight: 900; line-height: 24px; padding-top: 10px;}
         .nDate {
-             line-height: 24px; opacity: .5;
+             position: absolute; font-size: 12px; width: 12px; right: 5px; top: 16px; line-height: 15px; opacity: .5;
         }
         .beizhu { 
-            display: block; font-size: 14px; padding: 0 10px; line-height: 17px; height: 34px; 
-            overflow: hidden;
+            display: block; font-size: 12px; padding: 0 20px; line-height: 16px; height: 34px; 
+            overflow: hidden; text-overflow: ellipsis;
         }
 
 
     }
     //色块
-    li.p1,p.p1 { background: rgb(113, 58, 58);}
-    li.p2,p.p2 { background: rgb(87, 87, 152);}
-    li.p3,p.p3 { background: rgb(165, 165, 28);}
-    li.p4,p.p4 { background: rgb(116, 113, 113);}
+    li.p1,li.p2,li.p3,li.p4 {.box-shadow( 4px 5px 66px rgba(57, 125, 255, 0.5))}
+    li.p1,p.p1,.p1 { background: #d6e5fc; }
+    li.p2,p.p2,.p2 { background: #abe7dc; }
+    li.p3,p.p3,.p3 { background: #f4f4f4; }
+    li.p4,p.p4,.p4,li.holiday { background: #feffc9; }
     //弹窗
     .popupbox {
-        position: absolute; z-index: 10; left: 50%; top: 50%; 
+        position: absolute; z-index: 10; left: 50%; top: 50%;
         .transform(translate(-50%,-50%)); padding: 30px; 
         width: 200px;
         border-radius: 30px; .box-shadow(0 0 330px rgba(0, 0, 0, .2)); 
@@ -106,13 +117,41 @@
         background: #fff;
         font-size: 14px;
         p { 
-            padding: 10px; margin: 10px; border-radius: 10px; text-align: center; color: #fff;
+            padding: 10px; margin: 10px; border-radius: 10px; text-align: center; 
         }
         .date { font-size: 20px; font-weight: 900; }
         input { 
             width: 100%; line-height: 40px; background-color: #eee; border:1px solid #ddd; 
             text-indent: 20px; 
         }
+    }
+    //顶部
+    .topbox {
+        padding: 20px;
+        h2 {
+            font-size: 32px; line-height: 40px; width: 180px;
+        }
+        .datebut {
+            border: 1px solid #eee; line-height: 28px; margin: 5px 0 0 10px; border-radius: 6px; 
+            overflow: hidden; opacity: .6;
+            span {
+                padding: 10px; font-size: 12px; font-weight: 900; cursor: pointer;
+                i { font-size: 18px; }
+                &.today { padding: 10px 4px; }
+                &:hover { background-color: rgba(23, 43, 193, .1);  }
+            }
+        }
+        .whatbox {
+            line-height: 40px; font-size: 12px;
+            span {
+                padding: 0 10px;
+                b { padding: 0 10px; margin: 3px; border-radius: 6px; }
+            }
+        }
+        .p1 { background: #d6e5fc;}
+        .p2 { background: #abe7dc;}
+        .p3 { background: #f4f4f4;}
+        .p4 { background: #feffc9;}
     }
     
 }

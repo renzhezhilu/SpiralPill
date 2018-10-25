@@ -16,7 +16,7 @@ function getCalendar (whatDate,className){
 	start = 1-start
 	end.setDate(monthHowDay(getCalendarTime))
 	end = end.getDay()
-	end = 7-end
+	end = 12-end
 	//容器
 	var m_html,m_class;
 	var tem = "\
@@ -36,13 +36,15 @@ function getCalendar (whatDate,className){
         all.setDate(i)
         var li_date = all.getFullYear()+'/'+(all.getMonth()+1)+'/'+all.getDate()
         //判断是否节日
-		var icon =''; lunarDay=dateToLunar(all).lunarDay;
-		if (ifHoliday(all)) { icon = "<i class='fa fa-bookmark'></i>"; lunarDay='' }
+		var icon =''; lunarDay=''  //lunarDay=dateToLunar(all).lunarDay;
+		if (ifHoliday(all)) { icon = "<i class='fa fa-bookmark'></i>"; lunarDay=''; }
 
 		//非本月
 		if (i<=0 || i>daynum ) { m_class= 'othermonth' }
 		//指定日/今日
-		else if (now_D==all.getDate()) { m_class= 'nowmonth on'; lunarDay='今日' }
+		else if (all.getDate()==new Date().getDate()&&all.getMonth()==new Date().getMonth()&&all.getFullYear()==new Date().getFullYear()) { 
+			m_class= 'nowmonth on'; lunarDay='今日' 
+		}
 		//本月
 		else { 
 			if (all.getDay()==6 || all.getDay()==0) {
@@ -52,6 +54,14 @@ function getCalendar (whatDate,className){
 				m_class= 'nowmonth' 
 			}
 		}
+		if (ifHoliday(all)) { 
+			
+			if (i<=0 || i>daynum) {
+				m_class= 'nowmonth p4 othermonth'; 
+			}
+			else m_class= 'nowmonth p4'; 
+		 }
+
 		
 		//输出
 		m_html = 
@@ -74,7 +84,7 @@ function getCalendar (whatDate,className){
             <input type='text' placeholder='备注'>\
         </div>\
         "
-	$(className).find("li").dblclick(function (e) { 
+	$(className).find("li").not('.othermonth').dblclick(function (e) { 
         $(className).find(".popupbox").remove()
         $(this).append(popupboxtem)
         $(this).find(".date").html($(this).attr("date"))
@@ -82,7 +92,7 @@ function getCalendar (whatDate,className){
         var _that = $(this)
 
         $(this).find("p").click(function(event) {
-	    	$(this).parents("li").addClass($(this).attr("class"))
+	    	$(this).parents("li").attr("class",($(this).attr("class")))
 
 	    	_that.find('.beizhu').text(_that.find('input').val()).attr({
 	    		title: _that.find('input').val()
@@ -92,9 +102,36 @@ function getCalendar (whatDate,className){
     
     });
 
-    //其他
-
-    
+    //顶部
+    var topboxtem = "\
+    <div class='topbox clearfloat'>\
+		<h2 class='dateshow left'>"+now_Y+"年"+(now_M+1)+"月</h2>\
+		<div class='datebut left' >\
+			<span class='prvebut'>\
+				<i class='fa fa-chevron-circle-left'></i>\
+			</span>\
+			<span class='today'>今天</span>\
+			<span class='nextbut'><i class='fa fa-chevron-circle-right'></i></span>\
+		</div>	\
+		<div class='whatbox right'>\
+			<span></span>\
+			<span><b class='p1'></b>上班</span>\
+			<span><b class='p2'></b>半天班</span>\
+			<span><b class='p3'></b>周末</span>\
+			<span><b class='p4'></b>节假日</span>\
+		</div>\
+	</div>"
+	$(className).prepend(topboxtem)
+    //切换月份
+    $(className).find('.nextbut').click(function(event) {
+    	getCalendar(new Date(now_Y,now_M+1),$(className))
+    });
+    $(className).find('.prvebut').click(function(event) {
+    	getCalendar(new Date(now_Y,now_M-1),$(className))
+    });
+    $(className).find('.today').click(function(event) {
+    	getCalendar(new Date(),$(className))
+    });
     
 
 }
