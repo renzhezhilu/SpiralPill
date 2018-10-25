@@ -48,6 +48,7 @@
 @shadow02:0 0 100px rgba(0, 0, 0, 0.4);
 //清除浮动
 .clearfloat(){display: block; content: ''; clear: both; height: 0;}
+.clearfloat::after {.clearfloat()}
 //按钮
 .but01 (){
     .border-radius(6px);
@@ -59,5 +60,59 @@
     /* 从右下到左上、从蓝色渐变到红色 *///linear-gradient(to left top, blue, red); 
 }
 
+.SP_calendar {
+    border: 1px solid #eee; border-left: none; min-width: 700px; position: relative;  
+    -moz-user-select:none;-webkit-user-select:none;user-select:none;   text-align: center;  
+    .title {
+        li { font-size: 16px; min-height: 30px; line-height: 30px; opacity: .6;  }
+    }
+    li { 
+        float: left; position: relative;  width: 14.14%; min-height: 100px; 
+        border-left: 1px solid #eee; border-bottom: 1px solid #eee;  
+        &.nowweekend { background-color: #ddd; }
+        &.othermonth { opacity: .5}
+        &.nowmonth{ background-color: rgba(23,45,134,.2); }
+        &.nowmonth.on { background-color: blue; }
+        span { 
+            font-size: 13px; display: block;
+        }
+        i.fa {
+            position: absolute; right: 10px; top: 0; color:red;
+        }
+        
+        .getDate { font-size: 24px; font-weight: 900; line-height: 24px; padding-top: 10px;}
+        .nDate {
+             line-height: 24px; opacity: .5;
+        }
+        .beizhu { 
+            display: block; font-size: 14px; padding: 0 10px; line-height: 17px; height: 34px; 
+            overflow: hidden;
+        }
 
 
+    }
+    //色块
+    li.p1,p.p1 { background: rgb(113, 58, 58);}
+    li.p2,p.p2 { background: rgb(87, 87, 152);}
+    li.p3,p.p3 { background: rgb(165, 165, 28);}
+    li.p4,p.p4 { background: rgb(116, 113, 113);}
+    //弹窗
+    .popupbox {
+        position: absolute; z-index: 10; left: 50%; top: 50%; 
+        .transform(translate(-50%,-50%)); padding: 30px; 
+        width: 200px;
+        border-radius: 30px; .box-shadow(0 0 330px rgba(0, 0, 0, .2)); 
+        box-shadow:0 30px 80px rgba(0, 0, 0, .3);
+        background: #fff;
+        font-size: 14px;
+        p { 
+            padding: 10px; margin: 10px; border-radius: 10px; text-align: center; color: #fff;
+        }
+        .date { font-size: 20px; font-weight: 900; }
+        input { 
+            width: 100%; line-height: 40px; background-color: #eee; border:1px solid #ddd; 
+            text-indent: 20px; 
+        }
+    }
+    
+}
