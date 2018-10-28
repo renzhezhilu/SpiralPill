@@ -6,12 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>随机数据</title>
 <!-- <link rel="stylesheet/less" type="text/css" href="random-data.less"> -->
-<!-- <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script> -->
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
 <!-- <script type="text/javascript" src="random-data.js"></script> -->
 </head>
 <body>
 
-
+<style type="text/css">
+    td { padding: 10px; font-size: 12px }
+</style>
+<table id="data" border="1"></table>
 
 
 
@@ -268,12 +271,88 @@
     }
     
     
-    //测试输出
-    var conteneObj=[]
-    for (let r = 0; r < 100; r++) {
-       conteneObj.push(peopleDate ())
-       console.log(conteneObj[r].eMail)
-    }
+    // //测试输出
+    // var conteneObj=[];
+    // var datastring='';
+    // var ram;
+    // for (let r = 0; r < 100000; r++) {
+    //   ram=peopleDate()
+    //   conteneObj.push( JSON.stringify(ram))
+
+    // }
+    // $("#data").html(conteneObj.join(","))
+    // document.write(datastring)
+   // document.getElementById("data").innerHTML=datastring
+  //jquery
+   //  console.time("data")
+   //  var conteneObj=[];
+   //  var datastring='';
+   //  var ram;
+   //  for (let r = 0; r < 1000; r++) {
+   //    ram=peopleDate()
+   //    datastring+="<tr>"
+   //    for (var item in ram){
+   //      datastring+= "<td>"+ram[item]+"</td>"
+   //    }
+   //    datastring+="</tr>"
+   //  }
+    
+   //  $("#data").html(datastring)
+   //  // document.write(datastring)
+   // // document.getElementById("data").innerHTML=datastring
+
+   //  console.timeEnd("data")
+
+
+
+    var conteneObj=[];
+    var datastring='';
+    var ram;
+
+   $.getJSON("data.json",function(result){
+   console.time("data")
+   console.time("data2")
+
+        $.each(result, function(i, field){
+                datastring+="<tr>"
+                datastring+= "<td>"+i+"</td>"
+                for( var x in field){
+                    datastring+= "<td>"+field[x]+"</td>"
+                }
+                datastring+="</tr>"
+
+            if (i==300) {
+                $("#data").html(datastring);
+            }
+          
+        });
+    console.timeEnd("data")
+
+        datastring=''
+        $.each(result, function(i, field){
+                datastring+="<tr>"
+                datastring+= "<td>"+i+"</td>"
+                for( var x in field){
+                    datastring+= "<td>"+field[x]+"</td>"
+                }
+                datastring+="</tr>"
+            
+           if (i==9999) {
+                $("#data").append(datastring);
+            }
+           
+
+        });
+
+        
+        console.log(result)
+    console.timeEnd("data2")
+
+    });
+
+
+
+
     
 </script>
 </body>
