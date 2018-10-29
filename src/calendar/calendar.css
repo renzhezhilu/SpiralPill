@@ -2,88 +2,226 @@
 .bold {
   font-weight: bold;
 }
-body {
-  background-color: #f0f5fa;
-  color: #212b42;
+.clearfloat::after {
+  display: block;
+  content: '';
+  clear: both;
+  height: 0;
 }
-.SP_tableContent {
-  line-height: 24px;
-  font-size: 14.399999999999999px;
-  position: relative;
-  height: 500px;
-  overflow: auto;
-  margin: 30px;
-  text-align: center;
-}
-.SP_tableContent table {
-  width: 100%;
-  overflow: auto;
-}
-.SP_tableContent table tr {
+.SP_calendar {
+  border: 1px solid #eee;
   background-color: #fff;
-  border-top: 1px solid #c6cbd1;
-}
-.SP_tableContent table tr:nth-child(2n) {
-  background-color: #f6f8fa;
-}
-.SP_tableContent table tr:nth-child(1) {
+  border-left: none;
+  min-width: 0px;
+  width: 80%;
+  margin: 50px auto;
   position: relative;
-  z-index: 100;
-  bottom: -200px;
-  -webkit-transform: translateY(100px);
-  -moz-transform: translateY(100px);
-  -ms-transform: translateY(100px);
-  -o-transform: translateY(100px);
-  transform: translateY(100px);
-  background-color: #397dff;
-  color: #fff;
-}
-.SP_tableContent table tr:nth-child(1) th {
-  border: 1px solid #6c9eff;
-}
-.SP_tableContent table tr:nth-child(1) .tbcheckbox {
-  background-color: #d2e1ff;
-}
-.SP_tableContent table tr:nth-child(1) .tbcheckbox.on {
-  background-color: #d2e1ff;
-}
-.SP_tableContent table tr:nth-child(1) .tbcheckbox:after {
-  color: #397dff;
-}
-.SP_tableContent table tr:not(:nth-child(1)):hover,
-.SP_tableContent table tr.select {
-  background-color: #e1ecff;
-}
-.SP_tableContent table tr .tbcheckbox {
-  font-size: 7.199999999999999px;
-  width: 24px;
-  height: 24px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
   text-align: center;
-  line-height: 24px;
+  box-shadow: 10px 20px 100px rgba(0, 0, 0, 0.2), 3px 9px 20px rgba(57, 125, 255, 0.1);
+  border-radius: 6px;
+}
+.SP_calendar .title li {
+  font-size: 12px;
+  font-weight: 900;
+  min-height: 30px;
+  border: none;
+  border-top: 1px solid #eee;
+  line-height: 30px;
+  opacity: .3;
+}
+.SP_calendar .content {
+  height: 100%;
+}
+.SP_calendar li {
+  float: left;
+  position: relative;
+  width: 14.04%;
+  min-height: 70px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.SP_calendar li.nowweekend {
+  background-color: #fcfcfc;
+}
+.SP_calendar li.othermonth {
+  opacity: .2;
+}
+.SP_calendar li.nowmonth {
+  background-color: #d5e4fd;
+  border-left: 1px solid #c5d4ec;
+  border-bottom: 1px solid #c5d4ec;
+}
+.SP_calendar li.nowmonth.on:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
+  width: 80%;
+  height: 10px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  background-color: #dbe0ed;
-  text-indent: 24px;
-  overflow: hidden;
-}
-.SP_tableContent table tr .tbcheckbox.on {
-  font-size: 19.200000000000003px;
-  background-color: #397dff;
-  text-indent: 0;
-  opacity: 1;
-}
-.SP_tableContent table tr .tbcheckbox:after {
-  content: "✓";
   color: #fff;
+  background-color: #397dff;
+  -webkit-box-shadow: 3px 6px 20px rgba(58, 155, 255, 0.6);
+  -moz-box-shadow: 3px 6px 20px rgba(58, 155, 255, 0.6);
+  -ms-box-shadow: 3px 6px 20px rgba(58, 155, 255, 0.6);
+  -o-box-shadow: 3px 6px 20px rgba(58, 155, 255, 0.6);
+  box-shadow: 3px 6px 20px rgba(58, 155, 255, 0.6);
+  background: linear-gradient(0deg, #4494ff, #397dff);/* 渐变轴为45度，从蓝色渐变到红色 */
+  /* 从右下到左上、从蓝色渐变到红色 */
 }
-.SP_tableContent table th,
-.SP_tableContent table td {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
+.SP_calendar li:hover {
+  background-color: rgba(214, 229, 252, 0.6);
 }
-.SP_tableContent table th {
-  font-weight: 600;
+.SP_calendar li span {
+  font-size: 13px;
+  display: block;
+}
+.SP_calendar li i.fa {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  color: red;
+}
+.SP_calendar li .getDate {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 24px;
+  padding-top: 10px;
+}
+.SP_calendar li .nDate {
+  position: absolute;
+  font-size: 12px;
+  width: 12px;
+  right: 5px;
+  top: 16px;
+  line-height: 15px;
+  opacity: .5;
+}
+.SP_calendar li .beizhu {
+  display: block;
+  font-size: 12px;
+  padding: 0 20px;
+  line-height: 16px;
+  height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.SP_calendar li.p1,
+.SP_calendar li.p2,
+.SP_calendar li.p3,
+.SP_calendar li.p4 {
+  -webkit-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -moz-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -ms-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -o-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+}
+.SP_calendar li.p1,
+.SP_calendar p.p1,
+.SP_calendar .p1 {
+  background: #d6e5fc;
+}
+.SP_calendar li.p2,
+.SP_calendar p.p2,
+.SP_calendar .p2 {
+  background: #abe7dc;
+}
+.SP_calendar li.p3,
+.SP_calendar p.p3,
+.SP_calendar .p3 {
+  background: #f4f4f4;
+}
+.SP_calendar li.p4,
+.SP_calendar p.p4,
+.SP_calendar .p4,
+.SP_calendar li.holiday {
+  background: #feffc9;
+}
+.SP_calendar .popupbox {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  width: 200px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -moz-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -ms-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  -o-box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  box-shadow: 4px 5px 66px rgba(57, 125, 255, 0.5);
+  background: #fff;
+  font-size: 14px;
+}
+.SP_calendar .popupbox p {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+.SP_calendar .popupbox .date {
+  font-size: 20px;
+  font-weight: 900;
+}
+.SP_calendar .popupbox input {
+  width: 100%;
+  line-height: 40px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  text-indent: 20px;
+}
+.SP_calendar .topbox {
+  padding: 20px 20px 10px 20px;
+}
+.SP_calendar .topbox h2 {
+  font-size: 32px;
+  line-height: 40px;
+  width: 180px;
+}
+.SP_calendar .topbox .datebut {
+  font-size: 12px;
+  margin: 3px 0 0 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: .6;
+  line-height: 40px;
+}
+.SP_calendar .topbox .datebut span {
+  padding: 0 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.SP_calendar .topbox .datebut span i {
+  font-size: 18px;
+}
+.SP_calendar .topbox .datebut span:hover {
+  color: #397dff;
+}
+.SP_calendar .topbox .whatbox {
+  line-height: 40px;
+  font-size: 12px;
+}
+.SP_calendar .topbox .whatbox span {
+  padding: 0 4px;
+}
+.SP_calendar .topbox .whatbox span b {
+  padding: 0 8px;
+  margin: 0 3px;
+  border-radius: 6px;
 }
