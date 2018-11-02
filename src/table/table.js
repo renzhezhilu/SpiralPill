@@ -2,19 +2,20 @@
 
 //////////表格
 function tableBox (tableclass) {
-    var $SPtanle = $(tableclass)
-    $SPtanle.find('table').addClass('true_table')
-    var $table =$SPtanle.find(".true_table")
+    var $SPtanle = $(tableclass);
+    $SPtanle.find('table').addClass('true_table');
+    var $table =$SPtanle.find(".true_table");
+    var TableSelectedValue =[];
 
     //表头固定
-    var tableHead = function (){
+    function tableHead (){
         var $_checkbox_td = $table.find("tr:not(:first)").find("[type=checkbox]").parent()
         var tableHead_w = $SPtanle.find(".true_table tr:first").width()
         $SPtanle.find(".false_table").width( tableHead_w )
 
         for (var i = 0; i < $SPtanle.find(".true_table tr:first >th").size(); i++) {
             var w = $SPtanle.find(".true_table tr:first >th").eq(i).width()
-            $SPtanle.find(".false_table tr:first >th").eq(i).width( w )
+            $SPtanle.find(".false_table tr:first >th").eq(i).width( w+2 )
         }
     
         $SPtanle.scroll(function (){
@@ -33,12 +34,11 @@ function tableBox (tableclass) {
     var checkboxoradio = $SPtanle.find('.true_table th:first').find('[type=checkbox]').length
     if (checkboxoradio) {
         checkboxTable()
-     
     }
     else {
         radioTable()
-       
     }
+
     //复选框
     function checkboxTable () {
         $table.find('[type=checkbox]').before("<div class=\"tbcheckbox\"></div>")
@@ -96,6 +96,7 @@ function tableBox (tableclass) {
             //选中数量提示
             mouseArrowTips($("body"),howMuchSelect())
             isOrNotAllSelect()
+            getTableSelectedValue ()
         }
         //批量选中
         function batchSelect () {
@@ -149,6 +150,7 @@ function tableBox (tableclass) {
             isOrNotAllSelect()
              //选中数量提示
             mouseArrowTips($("body"),howMuchSelect())
+            getTableSelectedValue ()
         }
         //表头全选
         $SPtanle.find(".false_table").find("th:first").click(function() { allSelect() });
@@ -168,8 +170,7 @@ function tableBox (tableclass) {
         }
     }
 
-
-    // //单选框
+    //单选框
     function radioTable () {
         $table.find('[type=radio]').before("<div class=\"tbradio\"></div>")
         $SPtanle.prepend("<table class='false_table' style='position: absolute; left: 0; top: 0; z-index: 10; '><tr>"+$table.find("tr:nth-child(1)").html()+"</tr></table>")
@@ -184,8 +185,32 @@ function tableBox (tableclass) {
             $(this).find(".tbradio").addClass('on')
             $(this).find("[type=radio]").prop("checked",true)
             $(this).parents("tr").addClass('select')
+            getTableSelectedValue ()
         });
    
+    }
+
+    //获取选中的值
+    function getTableSelectedValue (){
+        TableSelectedValue=[];
+        var $th = $SPtanle.find(".true_table").find("tr").find("th")
+        var $select = $SPtanle.find(".select")
+        var $td = $select.find('td')
+        var tdVal=null;
+
+        for (var i = 0; i < $select.size(); i++) {
+            tdVal=new Object({});
+            $select.eq(i).find('td').each(function(index,element){
+
+                tdVal[$th.eq(index).text()]=$(this).text()   
+
+            });
+            TableSelectedValue.push(tdVal)
+        }
+        $th.eq(0).attr({
+            "table-data": JSON.stringify(TableSelectedValue)
+        });
+        console.log(TableSelectedValue)
     }
 }
  

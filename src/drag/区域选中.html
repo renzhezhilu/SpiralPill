@@ -22,7 +22,7 @@
   cursor:move;
   
 }  
-    ul li {  width:50px; height:50px; background:#333; float:left; margin:40px}
+    ul li {  width:50px; height:50px; background:#333; float:left; margin:1px}
 
 
     .dark { background-color: #333 }
@@ -109,9 +109,7 @@
 
 <script type="text/javascript">  
 // 模块拖拽  
-
-var selectRange_jg=0;
-function selectRange (Range,Element,Onclass){
+function SP_selectRange (Range,Element,Onclass){
 	if (!$(Range).find(Element).length) {return alert("参数有误！Range必须是Element的父层以上\n 当前设置：Range=>"+Range+" Element=>"+Element)}
 	var moveing = false
 	var x1,x2,y1,y2
@@ -136,7 +134,7 @@ function selectRange (Range,Element,Onclass){
 					$movediv.css({left:x1+deviation,top:y1+deviation,width:-x2,height:-y2,transform:"translate("+x2+"px"+", "+y2+"px"+")"}) 
 						
 				}
-				console.log(x2+"---"+y2)	
+				console.log(x2+"/---/"+y2)	
 			}
 		})
 	})
@@ -156,7 +154,6 @@ function selectRange (Range,Element,Onclass){
 			}
 			//左上角=>右下角
 			if (X2>50||Y2>50){
-				
 				for (var g = 0; g < $_this.length; g++) {
 				  	if (eleOffset(g).left< (X2+X1) && eleOffset(g).left>X1 && eleOffset(g).top< (Y2+Y1) && eleOffset(g).top> Y1 ) {
 			  			if ($_this.eq(g)[0].className==Onclass) {
@@ -197,30 +194,32 @@ function selectRange (Range,Element,Onclass){
 	//单机选中
 	$(Range).find(Element).click(function() {
 		$(this).toggleClass(Onclass)
-	})	
-
-	
+	})
+	//返回选中
+	function itIsSelected(){
+		var data = [];
+		$(Range).find("."+Onclass).each(function(index, el) {
+			data.el.html()
+		});
+	}		
 }
-var fff = function(){
-
-}
-selectRange("ul","li","red")
+SP_selectRange("ul","li","red")
 
 
 
 
 
-//可选元素的位置信息
-function selectElement (classname) {
-	var ele_array = [] 
-	var $ele_classname = $(classname) //可选元素
-	let ele_offset //位置
-	for (var i = 0; i < $ele_classname.size(); i++) {
-		ele_offset =$ele_classname.eq(i).offset()
-		ele_array.push({index:i,top:ele_offset.top,left:ele_offset.left})
-	}
-	return console.log(ele_array)
-}
+// //可选元素的位置信息
+// function selectElement (classname) {
+// 	var ele_array = [] 
+// 	var $ele_classname = $(classname) //可选元素
+// 	let ele_offset //位置
+// 	for (var i = 0; i < $ele_classname.size(); i++) {
+// 		ele_offset =$ele_classname.eq(i).offset()
+// 		ele_array.push({index:i,top:ele_offset.top,left:ele_offset.left})
+// 	}
+// 	return console.log(ele_array)
+// }
 // selectElement ("li")
 </script> 
 </body>

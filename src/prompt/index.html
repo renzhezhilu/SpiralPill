@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>提示</title>
+<link rel="stylesheet/less" type="text/css" href="prompt.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="prompt.js"></script>
+</head>
+<body>
+
+
+<span style="margin: 50px;" prompt="说明:
+        这里设定员工所在的班次组:
+            每个员工可以在其所在的班次组中,根据打卡时间自动转换班次; 新进员工只需设定一次所属的班次组即可,无需每月手动排班,极大的提高了工作效率.
+            ">提示</span>
+<!--*****************************-->
+<!-- 忽略 -->
+<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<!--*****************************-->
+<style type="text/css">
+	span[prompt] { position: relative; }
+	span[prompt] .SP-title { position: absolute; z-index: 10; left: 0; top: 0; width: 300px;  padding: 20px; background-color: rgba(0,0,0,.7); color: #fff; font-size: 14px; line-height: 24px; border-radius: 6px; display: none; }
+</style>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	function SP_promptTitle (className) {
+		$SP_title = $(className);
+		var SP_title;
+		SP_title =  $SP_title.attr("prompt");
+		$SP_title.append("<div class='SP-title'>"+SP_title+"</div>");
+		$SP_title.mouseenter(function(event) {
+			$(this).find('.SP-title').show();
+		}).mouseleave(function(event) {
+			$(this).find('.SP-title').hide();
+		});
+	}
+	SP_promptTitle ("span[prompt]")
+});
+</script>
+</body>
+</html>
