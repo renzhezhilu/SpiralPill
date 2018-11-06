@@ -4,11 +4,12 @@
 
 var tableBox_value={};
 function tableBox (tableclass,fixed_num) {
-    var fixed_num = fixed_num ;
+    var fixed_num = fixed_num || 1;
     var $SPtanle = $(tableclass);
     $SPtanle.find('table').addClass('true_table');
     var $table =$SPtanle.find(".true_table");
     var TableSelectedValue =[];
+
 
     //表头固定
     function tableHead (){
@@ -38,33 +39,41 @@ function tableBox (tableclass,fixed_num) {
 
                     $(this).children().each(function(index2, el2) {
                         col = $(this).attr("colspan");
-                       
+                        if (index2>0) {
+                            row = _this.prev().find("[rowspan]").size(); 
+                        }
                         if (col) { n -= (col-1) }
                         if (index2>n) { return false }
                     });
-                    row = _this.prev().find("th:nth-child(-1n+"+(fixed_num-2)+")[rowspan]").size(); 
-                    console.log(row)
-                    
                     if (row) {  n= n-row  }
+                        // $(".fixed_lefttight").append('<tr></tr>');
+                        for (var i = 0; i < n; i++) {
 
-                    if (n==1) {n++} 
-                    for (var i = 0; i < n; i++) {
+                            $(this).children().eq(i).addClass('isfixed');
+                            
+                            //$(this).children().eq(i).addClass('isfixed')
+                            // if (index=0 && !$(".fixed_lefttight").attr("style")) {
+                            //     ww += $(this).children().eq(i).width()
+                            //     $(".fixed_lefttight").width(ww)
+                            // }
+                            // $(this).children().eq(i).css({
+                            //     width: $(this).children().eq(i).width()
+                            // });
+                            // console.log()
 
-                        if ( $(this).children().eq(i)[0].nodeName == "TH") {
-                            $(this).children().eq(i).addClass('isfixed isfixed_th');
+                            // $(".fixed_lefttight").find("tr:last-child").append( $(this).children().eq(i).clone());
                         }
-                        else {
-                            $(this).children().eq(i).addClass('isfixed isfixed_td');
-                        }
-                    }
+                   
                 });
+
+
              }
         })();
                 
 
         //设置滚动固定
         (function(){
-            var _scrollTop , _scrollTop2=0 , _scrollLeft , _scrollLeft2=0 , $fixed_th;
+            var _scrollTop , _scrollTop2=0 , _scrollLeft , _scrollLeft2=0 , $fixed_td;
 
             //是否滚到底了
             setTimeout(function(){
@@ -73,6 +82,7 @@ function tableBox (tableclass,fixed_num) {
             } , 10); 
                 console.log( _scrollTop2 )
 
+                $("body").append('<style class="ss"></style>') 
 
             $SPtanle.scroll(function (){
 
@@ -84,14 +94,17 @@ function tableBox (tableclass,fixed_num) {
                     "-ms-transform":"translateY("+_scrollTop+"px)"
                 });
                 //侧面固定
-                $fixed_th = $(this).find(".isfixed");
-                    
+                $fixed_td = $(this).find(".isfixed");
+                    if (_scrollLeft>100 ) {
                         // document.write("<style>.isfixed {transform: translateX("+_scrollLeft+");}</style>")
 
-                        $fixed_th.css({
-                            "transform":"translateX("+_scrollLeft+"px)",
-                            "-ms-transform":"translateX("+_scrollLeft+"px)"
-                        });
+                        // $fixed_td.css({
+                        //     "transform":"translateX("+_scrollLeft+"px)",
+                        //     "-ms-transform":"translateX("+_scrollLeft+"px)"
+                        // });
+
+                    }
+                
 
                 //  $SPtanle.find(".fixed_lefttight").css({
                 //     "transform":"translateX("+_scrollLeft+"px)",
@@ -113,16 +126,22 @@ function tableBox (tableclass,fixed_num) {
                 }
             });
         })();
+
+        //窗口改变表头自适应
+     
     }
     var index_tableclass =tableclass+""
+
     setTimeout(function(){
         tableHead ()
     } ,index_tableclass[index_tableclass.length-1]*300);
-    $(window).resize(function(){
-        setTimeout(function(){
-                tableHead ()
-        } , 300);
-    }).resize();
+    // var resizeTimer = null;
+    // $(window).resize(function(){
+    //     if (resizeTimer) clearTimeout(resizeTimer);
+    //     resizeTimer = setTimeout(function(){
+    //             tableHead ()
+    //     } , 300);
+    // }).resize();
     //判断复选框还是单选框
     var checkboxoradio = $SPtanle.find('.true_table th:first').find('[type=checkbox]').length
     if (checkboxoradio) {
@@ -323,17 +342,19 @@ function tableBox (tableclass,fixed_num) {
         var elementup=false;
         var x,y,x2,y2,pos,nowpos,dow_setTimeout;
 
-        var $move_range = $SPtanle.not('.isfixed')
+        var $move_range = $SPtanle
+
+
+
         $move_range.mousedown(function (e) {
             // dow_setTimeout = setTimeout(function(){
             // } , 100);
-                $(this).css({
-                    cursor: 'ew-resize'
-                });
                 elementup=true;
+                document.onselectstart = function(){return false}; //禁选文本
                 x=e.pageX-parseInt($(this).css("left"));
                 y=e.pageY-parseInt($(this).css("top"));
                 nowpos = $(this).scrollLeft();
+            
 
         }).mousemove(function(e) {
             if (elementup) {
@@ -342,15 +363,19 @@ function tableBox (tableclass,fixed_num) {
                 $(this).scrollLeft(nowpos-x2);
             }
         }).mouseup(function(e) {
-            $(this).css({ cursor: 'default' });
             elementup=false;
             clearTimeout(dow_setTimeout)
+            document.onselectstart = function(){return true}; //解！
+
         });
        
     }
     //去除loading
     $SPtanle.removeClass("SP_tableContent_loading")
     $SPtanle.find(".loading").hide(0)
+
+     
+
 }
  
  //表格自动调整高度

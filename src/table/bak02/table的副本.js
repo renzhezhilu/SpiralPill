@@ -4,11 +4,12 @@
 
 var tableBox_value={};
 function tableBox (tableclass,fixed_num) {
-    var fixed_num = fixed_num ;
+    var fixed_num = fixed_num || 1;
     var $SPtanle = $(tableclass);
     $SPtanle.find('table').addClass('true_table');
     var $table =$SPtanle.find(".true_table");
     var TableSelectedValue =[];
+
 
     //表头固定
     function tableHead (){
@@ -21,50 +22,41 @@ function tableBox (tableclass,fixed_num) {
         false_th = $SPtanle.find(".false_table tr:first >th");
         $SPtanle.find(".false_table").width( tableHead_w );
         for (var i = 0; i < true_th.size(); i++) {
-            true_w = Math.round( true_th.eq(i).width() );
-            false_th.eq(i).width( true_w+1 )
+            true_w = Math.round( true_th.eq(i).width()+10 );
+            false_th.eq(i).width( true_w )
         }
        
         //需要侧面固定的添加class
         (function(){
-            var n,_this,col,row,ww; 
+            var n,_this,col,row; 
             if (fixed_num>0) {
-                //新表格
-                // $SPtanle.append('<table class="fixed_lefttight"></table>')
-
                 $SPtanle.find("tr").not($table.find("th").parent()).each(function(index, el) {
                     n=fixed_num;
                     _this=$(this);
-
                     $(this).children().each(function(index2, el2) {
                         col = $(this).attr("colspan");
-                       
+                        if (index2>0) {
+                            row = _this.prev().find("[rowspan]").size(); 
+                        }
                         if (col) { n -= (col-1) }
                         if (index2>n) { return false }
                     });
-                    row = _this.prev().find("th:nth-child(-1n+"+(fixed_num-2)+")[rowspan]").size(); 
-                    console.log(row)
-                    
                     if (row) {  n= n-row  }
-
-                    if (n==1) {n++} 
                     for (var i = 0; i < n; i++) {
-
-                        if ( $(this).children().eq(i)[0].nodeName == "TH") {
-                            $(this).children().eq(i).addClass('isfixed isfixed_th');
-                        }
-                        else {
-                            $(this).children().eq(i).addClass('isfixed isfixed_td');
-                        }
+                        $(this).children().eq(i).addClass('isfixed')
                     }
                 });
+
              }
         })();
                 
 
         //设置滚动固定
         (function(){
-            var _scrollTop , _scrollTop2=0 , _scrollLeft , _scrollLeft2=0 , $fixed_th;
+            var _scrollTop , _scrollTop2=0 , _scrollLeft , _scrollLeft2=0 , $fixed_td;
+
+
+            
 
             //是否滚到底了
             setTimeout(function(){
@@ -73,30 +65,18 @@ function tableBox (tableclass,fixed_num) {
             } , 10); 
                 console.log( _scrollTop2 )
 
-
             $SPtanle.scroll(function (){
 
                 _scrollTop = $(this).scrollTop();
                 _scrollLeft = $(this).scrollLeft();
                 //顶部固定
-                $(this).find(".false_table").css({
-                    "transform":"translateY("+_scrollTop+"px)",
-                    "-ms-transform":"translateY("+_scrollTop+"px)"
-                });
+                $(this).find(".false_table").css("top",_scrollTop+"px");
                 //侧面固定
-                $fixed_th = $(this).find(".isfixed");
-                    
-                        // document.write("<style>.isfixed {transform: translateX("+_scrollLeft+");}</style>")
-
-                        $fixed_th.css({
-                            "transform":"translateX("+_scrollLeft+"px)",
-                            "-ms-transform":"translateX("+_scrollLeft+"px)"
-                        });
-
-                //  $SPtanle.find(".fixed_lefttight").css({
-                //     "transform":"translateX("+_scrollLeft+"px)",
-                //     "-ms-transform":"translateX("+_scrollLeft+"px)"
-                // });;
+                $fixed_td = $(this).find(".isfixed");
+                $fixed_td.css({
+                    "transform":"translateX("+_scrollLeft+"px)",
+                    "-ms-transform":"translateX("+_scrollLeft+"px)"
+                });;
                 //滚到底了 - 底部提示
                 if (_scrollTop > _scrollTop2) {
                     $table.addClass('true_table_bottom_end');
@@ -113,16 +93,22 @@ function tableBox (tableclass,fixed_num) {
                 }
             });
         })();
+
+        //窗口改变表头自适应
+     
     }
     var index_tableclass =tableclass+""
+
     setTimeout(function(){
         tableHead ()
     } ,index_tableclass[index_tableclass.length-1]*300);
-    $(window).resize(function(){
-        setTimeout(function(){
-                tableHead ()
-        } , 300);
-    }).resize();
+    // var resizeTimer = null;
+    // $(window).resize(function(){
+    //     if (resizeTimer) clearTimeout(resizeTimer);
+    //     resizeTimer = setTimeout(function(){
+    //             tableHead ()
+    //     } , 300);
+    // }).resize();
     //判断复选框还是单选框
     var checkboxoradio = $SPtanle.find('.true_table th:first').find('[type=checkbox]').length
     if (checkboxoradio) {
@@ -137,7 +123,7 @@ function tableBox (tableclass,fixed_num) {
         $table.find('[type=checkbox]').before("<div class=\"tbcheckbox\"></div>");
 
         //复制表头 包含th的tr
-        $SPtanle.prepend("<table class='false_table'></table>");
+        $SPtanle.prepend("<table class='false_table' style='position: absolute; left: 0; top: 0; z-index: 10; '></table>");
         var $false_table;
         $false_table = $SPtanle.find(".false_table");
         $table.find("th").parent().each(function(index, el) {
@@ -149,9 +135,9 @@ function tableBox (tableclass,fixed_num) {
         var $checkbox_td = $table.find("tr:not(:first)").find("[type=checkbox]").parent(); //排除表头
         var $tbcheckbox = $SPtanle.find(".tbcheckbox");
 
-        // $checkbox_td.css({
-        //     cursor: 'move'
-        // });
+        $checkbox_td.css({
+            cursor: 'move'
+        });
         //判断是否已全选
         function isOrNotAllSelect() {
            var allyeseorno = true;
@@ -274,7 +260,7 @@ function tableBox (tableclass,fixed_num) {
     //单选框
     function radioTable () {
         $table.find('[type=radio]').before("<div class=\"tbradio\"></div>");
-        $SPtanle.prepend("<table class='false_table' ><tr>"+$table.find("tr:nth-child(1)").html()+"</tr></table>");
+        $SPtanle.prepend("<table class='false_table' style='position: absolute; left: 0; top: 0; z-index: 10; '><tr>"+$table.find("tr:nth-child(1)").html()+"</tr></table>");
      
         var $radio = $table.find("[type=radio]");
         var $tbradio = $table.find(".tbradio");
@@ -323,17 +309,19 @@ function tableBox (tableclass,fixed_num) {
         var elementup=false;
         var x,y,x2,y2,pos,nowpos,dow_setTimeout;
 
-        var $move_range = $SPtanle.not('.isfixed')
+        var $move_range = $SPtanle
+
+
+
         $move_range.mousedown(function (e) {
             // dow_setTimeout = setTimeout(function(){
             // } , 100);
-                $(this).css({
-                    cursor: 'ew-resize'
-                });
                 elementup=true;
+                document.onselectstart = function(){return false}; //禁选文本
                 x=e.pageX-parseInt($(this).css("left"));
                 y=e.pageY-parseInt($(this).css("top"));
                 nowpos = $(this).scrollLeft();
+            
 
         }).mousemove(function(e) {
             if (elementup) {
@@ -342,15 +330,19 @@ function tableBox (tableclass,fixed_num) {
                 $(this).scrollLeft(nowpos-x2);
             }
         }).mouseup(function(e) {
-            $(this).css({ cursor: 'default' });
             elementup=false;
             clearTimeout(dow_setTimeout)
+            document.onselectstart = function(){return true}; //解！
+
         });
        
     }
     //去除loading
     $SPtanle.removeClass("SP_tableContent_loading")
     $SPtanle.find(".loading").hide(0)
+
+     
+
 }
  
  //表格自动调整高度

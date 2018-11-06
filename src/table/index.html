@@ -6,66 +6,2992 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>table</title>
 
+<style type="text/css">
+	.SP_tableContent_loading { position: relative; width: 100%; height: 500px; overflow: hidden;   }
+	.SP_tableContent_loading .loading {position: absolute; z-index: 1000; left: 0; top: 0; width: 100%; overflow: hidden; height: 500px; background:url(loading.gif) center center no-repeat #f4f8fb; }
+
+	.SP_tableContent.SP_tableContent01 table th, .SP_tableContent.SP_tableContent01 table td { padding: 7px 5px; }
+</style>
 </head>
 <body>
 <div class="pure-g">
-		<div class="pure-u-1-24"></div>
 
-	<div class="pure-u-10-24">
-		<div class="SP_tableContent SP_tableContent01">
-		    <table>
-		        <tr>
-		            <th>单选333333</th>
-		            <th>名称3333</th>
-		            <th>卡机用途3333</th>
-		            <th>排序333</th>
-		            
-		        </tr>
-		        <tr><td>
-		        <input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td>
-		         <input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		         <tr><td><input name="radiobut" type="radio"></td>
-		            <td>1号楼所有考勤机器</td>
-		            <td>考勤机</td>
-		            <td>1</td>
-		        </tr>
-		        
-		    </table>
-		</div>
+	<div class="pure-u-1">
+		 <div class="SP_tableContent SP_tableContent_loading SP_tableContent01">
+		    <div class="loading"></div>
+                <table>
+                    <tr>
+                        <th rowspan="2"><input name="checkboxbut" type="checkbox"></th>
+                        <th colspan="3">年份</th>
+                        <th rowspan="2">姓名</th>
+                        <th>部门名称</th>
+                        <th>职位</th>
+                        <th rowspan="2">入职日期</th>
+                        <th>离职日期</th>
+                        <th>在职状态</th>
+                        <th>用工形式</th>
+                        <th>代码</th>
+                        <th>计薪方式</th>
+                        <th>车间名称</th>
+                        <th>类别</th>
+                        <th>职级</th>
+                        <th>应出勤天数</th>
+                        <th>实际出勤天数</th>
+                        <th>平时加班小时</th>
+                        <th>周末加班小时</th>
+                        <th>节日加班小时</th>
+                        <th>出差</th>
+                        <th>放假</th>
+                        <th>事假小时</th>
+                        <th>工伤假小时</th>
+                        <th>婚假小时</th>
+                        <th>产假小时</th>
+                        <th>病假小时</th>
+                        <th>丧假小时</th>
+                        <th>哺乳假</th>
+                        <th>产检假</th>
+                        <th>流产假</th>
+                        <th>有薪假</th>
+                        <th>轮休假期</th>
+                        <th>看护假</th>
+                        <th>年假</th>
+                        <th>其他放假</th>
+                        <th>法定假</th>
+                        <th>迟到分钟</th>
+                        <th>早退分钟</th>
+                        <th>迟到早退总分钟</th>
+                        <th>旷工时数</th>
+                        <th>补卡次数</th>
+                        <th>锁定</th>
+                    </tr>
+                    <tr>
+                        <th>年份</th>
+                        <th>月份</th>
+                        <th>月份</th>
+                        <th>工号</th>
+                        <th>姓名</th>
+                        <th>部门名称</th>
+                        <th>部门名称</th>
+                        <th>职位</th>
+                        <th>入职日期</th>
+                        <th>离职日期</th>
+                        <th>在职状态</th>
+                        <th>用工形式</th>
+                        <th>代码</th>
+                        <th>计薪方式</th>
+                        <th>车间名称</th>
+                        <th>类别</th>
+                        <th>职级</th>
+                        <th>应出勤天数</th>
+                        <th>实际出勤天数</th>
+                        <th>平时加班小时</th>
+                        <th>周末加班小时</th>
+                        <th>节日加班小时</th>
+                        <th>出差</th>
+                        <th>放假</th>
+                        <th>事假小时</th>
+                        <th>工伤假小时</th>
+                        <th>婚假小时</th>
+                        <th>产假小时</th>
+                        <th>病假小时</th>
+                        <th>丧假小时</th>
+                        <th>哺乳假</th>
+                        <th>产检假</th>
+                        <th>流产假</th>
+                        <th>有薪假</th>
+                        <th>轮休假期</th>
+                        <th>看护假</th>
+                        <th>年假</th>
+                        <th>其他放假</th>
+                        <th>法定假</th>
+                        <th>迟到分钟</th>
+                        <th>早退分钟</th>
+                      
+                    </tr>
+                    <tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr><tr>
+                        <td><input name="checkboxbut" type="checkbox"></td>
+                        <td>2018</td>
+                        <td>8</td>
+                        <td>1995001</td>
+                        <td>邓云化</td>
+                        <td>董事会</td>
+                        <td>董事长兼总经理</td>
+                        <td>1995/1/1 0:00:00</td>
+                        <td>&nbsp;</td>
+                        <td>在职</td>
+                        <td>正式工</td>
+                        <td>间接</td>
+                        <td>计时</td>
+                        <td>董事会</td>
+                        <td>董事会</td>
+                        <td>1</td>
+                        <td>23.00</td>
+                        <td>23.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>64.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0.00</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
 		<div class="page123">
 			<div class="page123_con">
 				<div class="pagenum">
@@ -92,15 +3018,861 @@
 
 		<div class="pure-u-1-24"></div>
 
-	<div class="pure-u-10-24">
-		<div class="SP_tableContent SP_tableContent02 ">
+	<div class="pure-u-22-24">
+		<div class="SP_tableContent SP_tableContent_loading SP_tableContent02 ">
+                  <div class="loading"></div>
 			<table>
 				<tr>
-					<th><input name="checkboxbut"  type="checkbox"></th>
+					<th rowspan="2"><input name="checkboxbut"  type="checkbox"></th>
+					<th colspan="2">机器名称</th>
+					<th colspan="2">最新联机时间</th>
 					<th>状态</th>
 					<th>序列号</th>
 					<th>机器名称</th>
 					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+				</tr>
+				<tr>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+					<th>状态</th>
+					<th>序列号</th>
+					<th>机器名称</th>
+					<th>最新联机时间</th>
+				</tr>
+				<tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+			
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>xxx</td>
+				  <td>第一麦方华凯店</td>
+				
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
 				</tr>
 				<tr>
 				  <td></div><input name="checkboxbut"  type="checkbox"></td>
@@ -108,154 +3880,80 @@
 				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>222222222</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
-				  <td>333333</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>3009488844334</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>2232333245884</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>3009488844334</td>
+				  <td>111111</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>2232333245884</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>3009488844334</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>2232333245884</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>3009488844334</td>
+				  <td>111111</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>2232333245884</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
-				  <td>33434545454232</td>
-				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>3009488844334</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
 				  <td>2018/9/19 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>2232333245884</td>
-				  <td>舔舔东郡店</td>
-				  <td>2018/9/12 22:32:32</td>
-				</tr>
-				<tr>
-				  <td></div><input name="checkboxbut"  type="checkbox"></td>
-				  <td><a href="" class="but lightdark butsm"><i class="fa fa-minus-square"></i>离线</a></td>
-				  <td>33434545454232</td>
+				  <td>111111</td>
+				  <td>111111</td>
 				  <td>第一麦方华凯店</td>
-				  <td>2018/9/13 22:32:32</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				</tr><tr>
+				  <td></div><input name="checkboxbut"  type="checkbox"></td>
+				  <td><a href="" class="but lightgreen butsm"><i class="fa fa-check-circle-o"></i>在线</a></td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
+				  <td>2018/9/19 22:32:32</td>
+				  <td>111111</td>
+				  <td>111111</td>
+				  <td>第一麦方华凯店</td>
 				</tr>
+				
 			</table>
 		</div>
 		<div class="page123">
@@ -284,7 +3982,7 @@
 
 		<div class="pure-u-1-24"></div>
 
-	<div class="pure-u-10-24">
+	<div class="pure-u-22-24">
 		<div class="SP_tableContent SP_tableContent03 SP_tableContent_green SP_table_lg">
     		<table>
     			<tr>
@@ -299,6 +3997,7 @@
     				<th>子段描述</th>
     				<th>菜单ID</th>    			
     			</tr>
+
     			<tr><td><input name="checkboxbut" type="checkbox"></td>
     			  	<td>ERPSHEBei</td>
     			  	<td>gfde</td>
@@ -591,11 +4290,11 @@
 
 		<div class="pure-u-1-24"></div>
 
-	<div class="pure-u-10-24">
+	<div class="pure-u-22-24">
 		<div class="SP_tableContent SP_tableContent04 SP_tableContent_red SP_table_sm">
     		<table>
     			<tr>
-                    <th><input name="checkboxbut" type="checkbox"></td>
+                    <th><input name="checkboxbut" type="radio"></td>
     				<th>标题</td>
     				<th>目标数据库</th>
                     <th>备份类型</th>
@@ -609,7 +4308,7 @@
     			</tr>
 
     			<tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -622,7 +4321,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
     			</tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -635,7 +4334,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -648,7 +4347,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -661,7 +4360,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -674,7 +4373,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -687,7 +4386,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -700,7 +4399,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -713,7 +4412,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -726,7 +4425,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -739,7 +4438,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -752,7 +4451,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -765,7 +4464,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -778,7 +4477,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -791,7 +4490,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>即时手动备份</td>
                     <td>WanHUa—database01</td>
                     <td>1次</td>
@@ -804,7 +4503,7 @@
                     <td><a href="" class="text"><i class="fa fa-download"></i> 下载插件 </a></td>
                 </tr>
                 <tr>
-                    <td><input name="checkboxbut" type="checkbox"></td>
+                    <td><input name="checkboxbut" type="radio"></td>
                     <td>每周自动备份</td>
                     <td>WanHUa—database03</td>
                     <td>1次</td>
@@ -850,18 +4549,20 @@
 </style>
 <!--*****************************-->
 <link rel="stylesheet/less" type="text/css" href="table.less">
+<!-- <link rel="stylesheet" type="text/css" href="table.css"> -->
 <script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<!-- <script type="text/javascript" src="../PUBLIC/js/jquery.min.js"></script> -->
 <script type="text/javascript" src="table.js"></script>
 
 <script type="text/javascript">
 
 	//初始化表格
-	var SP_01 = tableBox (".SP_tableContent01")
-	tableBox (".SP_tableContent02")
-	tableBox (".SP_tableContent03")
+	var SP_01 = tableBox (".SP_tableContent01",8)
+	tableBox (".SP_tableContent02",3)
+	tableBox (".SP_tableContent03",3)
 	tableBox (".SP_tableContent04")
 	//表格调整宽高
-	taleAutoHeight(".fixed_box",".page123",70)
+	taleAutoHeight(".fixed_box",".page123",-80)
 
 
 </script>

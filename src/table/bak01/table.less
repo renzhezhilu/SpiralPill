@@ -75,18 +75,13 @@
 @table_color02: darken(@table_color01,80%);
 @table_color03:fade(desaturate(@table_color01, 70%), 20%);
 @table_select:lighten(@table_color01,40%);
-
 .SP_tableContent{
     @table_size:8px; overflow-y: auto; 
     line-height: @table_size*2; font-size: @table_size*1.6; position: relative;  
     text-align: center; border-bottom: 1px solid @table_color03; 
    
     .false_table {
-          display: block;  width: auto; .transition(0s); position: absolute; left: 0; top: 0; z-index: 10;
-          th {.transition(0s)}
-    }
-    .fixed_lefttight {
-       display: block; .transition(0s); position: absolute; z-index: 100; left: 0; top: 0;
+          display: block;  width: auto; .transition(0s);
     }
     &.SP_table_sm {
         @font2:@table_size*1.6;
@@ -131,36 +126,26 @@
         &.true_table { 
             width: 100%; display: table; height: auto; 
         }
-        &.true_table tr:nth-child(1) { color:@table_color01; }
         tr td:nth-child(1),tr th:nth-child(1){ cursor: pointer; }
         tr { 
-             white-space:nowrap;
-            & td { background-color: #fff; .transition(0s);}
-            &:nth-child(2n) td {
-                background-color:lighten(desaturate(@table_color01, 70%), 45%); 
+            background-color: #fff;
+            &:nth-child(2n) {
+                background-color: fade(desaturate(@table_color01, 70%), 10%); 
             }
-            th{
-                border: 1px solid lighten(@table_color01, 10%);  font-size: @table_size*1.6; 
+            &:nth-child(1){
                 background-color: @table_color01; color:#fff;  
+                th {
+                    border: 1px solid lighten(@table_color01, 10%); white-space:nowrap; font-size: @table_size*1.8; 
+                }
                 .tbcheckbox {
-                    background-color: lighten(@table_color01, 40%); 
+                    background-color: lighten(@table_color01, 30%); 
+                    &.on {background-color: lighten(@table_color01, 30%); }
+                    &:after { color:@table_color01; }
                 }
             }
-    
-            &:not(:nth-child(1)):hover td{  
-                background-color:lighten(desaturate(@table_color01, 70%), 38%); 
-                border: 1px solid darken(@table_color03, 12%)
-                .transition(0s);
-            }
-            &.select td {  
-                background-color:lighten(@color_blue,26%);
-                border: 1px solid lighten(desaturate(@color_blue, 50%),16%);
-            }
-            &.select td.isfixed {  
-                outline:1px solid lighten(desaturate(@color_blue, 50%),16%); 
-            }
-            &.select:hover td {
-                background-color:lighten(@color_blue,20%); 
+            &:not(:nth-child(1)):hover,&.select {  
+                background-color:fade(@table_color01,26%);
+                td {border: 1px solid darken(@table_color03, 12%);}
             }
 
             input[type=checkbox] { display: none; }
@@ -169,9 +154,7 @@
                 font-size:@font2*.3; width: @font2; height: @font2; text-align: center; line-height: @font2;.border-radius(@font2*.2);
                 background-color: fade(@table_color02, 20%); text-indent: @font2;  overflow: hidden; margin: 0 auto; 
                 &.on {
-                    font-size:@font2*.8; 
-                    background-color: @color_blue; 
-                    text-indent: 0; opacity: 1;
+                    font-size:@font2*.8; background-color: @table_color01; text-indent: 0; opacity: 1;
                 }
                 &:after { content: "✓";color:#fff; }
             }
@@ -181,53 +164,14 @@
                 font-size:@font2*.1;width: @font2; height: @font2; text-align: center; line-height: @font2;.border-radius(50%);
                 background-color: fade(@table_color02, 20%); text-indent: @font2; overflow: hidden; margin: 0 auto; 
                 &.on {
-                    font-size:@font2*.6; text-indent: 0; opacity: 1; background-color: @color_blue;
+                    font-size:@font2*.8; text-indent: 0; opacity: 1;
                 }
-                &:after { 
-                    content: "●"; color:#fff; 
-                }
+                &:after { content: "●";color:@table_color01; }
 
             }
         }
         th,td{padding: 10px 13px; border: 1px solid @table_color03;}
-        // 固定的
-        tr .isfixed {
-            box-shadow: 10px 5px 10px rgba(0, 0, 0, .2); position:relative; z-index: 5; .transition(0s)
-        }
-        tr .isfixed:after {
-            position: absolute; z-index: -1; content: ''; left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(0, 0, 0, .03);
-         }
-        th.isfixed,{
-          outline:1px solid lighten(@table_color01, 8%); 
-      }
-        td.isfixed{
-          outline:1px solid @table_color03;  border: none; 
-        }
     }
-    //文字禁止选择
-    .unselectable {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    //滚到底提示
-    .true_table { position: relative; overflow: hidden; }
-    .true_table:after,.true_table:before {
-        position: absolute; bottom: -20px; right: 0; z-index: 10; content: ''; width: 100%; 
-        height: 3px; background-color: @color_blue; 
-    }
-    .true_table:before { bottom: 0; right: -20px; width: 3px; height: 100%;}
-    .true_table_bottom_end:after {
-       .transform(scale(1,50) translateY(-14%)); opacity: 0;  .transition(1s)
-    }
-    .true_table_right_end:before {
-       .transform(scale(50,1) translateX(-14%));opacity: 0;  .transition( 1s)
-    }
-
 }
 .SP_tableContent_blue {
     @table_color01:@color_blue; 
@@ -235,16 +179,17 @@
     table { 
         tr { 
             background-color: #fff;
-             &:nth-child(2n) td {
-                background-color: lighten(desaturate(@table_color01, 70%), 42%); 
+            &:nth-child(2n){
+                background-color: fade(desaturate(@table_color01, 70%), 10%);
             }
-
-           th{
-                border: 1px solid lighten(@table_color01, 10%); 
+            &:nth-child(1){
                 background-color: @table_color01; color:#fff;  
+                th {
+                    border: 1px solid lighten(@table_color01, 10%); 
+                }
                 .tbcheckbox {
-                    background-color: lighten(@table_color01, 40%); 
-                    &.on { background-color: lighten(@table_color01, 40%); }
+                    background-color: lighten(@table_color01, 30%); 
+                    &.on { background-color: lighten(@table_color01, 30%); }
                     &:after { color:@table_color01; }
                 }
             }
@@ -273,19 +218,21 @@
     table { 
         tr { 
             background-color: #fff;
-             &:nth-child(2n) td {
-                background-color: lighten(desaturate(@table_color01, 70%), 42%); 
+            &:nth-child(2n){
+                background-color: fade(desaturate(@table_color01, 70%), 10%);
             }
-            th{
-                border: 1px solid lighten(@table_color01, 10%); 
+            &:nth-child(1){
                 background-color: @table_color01; color:#fff;  
+                th {
+                    border: 1px solid lighten(@table_color01, 10%); 
+                }
                 .tbcheckbox {
-                    background-color: lighten(@table_color01, 40%); 
-                    &.on { background-color: lighten(@table_color01, 40%); }
+                    background-color: lighten(@table_color01, 30%); 
+                    &.on { background-color: lighten(@table_color01, 30%); }
                     &:after { color:@table_color01; }
                 }
             }
-            &:not(:nth-child(1)):hover td,&.select td {  
+            &:not(:nth-child(1)):hover,&.select {  
                 background-color:fade(@table_color01,26%);
                 td {border: 1px solid darken(@table_color03, 12%);}
             }
@@ -302,8 +249,6 @@
             }
         }
         th,td{padding: 10px 13px; border: 1px solid @table_color03;}
-        
-        
     }
 }
 .SP_tableContent_red {
@@ -312,19 +257,21 @@
     table { 
         tr { 
             background-color: #fff;
-             &:nth-child(2n) td {
-                background-color: lighten(desaturate(@table_color01, 70%), 42%); 
+            &:nth-child(2n){
+                background-color: fade(desaturate(@table_color01, 70%), 10%);
             }
-            th{
-                border: 1px solid lighten(@table_color01, 10%); 
+            &:nth-child(1){
                 background-color: @table_color01; color:#fff;  
+                th {
+                    border: 1px solid lighten(@table_color01, 10%); 
+                }
                 .tbcheckbox {
-                    background-color: lighten(@table_color01, 40%); 
-                    &.on { background-color: lighten(@table_color01, 40%); }
+                    background-color: lighten(@table_color01, 30%); 
+                    &.on { background-color: lighten(@table_color01, 30%); }
                     &:after { color:@table_color01; }
                 }
             }
-            &:not(:nth-child(1)):hover td,&.select td {  
+            &:not(:nth-child(1)):hover,&.select {  
                 background-color:fade(@table_color01,26%);
                 td {border: 1px solid darken(@table_color03, 12%);}
             }
@@ -352,7 +299,7 @@
         float: left;
         select { .bg();  width: 60px; height:@font3*4.2;   }
         span {
-            margin:0 0 0 @font3*1.6; line-height: 30px;
+            padding:3px 0 0 @font3*1.6;
             b { color:red; }
         }
     }
@@ -362,9 +309,9 @@
             cursor: pointer; color:@table_color02; margin-left:@font3*.8;
             padding: @font3*.7 @font3*1.5; font-size: @font3*1.6; 
             .border-radius(@font3*.5); display: inline-block;
-            border: 1px solid rgba(27,31,35,0.2); user-select:text;
+            border: 1px solid rgba(27,31,35,0.2);
             &:hover { opacity: 0.95; .transform(translateY(-1px)); .but01(@table_color01); }
-            &:active { user-select:none; .box-shadow(inset 0 5px 5px rgba(0,0,0,0.1)); outline: none; .transform(translateY(1px)); }
+            &:active { .box-shadow(inset 0 5px 5px rgba(0,0,0,0.1)); outline: none; .transform(translateY(1px)); }
             &.not { 
                 opacity: .5; cursor: text; 
                 &:hover {
@@ -386,10 +333,10 @@
     &:after { .clearfloat() }
 }
 
-.mouseArrowTips {position: fixed; z-index:30; right: 5%; top: 5%; font-size: 20px;  color: #fff; min-width: 30px; padding: 5px 10px; height: 30px; border-radius: 4px; text-align: center;  background-color: rgba(0,0,0,0.5);}
-//滚动条
+.mouseArrowTips {position: fixed; z-index:30; left: 5%; top: 5%; font-size: 20px;  color: #fff; min-width: 30px; padding: 5px 10px; height: 30px; border-radius: 4px; text-align: center;  background-color: rgba(0,0,0,0.5);}
+
 .SP_tableContent::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1);}
-.SP_tableContent::-webkit-scrollbar{width: 3px; height: 3px; background-color: transparent;}
-.SP_tableContent::-webkit-scrollbar-thumb{background-color: @color_blue; border-radius: 100px; } 
+.SP_tableContent::-webkit-scrollbar{width: 3px;background-color: transparent;}
+.SP_tableContent::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.2); border-radius: 100px; } 
 .SP_tableContent_jiantou { position: absolute; z-index: 30; font-size: 20px; right: 3%; top: -15px; color: #777f8e  }
 /////////////表格结束
