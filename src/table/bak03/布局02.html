@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
+</head>
+<body>
+
+<style type="text/css">
+
+body {
+  background-color: #e8e8e8;
+  padding: 2rem;
+}
+
+table {
+  font-size: 13px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  position: absolute;
+  left: 200px;
+  width: 100px;
+
+  top: auto;
+}
+table th:nth-child(1),
+table td:nth-child(1) {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  top: auto;
+}
+
+table th,
+table td {
+  padding-right: 5px;
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+/* custom */
+/*table th:not(:first-of-type),
+table td:not(:first-of-type) {
+  width: 200px;
+}
+*/
+.scroll {
+  width: calc(100% - $column-fixed-width);
+  overflow-x: scroll;
+  overflow-y: visible;
+  margin-left: 300px;
+  background-color:#fff;
+}
+
+</style>
+
+    <div class="scroll">
+      <table class="bordered highlight">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+          <th>Item Name</th>
+          <th>Item Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Alvin</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+          <td>Eclair</td>
+          <td>$0.87</td>
+        </tr>
+        <tr>
+          <td>Alan</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+          <td>Jellybean</td>
+          <td>$3.76</td>
+        </tr>
+        <tr>
+          <td>Jonathan</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+          <td>Lollipop</td>
+          <td>$7.00</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+
+</body>
+</html>

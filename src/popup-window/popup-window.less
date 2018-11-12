@@ -126,11 +126,11 @@ body {background-color: #f0f5fa; color:@color_2; }
             }
         }
         .center {
-            padding: 13px 10px 20px 10px;overflow-y:auto; max-height: 500px ; padding-bottom: 100px;
+            padding: 13px 10px 20px 10px;overflow-y:auto; overflow-x:hidden;  max-height: 500px ; 
             //滚动条
             &::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1);}
             &::-webkit-scrollbar{width: 6px;background-color: transparent;}
-            &::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.2); border-radius: 100px; }  
+            &::-webkit-scrollbar-thumb{background-color: @color_blue; border-radius: 100px; }  
         }
         
         .bottom {
@@ -154,7 +154,7 @@ body {background-color: #f0f5fa; color:@color_2; }
     .content_full { 
          width: 96%; max-width: 100%; height: 94%; max-height: 100%; left: 0; top: 0;
          padding: 2%; .transform(translate(0,0)); .border-radius(0);
-        .center{max-height: 80%;  }
+        .center{max-height: 90%;  }
     }
     .bg {
         position: absolute; z-index: 1;width: 100%;height: 100%;left: 0; top: 0;;background-color:darken(@color_bg, 10%);opacity: 0.7  

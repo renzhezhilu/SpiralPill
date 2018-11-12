@@ -6,12 +6,6 @@ var tableBox_value={};
 function tableBox (tableclass,fixed_num) {
     var fixed_num = fixed_num ;
     var $SPtanle = $(tableclass);
-    var newclass = tableclass+"_box";
-    var newclass2 = "SP_tableContent_box";
-    // $SPtanle.before('<div class='+newclass.replace(/\./,"")+" "+newclass2+'></div>');
-    $SPtanle.before('<div class='+newclass.replace(/\./,"")+'></div>');
-    $(newclass).append($SPtanle)
-
     $SPtanle.find('table').addClass('true_table');
     var $table =$SPtanle.find(".true_table");
     var TableSelectedValue =[];
@@ -30,9 +24,7 @@ function tableBox (tableclass,fixed_num) {
             true_w = Math.round( true_th.eq(i).width() );
             false_th.eq(i).width( true_w+1 )
         }
-        
-
-
+       
         //需要侧面固定的添加class
         (function(){
             var n,_this,col,row,ww; 
@@ -64,22 +56,11 @@ function tableBox (tableclass,fixed_num) {
                         else {
                             $(this).children().eq(i).addClass('isfixed isfixed_td');
                         }
-                        $(this).children().eq(i).width($(this).children().eq(i).width())
                     }
                 });
              }
         })();
-
-        //左侧固定
-        (function(){
-            var $left_false_table =  $SPtanle.clone();
-
-            $left_false_table.addClass('left_false_table');
-            $left_false_table.find("td").not('.isfixed').remove();
-            if (!$(newclass).find('.left_false_table').length) {
-                $(newclass).append($left_false_table)
-            }
-        })();
+                
 
         //设置滚动固定
         (function(){
@@ -107,11 +88,10 @@ function tableBox (tableclass,fixed_num) {
                     
                         // document.write("<style>.isfixed {transform: translateX("+_scrollLeft+");}</style>")
 
-                        
-                        // $(this).find(".isfixed:nth-child(-1n+19)").css({
-                        //     "transform":"translateX("+_scrollLeft+"px)",
-                        //     "-ms-transform":"translateX("+_scrollLeft+"px)"
-                        // });
+                        $fixed_th.css({
+                            "transform":"translateX("+_scrollLeft+"px)",
+                            "-ms-transform":"translateX("+_scrollLeft+"px)"
+                        });
 
                 //  $SPtanle.find(".fixed_lefttight").css({
                 //     "transform":"translateX("+_scrollLeft+"px)",

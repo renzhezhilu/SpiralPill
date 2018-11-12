@@ -49,7 +49,53 @@
 </div> -->
 
 <!-- 忽略 -->
-<!-- <iframe style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+<div class="iframe1">
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+bfdfdsfsdfdfbr <br>
+	<!-- <iframe class="" style="width: 100%; overflow:hidden; height: 2000px;" src="https://cn.bing.com"></iframe> -->
+</div>
 <small><h2 >sssss收起</h2>
 	<h2 >ssss收起</h2></small>
 <div class="test" style="position: fixed; z-index: 10000; left: 0; top: 0; width: 100px;  height: 300px; background-color: #fff">
@@ -71,8 +117,8 @@
 $("h2").click(function() {
 	var popUpWindowId =this.tagName+"-"+$(this).index( this.tagName )
 	$(this).attr("popUpWindowId", popUpWindowId )
-	var htmlssd = $(".test").html()
-	new_popUpWindow (popUpWindowId,"标题生生世世",htmlssd,"1000px","500px","search")
+	var htmlssd = $(".iframe1").html()
+	new_popUpWindow (popUpWindowId,"xxxxx",htmlssd,"1000px","200px","search")
 });
 
 function new_popUpWindow (elementid,title,con,w_width,w_height,titleicon,tem) {
@@ -105,7 +151,7 @@ function new_popUpWindow (elementid,title,con,w_width,w_height,titleicon,tem) {
 		
 		var htmltem_complex = "\
 			<div popUpWindowId='"+windowsid+"' class='popup-window "+windowsid+"'>\
-				<div class='content "+setting.other.content_full+"' style='min-width:"+setting.other.width+"; min-height:"+setting.other.height+";'>\
+				<div class='content "+setting.other.content_full+"' style='width:"+setting.other.width+"; height:"+setting.other.height+";'>\
 					<div class='top'>\
 						<div class='title'>\
 							<h3>\
@@ -122,14 +168,6 @@ function new_popUpWindow (elementid,title,con,w_width,w_height,titleicon,tem) {
 					</div>\
 					<div class='center'>\
 						"+setting.center+"\
-					</div>\
-					<div class='bottom'>\
-						<div class='text'>"+setting.bottom.unimportanttext+"</div>\
-						<div class='button'>\
-							<div class='okbut'>"+setting.bottom.okbut+"</div>\
-							<div class='nobut'>"+setting.bottom.nobut+"</div>\
-							<div class='otherbut'>"+setting.bottom.otherbut+"</div>\
-						</div>\
 					</div>\
 				</div>\
 				<div class='bg'></div>\

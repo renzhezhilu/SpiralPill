@@ -76,17 +76,9 @@
 @table_color03:fade(desaturate(@table_color01, 70%), 20%);
 @table_select:lighten(@table_color01,40%);
 
-.SP_tableContent_box {
-    position: relative;
-}
-div.left_false_table {
-    position: absolute;left: 0; top: 0; z-index: 100; display: block; overflow: auto; height: 700px;
-}
-
-
 .SP_tableContent{
     @table_size:8px; overflow-y: auto; 
-    line-height: @table_size*2; font-size: @table_size*1.6; position: relative; 
+    line-height: @table_size*2; font-size: @table_size*1.6; position: relative;  
     text-align: center; border-bottom: 1px solid @table_color03; 
    
     .false_table {
@@ -396,13 +388,8 @@ div.left_false_table {
 
 .mouseArrowTips {position: fixed; z-index:30; right: 5%; top: 5%; font-size: 20px;  color: #fff; min-width: 30px; padding: 5px 10px; height: 30px; border-radius: 4px; text-align: center;  background-color: rgba(0,0,0,0.5);}
 //滚动条
-.SP_tableContent::-webkit-scrollbar-track{ height: 1px; -webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1) ;}
-.SP_tableContent::-webkit-scrollbar{width: 3px; height: 10px; background-color: transparent;}
-.SP_tableContent::-webkit-scrollbar-thumb{background-color: @color_blue; .but01(); border-radius: 100px; } 
-
-
-// .SP_tableContent::-webkit-scrollbar:hover {width: 12px; height: 12px;  background-color: transparent;}
-
-
+.SP_tableContent::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1);}
+.SP_tableContent::-webkit-scrollbar{width: 3px; height: 3px; background-color: transparent;}
+.SP_tableContent::-webkit-scrollbar-thumb{background-color: @color_blue; border-radius: 100px; } 
 .SP_tableContent_jiantou { position: absolute; z-index: 30; font-size: 20px; right: 3%; top: -15px; color: #777f8e  }
 /////////////表格结束
