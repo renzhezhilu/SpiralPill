@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>table</title>
+<link rel="stylesheet/less" type="text/css" href="search-morebox.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="search-morebox.js"></script>
+</head>
+<body>
+ssssssss334ss ssss334sssss334ss ssss334sbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
+	
+		<input searchmorebox="1"  type="text" placeholder="输入即时出结果"></input>
+		
+		<input searchmorebox="1"  type="text" placeholder="xxxxxx"></input>
+
+
+
+	ssss334ss ssss334s
+ssssbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
+ ssss334ss ssss334ss ssss334ss ssss334ss ssss334ss
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	
+	searchMoreBox ("[searchmorebox]",1,
+			`<li class="on">
+				<span>李时珍</span>
+				<span>123232</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>杜甫</span>
+				<span>343434</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>张三丰</span>
+				<span>565656</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>流沙去</span>
+				<span>767688</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>诚征</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>`
+			
+
+		);
+
+	function searchMoreBox (classname,selcon,conhtml){
+		var $input = $(classname)
+		$input.after("<div class='search_con'></div>")
+		var $box = $input.next('.search_con');
+		$box.append(conhtml)
+		//定位
+		function dw (that) {
+			if (that.parents(".content ").length) {
+				var x = this.getBoundingClientRect().left + $(window)['scrollLeft']();
+        		var y = this.getBoundingClientRect().top + $(window)['scrollTop']() + that.height();
+		        var con_xy = that.parents(".content ").offset();
+		       	x = x - con_xy.left;
+		        y = y - con_xy.top;
+		        that.next().css({
+					left: x ,
+					top: y+that.height() +10
+				});
+		    }
+		    else {
+		    	that.next().css({
+					left: that.offset().left,
+					top: that.offset().top+that.height()+10
+				});
+		    }
+		}
+		$input.mouseenter(function(event) {
+			dw ($(this))
+		}).focus(function(event) {
+			dw ($(this))
+		});
+		
+		//之外点击隐藏
+		$(document).click(function(){
+			$box.hide();
+		});
+		$(classname).click(function(event){
+			event.stopPropagation();
+		})
+		//显示
+		$input.focus(function(event) {
+			$(this).next().show()
+		}).click(function(event) {
+			$(this).next().show()
+		});;
+		//鼠标选择
+		$box.children().mouseenter(function(event) {
+			$(this).addClass('on').siblings().removeClass('on');
+		}).click(function(event) {
+			upOrDow.inputValue($(this).parent());
+		})
+		//键盘选择
+		$input.keydown(function(e){
+			//向上
+			if (e.which == 38) {
+				upOrDow.up($(this).next());
+		 	}
+		 	//向下
+			if (e.which == 40) {
+				upOrDow.dow($(this).next());
+		 	}
+		 	//回车
+		 	if (e.which == 13) {
+				$box.hide()
+		 	}
+		 	if (e.which == 38 || e.which == 40) {
+		 		upOrDow.inputValue($(this).next());
+		 	}
+		})
+		$input.bind('input propertychange', function() {
+		   if ($(this).val()) {
+				$(this).next().css('display')=="none" && $(this).next().show()
+			}
+			else {
+				$(this).next().css('display')=="block" && $(this).next().hide()
+			}
+		});
+	
+		//方法
+		var upOrDow = {
+			up: function(nextEl){
+				if (nextEl.find('.on').index()==0) {
+					nextEl.find('.on').removeClass('on');
+					nextEl.children().eq(nextEl.children().size()-1).addClass('on');
+				}
+				else {
+					nextEl.find('.on').removeClass('on').prev().addClass('on');
+				}
+			},
+			dow: function(nextEl){
+				if (nextEl.find('.on').index()+1 == nextEl.children().size()) {
+					nextEl.find('.on').removeClass('on');
+					nextEl.children().eq(0).addClass('on');
+				}
+				else {
+					nextEl.find('.on').removeClass('on').next().addClass('on');
+				}
+			},
+			inputValue : function (nextEl) {
+				var onvalue = nextEl.find('.on').children().eq(selcon).text();
+				nextEl.prev().val(onvalue);
+			}
+		}
+	}
+});
+</script>
+</body>
+</html>

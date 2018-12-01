@@ -13,6 +13,7 @@
 
 
 <input type="text" class="date-input01" placeholder="日期"></input>
+dsd
 <input type="text" class="date-input02" placeholder="日期加时分秒"></input>
 <input type="text" class="date-input03" placeholder="时分秒"></input>
 <br><br><br>
@@ -133,9 +134,9 @@ function obtain_H_M_S (){
 	
 	var hours = $date.find("select.h").val()
 	var minute = $date.find("select.m").val()
-	var second = $date.find("select.s").val()
-	
-	return hours+":"+minute+":"+second
+	// var second = $date.find("select.s").val()
+	// return hours+":"+minute+":"+second
+	return hours+":"+minute;
 }
 //是否设置日期时间
 
@@ -208,9 +209,6 @@ function htmlDate (element,x,y,html) {
 				<select class='m'>\
 				</select>\
 				分\
-				<select  class='s'>\
-				</select>\
-				秒\
 			</div>\
 			<div class='butbox'>\
 				<a class='close'>关闭</a>\
@@ -377,9 +375,11 @@ function htmlDate (element,x,y,html) {
 }
 //调用
 $(classname).click(function(){
-  var xy = $(this).offset()
-  var x = xy.left
-  var y = xy.top + $(this).height()+10
+  // var xy = $(this).offset();
+  // var x = xy.left;
+  // var y = xy.top + $(this).height()+10;
+  var x = this.getBoundingClientRect().left + $(window)['scrollLeft']();
+  var y = this.getBoundingClientRect().top + $(window)['scrollTop']() + $(this).height()+10;
   htmlDate ($(this),x,y,hours)
 });
 }

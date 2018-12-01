@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>table</title>
+<link rel="stylesheet/less" type="text/css" href="search-morebox.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="search-morebox.js"></script>
+</head>
+<body>
+ssssssss334ss ssss334sssss334ss ssss334sbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
+	<div class="search_morebox">
+		<input  type="text" placeholder="输入即时出结果"></input>
+		<ul class="con">
+			<li class="on">
+				<span>李时珍</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>杜甫</span>
+				<span>001023</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>张三丰</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>流沙去</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>诚征</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+		</ul>
+	</div>
+	<div class="search_morebox">
+		<input  type="text" placeholder="输入即时出结果"></input>
+		<ul class="con">
+			<li class="on">
+				<span>李时珍</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>杜甫</span>
+				<span>001023</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>张三丰</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>流沙去</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+			<li>
+				<span>诚征</span>
+				<span>029332</span>
+				<span>技术部</span>
+			</li>
+		</ul>
+	</div>
+	ssss334ss ssss334s
+ssssbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
+ ssss334ss ssss334ss ssss334ss ssss334ss ssss334ss
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	
+	searchMoreBox (".search_morebox");
+
+	function searchMoreBox (classname){
+		var $input = $(classname).find('input');
+		var $box = $(classname).find('.con');
+		//之外点击隐藏
+		$(document).click(function(){
+			$box.hide();
+		});
+		$(classname).click(function(event){
+			event.stopPropagation();
+		})
+		//显示
+		$input.focus(function(event) {
+		 	$box.css('display')=="none" && $box.show()
+		}).click(function(event) {
+			$box.css('display')=="none" && $box.show()
+		});;
+		//鼠标选择
+		$box.children().mouseenter(function(event) {
+			$(this).addClass('on').siblings().removeClass('on');
+		}).click(function(event) {
+			upOrDow.inputValue();
+		}).dblclick(function(event) {
+			$box.hide()
+		});
+		//键盘选择
+		$input.keydown(function(e){
+			//向上
+			if (e.which == 38) {
+				upOrDow.up();
+		 	}
+		 	//向下
+			if (e.which == 40) {
+				upOrDow.dow();
+		 	}
+		 	//回车
+		 	if (e.which == 13) {
+				$box.hide()
+		 	}
+		 	if (e.which == 38 || e.which == 40) {
+		 		upOrDow.inputValue();
+		 	}
+		})
+		$input.bind('input propertychange', function() {
+		   if ($(this).val()) {
+				$box.css('display')=="none" && $box.show()
+			}
+			else {
+				$box.css('display')=="block" && $box.hide()
+			}
+		});
+	
+		//方法
+		var upOrDow = {
+			up: function(){
+				if ($box.find('.on').index()==0) {
+					$box.find('.on').removeClass('on');
+					$box.children().eq($box.children().size()-1).addClass('on');
+				}
+				else {
+					$box.find('.on').removeClass('on').prev().addClass('on');
+				}
+			},
+			dow: function(){
+				if ($box.find('.on').index()+1 == $box.children().size()) {
+					$box.find('.on').removeClass('on');
+					$box.children().eq(0).addClass('on');
+				}
+				else {
+					$box.find('.on').removeClass('on').next().addClass('on');
+				}
+			},
+			inputValue : function () {
+				var onvalue = $box.find('.on').children().eq(0).text();
+				$input.val(onvalue);
+			}
+		}
+	}
+});
+</script>
+</body>
+</html>

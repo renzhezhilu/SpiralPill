@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>折叠菜单</title>
+<link rel="stylesheet/less" type="text/css" href="fold-menu.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="fold-menu.js"></script>
+</head>
+<body>
+
+<div class="SP_fold_menu">
+	<div class="butbox">
+		<span class="show_but">展开</span>
+		<span class="hide_but">收起</span>
+	</div>
+	<div class="con">
+		<ul>
+			<li>
+				<h3>宿舍1号楼
+					<span> - 总可住:<b>145</b>,已入住:<b>123</b>,可入住:<b>31</b></span>
+				</h3>
+				<ul>
+					<li>
+						<h3>单人房</h3>
+						<ul>
+							<li>
+								<h3 class="on">宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+
+						</ul>
+					</li>
+					<li>
+						<h3></i>单人房</h3>
+						<ul>
+							<li><h3></i>宿舍号:102</h3></li>
+							<li><h3></i>宿舍号:102</h3></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<h3>宿舍2号楼
+				<span> - 总可住:<b>47</b>,已入住:<b>5</b>,可入住:<b>42</b></span>
+				</h3>
+				<ul>
+					<li>
+						<h3>单人房</h3>
+						<ul>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+							<li>
+								<h3>宿舍号:102
+									<span> - 总可住:<b>15</b>,已入住:<b>12</b>,可入住:<b>3</b></span>
+									<a>历史入住</a>
+								</h3>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h3></i>单人房</h3>
+						<ul>
+							<li><h3></i>宿舍号:102</h3></li>
+							<li><h3></i>宿舍号:102</h3></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	(function(){
+		var add = "<i class='fa fa-show fa-plus'></i>";
+		var sub = "<i class='fa fa-show fa-minus'></i>";
+		var icon01 = "<i class='fa fa-icon fa-building'></i>";
+		var icon02 = "<i class='fa fa-icon fa-home'></i>";
+		var icon03 = "<i class='fa fa-icon fa-key'></i>";
+
+		$('.SP_fold_menu .con > ul > li > h3').prepend(icon01);
+		$('.SP_fold_menu .con > ul > li > ul > li > h3').prepend(icon02);
+		$('.SP_fold_menu .con > ul > li > ul > li > ul > li > h3').prepend(icon03);
+
+		//当前状态
+		$('.SP_fold_menu').find('h3').each(function(index, val) {
+			 if ($(this).next("ul").text()) {
+			 	$(this).addClass('div-show');
+			 	$(this).prepend(sub);
+			 }
+		});
+		//点击展开
+		$('.SP_fold_menu h3').click(function(e) {
+			if ($(this).next().css('display')=='block') {
+				$(this).next().hide()
+				$(this).find('.fa-show').attr('class','fa fa-show fa-plus')
+			}
+			else {
+				$(this).next().show()
+				$(this).find('.fa-show').attr('class','fa fa-show fa-minus')
+			}
+		});
+		$('.SP_fold_menu h3').click();
+		$('.SP_fold_menu .con > ul > li > h3').find('.fa-show').click();
+
+		//全部展开/收缩
+		$('.SP_fold_menu .show_but').click(function(e) {
+			$('.SP_fold_menu ul ul').show();
+			$('.fa-show').attr('class','fa fa-show fa-minus')
+		});
+		$('.SP_fold_menu .hide_but').click(function(e) {
+			$('.SP_fold_menu ul ul').hide()
+			$('.fa-show').attr('class','fa fa-show fa-plus')
+		});
+		$('.SP_fold_menu .con > ul > li > ul > li > ul > li > h3').click(function(e) {
+			$('.SP_fold_menu .con h3').removeClass('on')
+			$(this).addClass('on')
+		});
+
+
+
+		$('.SP_fold_menu .show_but').click();
+
+	})()
+	
+});
+</script>
+</body>
+</html>
