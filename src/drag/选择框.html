@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>选择框</title>
+
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+
+</head>
+<body style="height: 10000px;">
+ <style type="text/css">  
+ .SP_select_range,.SP_select_range:before,.SP_select_range:after{transition:0s ease;}
+/*选择框*/  
+
+.SP_select_range {
+	position: fixed; background-color: #d6f2ff; outline: 1px solid #689eb7;
+	height: 0; width: 0; left: 0; top: 0;
+}
+
+.SP_select_range.reverse_top {
+	transform: translate(0,-100%);
+}
+.SP_select_range.reverse_right {
+	transform: translate(-100%,0);
+}
+.SP_select_range.reverse_all {
+	transform: translate(-100%,-100%);
+}
+	
+</style>  
+ 
+ <div class="SP_select_range">
+ 	
+ </div>
+
+
+<script type="text/javascript">  
+var elmove=false;
+var x,y,x2,y2,jg={},jg_num;
+var $el = $(".SP_select_range");
+$(document).mousedown(function (e) {
+	elmove=true;
+	$el.show();
+	x=e.clientX;
+	y=e.clientY;
+	// console.log('e.pageX'+e.pageX+'| e.pageY:' +e.pageY)
+	// console.log('e.clientX'+e.clientX+'| e.clientY:'+ e.clientY)
+	$el.css({
+		left: e.clientX,
+		top: e.clientY
+	})
+})
+$(document).mousemove(function(e) {
+	if (elmove) {
+		x2=e.clientX-x;
+		y2=e.clientY-y;
+		// 右上
+		if (x2<0 && y2<0 ) {
+			$el.attr('class','SP_select_range reverse_all');
+			x2 = -x2;
+			y2 = -y2;
+			jg_num=3;
+		}
+		// 右
+		else if (x2<0) {
+			$el.attr('class','SP_select_range reverse_right');
+			x2 = -x2;
+			jg_num=2;
+		}
+		// 上
+		else if (y2<0) {
+			$el.attr('class','SP_select_range reverse_top');
+			y2 = -y2;
+			jg_num=1;
+		}
+		// 正常
+		else {
+			$el.attr('class','SP_select_range');
+			jg_num=0
+		}
+		$el.css({
+			height: y2,
+			width: x2
+		})
+		console.log(y2,x2)
+	}
+}).mouseup(function(e) {
+	elmove=false;
+	if (jg_num==0) {
+		jg={
+			up_left:[x,y],
+			up_right:[x+x2,y],
+			bot_left:[x,y+y2],
+			bot_right:[x+x2,y+y2],
+		}
+		console.log(jg)
+	}
+	// console.log(`左上角:${$el.css('left')}/${$el.css('top')}\n`)	
+	$el.attr('style','');
+	
+	// return 
+	
+});
+
+
+
+
+
+// //可选元素的位置信息
+// function selectElement (classname) {
+// 	var ele_array = [] 
+// 	var $ele_classname = $(classname) //可选元素
+// 	let ele_offset //位置
+// 	for (var i = 0; i < $ele_classname.size(); i++) {
+// 		ele_offset =$ele_classname.eq(i).offset()
+// 		ele_array.push({index:i,top:ele_offset.top,left:ele_offset.left})
+// 	}
+// 	return console.log(ele_array)
+// }
+// selectElement ("li")
+</script> 
+</body>
+</html>

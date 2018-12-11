@@ -48,6 +48,8 @@
 @shadow02:0 0 100px rgba(0, 0, 0, 0.4);
 //清除浮动
 .clearfloat(){display: block; content: ''; clear: both; height: 0;}
+.clear_after:after { .clearfloat() }
+.clearfloat::after {.clearfloat()}
 //按钮
 .but01 (){
     .border-radius(6px);
@@ -59,22 +61,18 @@
     /* 从右下到左上、从蓝色渐变到红色 *///linear-gradient(to left top, blue, red); 
 }
 
-
-
-    [searchmorebox] {
-       width: 200px; margin: 100px; height: 40px; border:1px solid #ddd; border-radius: 10px; text-indent: 20px;
-    }
-    [searchmorebox] + .search_con {
-        display: none; border-bottom: 4px solid  desaturate(rgba(57, 125, 255, .4),30%);
-         padding: 20px; background-color: #fff; 
-        .box-shadow(3px 9px 20px rgba(57, 125, 255, 0.3)); .border-radius(6px);
-         position: relative; z-index: 10; position: fixed; 
-        & > * {
-            padding: 3px 10px; .border-radius(6px); .transition(0.2s); color:#25292e; cursor: pointer;
-            &.on { background-color: @color_blue; color:#fff;}
+.SP_searchinput_con {
+    display: none; border-bottom: 4px solid desaturate(rgba(57, 125, 255, .4),30%);
+    padding: 20px; background-color: #fff; 
+    .box-shadow(3px 9px 20px rgba(57, 125, 255, 0.3)); .border-radius(6px);
+     position: relative; z-index: 10; position: fixed; 
+    & > * {
+        padding: 3px 10px;  .border-radius(6px); .transition(0.2s); color:#25292e; cursor: pointer;
+        clear: both;
+        &::after {.clearfloat()}
+        & >* {
+            min-width: 60px; display: block; float: left;
         }
+        &.on { background-color: @color_blue; color:#fff;}
     }
-
-.search_morebox_con01 {
-    background-color: red;
 }

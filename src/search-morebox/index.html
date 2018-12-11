@@ -10,22 +10,15 @@
 <script type="text/javascript" src="search-morebox.js"></script>
 </head>
 <body>
-ssssssss334ss ssss334sssss334ss ssss334sbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
-	
-		<input searchmorebox="1"  type="text" placeholder="输入即时出结果"></input>
+
+		<input type="text" placeholder="输入即时出结果"></input>
 		
-		<input searchmorebox="1"  type="text" placeholder="xxxxxx"></input>
-
-
-
-	ssss334ss ssss334s
-ssssbr	<br>ssss334ss ssss334sssss334ss ssss334sssss334ss ssss334sssss334ss ssss334s
- ssss334ss ssss334ss ssss334ss ssss334ss ssss334ss
+		<input type="text" placeholder="xxxxxx"></input>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 	
-	searchMoreBox ("[searchmorebox]",1,
+	searchMoreBox ("[type=text]",0,
 			`<li class="on">
 				<span>李时珍</span>
 				<span>123232</span>
@@ -51,15 +44,14 @@ jQuery(document).ready(function($) {
 				<span>029332</span>
 				<span>技术部</span>
 			</li>`
-			
-
-		);
+	);
 
 	function searchMoreBox (classname,selcon,conhtml){
 		var $input = $(classname)
-		$input.after("<div class='search_con'></div>")
-		var $box = $input.next('.search_con');
-		$box.append(conhtml)
+		var search_con = "SP_searchinput_con"+$input.size();
+		$input.after("<div class='SP_searchinput_con "+search_con+"'></div>")
+		var $box = $input.next("."+search_con);
+        conhtml && $box.append(conhtml);
 		//定位
 		function dw (that) {
 			if (that.parents(".content ").length) {
