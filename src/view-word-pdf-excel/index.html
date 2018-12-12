@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    	if (window.DOMParser)
+    	{ // Firefox, Chrome, Opera, etc.
+    	    parser=new DOMParser();
+    	    xmlDoc=parser.parseFromString('http://127.0.0.1/SpiralPill/src/view-word-pdf-excel/ttt.doc',"text/xml");
+    	    document.write(xmlDoc)
+    	}
+    	else // Internet Explorer
+    	{
+    	    xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+    	    xmlDoc.async=false;
+    	    xmlDoc.loadXML('http://127.0.0.1/SpiralPill/src/view-word-pdf-excel/ttt.doc'); 
+    	    document.write(xmlDoc)
+    	} 
+    	
+       
+    </script>
+</head>
+<body>
+</body>
+</html>
