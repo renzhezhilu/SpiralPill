@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>打开word文件</title>
+</head>
+<body>
+
+	
+<script type="text/javascript">
+var url ='http://192.168.1.4/SpiralPill/src/360-open-word-excel/01.doc';
+	
+
+	function opendoc () {
+		var openDocObj; 
+		openDocObj = new ActiveXObject("Word.Application"); 
+		openDocObj.editDocument(url);
+	}
+</script>
+<button onClick="opendoc()">打开Word文档</button>
+<!-- <a href="01.docx">xxxxx</a> -->
+
+
+<frameset rows="444,0" cols="*"> <frame src="http://192.168.1.4/SpiralPill/src/360-open-word-excel/01.doc" framborder="no" scrolling="auto" noresize marginwidth="0" margingheight="0"> <frame src="UntitledFrame-1"></frameset><noframes></noframes> 
+</body>
+</html>

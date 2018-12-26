@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>banner</title>
+<link rel="stylesheet/less" type="text/css" href="banner.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="banner.js"></script>
+</head>
+<body>
+
+<div class="SP_banner11">
+	<ul class="SP_banner_tab">
+		<li></li>
+		<li></li>
+		<li></li>
+
+	
+	</ul>
+	<div class="SP_banner_con">
+		<li><a href=""> <img src="http://wx4.sinaimg.cn/mw600/6d87a7f4gy1fygv9as009j20kq0gmmzf.jpg"></a></li>
+		<li><a href=""> <img src="http://wx4.sinaimg.cn/mw600/6d87a7f4gy1fygv9ah146j2069069jrg.jpg"></a></li>
+		<li><a href=""> <img src="http://wx1.sinaimg.cn/mw600/6d87a7f4gy1fygv9ajn1aj208c04o3yg.jpg"></a></li>
+
+	</div>
+
+</div>
+
+<style type="text/css">
+	*,*:before,*:after{transition:0s;}/*所以变化动画过度ease*/
+	.SP_banner_con img { width: 100%; height: 100%; }
+</style>
+
+<script type="text/javascript">
+SP_banner({
+	SP_banner:'.SP_banner11',
+	tabclass:'.SP_banner_tab',
+	conclass:'.SP_banner_con',
+	width:'100%',
+	height:'400px',
+	time:3000,
+	autoplay:true
+})
+function SP_banner (obj) {
+	var SP_banner 	= obj.SP_banner,
+		tabclass 	= $(SP_banner).find(obj.tabclass),
+		conclass 	= $(SP_banner).find(obj.conclass),
+		point	= obj.point 	|| true,			//显示点
+		bothBut = obj.bothBut 	|| true, 			//显示两边按钮
+		showNum = obj.showNum 	|| true,			//显示数量1/4
+		time 	= obj.time 		|| 5000,			//切换间隔时间
+		autoplay 	= obj.autoplay || false,		//自动播放
+		animationTime =	obj.animationTime || 300, 	//动画时间
+		animationType = obj.animationType || null,  //动画类型
+
+		smallPic = obj.smallPic || false,  //小图模式
+
+		width	  = obj.width || '500px';	//
+		height	  = obj.height || '300px';	//
+
+	//初始化
+	$(SP_banner).addClass('SP_banner');
+	$(SP_banner).css({
+		width: width,
+		height: height
+	});
+	$(tabclass).css('margin-left', 0-$(tabclass).width()/2);
+	//总数
+	var tabSize =$(tabclass).children().size();
+
+	setTimeout(function(){
+		var one_width = $(SP_banner).width();
+		$(conclass).width( one_width*(tabSize))
+		$(conclass).children().width( one_width)
+
+		//当前tab
+		var getCurrentNum;
+		function getCurrent () {
+			getCurrentNum = null;
+			getCurrentNum = $(tabclass).find('.current').index();
+			return getCurrentNum
+		}
+
+		
+
+		//点击tab
+		$(document).on('click', obj.tabclass+' > *', function(event) {
+			var _index = $(this).index();
+			run (_index)
+			getCurrent ()
+			function run (_index){
+				$(conclass).stop().animate({left:-(one_width*_index)},animationTime,function(){});
+				$(tabclass).children().eq(_index).addClass("current").siblings().removeClass('current')
+			}
+		});
+		//跳
+		function go (ind){
+			$(tabclass).children().eq(ind).click();
+			if (tabSize==ind+1) { ind=0}
+			else { ind++}
+			if (autoplay) {
+				$(tabclass).stop().animate({right:'auto'},time,function(){
+					var cur = getCurrent ();
+					if (cur+1==tabSize) { cur=0}
+					else { cur++}
+					go(cur)
+				});
+			}
+		}
+		//自动播放
+		if (autoplay) go(0)
+		
+		// 两边按钮
+		if(bothBut){
+			if ( !($(SP_banner).find('.bothbut').length) ) {
+				$(SP_banner).append('\
+					<div class="left_but bothbut">◄</div>\
+					<div class="right_but bothbut">►</div>\
+				')
+			}
+			$(document).on('click', obj.SP_banner+' .left_but', function(e){
+				var ind = getCurrent ();
+				if (tabSize==ind-1) {ind=0}
+				go (ind-1)
+			})
+			$(document).on('click', obj.SP_banner+' .right_but', function(e){
+				var ind = getCurrent ();
+				if (tabSize==ind+1) {ind=-1}
+				go (ind+1)
+			})
+		}
+		//显示数字
+		if (showNum) {
+			if ( !($(SP_banner).find('.showNum').length) ) {
+				$(SP_banner).append('\
+					<div class="shownum">\
+						<b>1</b>/<span></span>\
+					</div>\
+				')
+			}
+			$(SP_banner).find('.shownum span').text( tabSize );
+			$(obj.tabclass+' > *').click(function(event) {
+				if (getCurrentNum+1==tabSize) { getCurrentNum=0}
+				else { getCurrentNum++}
+				$(SP_banner).find('.shownum b').text( getCurrentNum+1 );
+			});
+		}
+
+		////////////
+	}, 0)
+
+
+
+
+}
+</script>
+</body>
+</html>

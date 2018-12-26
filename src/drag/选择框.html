@@ -14,9 +14,10 @@
  .SP_select_range,.SP_select_range:before,.SP_select_range:after{transition:0s ease;}
 /*选择框*/  
 
+body { position: relative; }
 .SP_select_range {
-	position: fixed; background-color: #d6f2ff; outline: 1px solid #689eb7;
-	height: 0; width: 0; left: 0; top: 0;
+	position: absolute; background-color: rgba(0,0,0,.2); outline: 1px solid #689eb7;
+	height: 10px; width: 10px; left: auto; top: auto;
 }
 
 .SP_select_range.reverse_top {
@@ -29,97 +30,252 @@
 	transform: translate(-100%,-100%);
 }
 	
+ul { width: 600px; user-select: none;}
+ul li { width: 50px; height: 50px; margin: 1px; background-color: green; float: left; opacity: 0.7 }
+ul li.on { background-color: blue; }
 </style>  
  
- <div class="SP_select_range">
- 	
- </div>
 
 
-<script type="text/javascript">  
-var elmove=false;
-var x,y,x2,y2,jg={},jg_num;
-var $el = $(".SP_select_range");
-$(document).mousedown(function (e) {
-	elmove=true;
-	$el.show();
-	x=e.clientX;
-	y=e.clientY;
-	// console.log('e.pageX'+e.pageX+'| e.pageY:' +e.pageY)
-	// console.log('e.clientX'+e.clientX+'| e.clientY:'+ e.clientY)
-	$el.css({
-		left: e.clientX,
-		top: e.clientY
-	})
-})
-$(document).mousemove(function(e) {
-	if (elmove) {
-		x2=e.clientX-x;
-		y2=e.clientY-y;
-		// 右上
-		if (x2<0 && y2<0 ) {
-			$el.attr('class','SP_select_range reverse_all');
-			x2 = -x2;
-			y2 = -y2;
-			jg_num=3;
-		}
-		// 右
-		else if (x2<0) {
-			$el.attr('class','SP_select_range reverse_right');
-			x2 = -x2;
-			jg_num=2;
-		}
-		// 上
-		else if (y2<0) {
-			$el.attr('class','SP_select_range reverse_top');
-			y2 = -y2;
-			jg_num=1;
-		}
-		// 正常
-		else {
-			$el.attr('class','SP_select_range');
-			jg_num=0
-		}
+<ul>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li class="on">1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li class="on">1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li class="on">1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li class="on">1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+	<li>1</li>
+</ul>
+
+
+
+ 
+
+
+<script type="text/javascript"> 
+SP_dragSelect(document,'ul','li','on');
+
+// 移动范围 move_el,  可触发区域 down_el, 子元素 children_el, 选中后增加的类 add_class
+function SP_dragSelect (move_el,down_el,children_el,add_class) {
+	var elmove=false;
+	var x,y,x2,y2,jg={},jg_num,el_position;
+	$("body").append('<div class="SP_select_range"></div>');
+	var $el = $(".SP_select_range");
+	$(down_el).mousedown(function (e) {
+		elmove=true;
+		$el.show();
+		x=e.pageX;
+		y=e.pageY;
+		// console.log('e.pageX'+e.pageX+'| e.pageY:' +e.pageY)
+		// console.log('e.clientX'+e.clientX+'| e.clientY:'+ e.clientY)
 		$el.css({
-			height: y2,
-			width: x2
+			left: e.pageX,
+			top: e.pageY
 		})
-		console.log(y2,x2)
-	}
-}).mouseup(function(e) {
-	elmove=false;
-	if (jg_num==0) {
-		jg={
-			up_left:[x,y],
-			up_right:[x+x2,y],
-			bot_left:[x,y+y2],
-			bot_right:[x+x2,y+y2],
+	})
+	$(move_el).mousemove(function(e) {
+		if (elmove ) {
+			x2=e.pageX-x;
+			y2=e.pageY-y;
+				
+			el_position = { x:e.pageX, y:e.pageY }
+			// 左上
+			if (x2<0) {
+				$el.attr('class','SP_select_range reverse_all');
+				x2 = -x2;
+				y2 = -y2;
+				jg_num=3;
+				
+			}
+			// 左下
+			else if (x2<0) {
+				$el.attr('class','SP_select_range reverse_right');
+				x2 = -x2;
+				jg_num=2;
+				
+			}
+			// 右上
+			else if (y2<0) {
+				$el.attr('class','SP_select_range reverse_top');
+				y2 = -y2;
+				jg_num=1;
+			}
+			// 右下 /正常
+			else {
+				$el.attr('class','SP_select_range');
+				jg_num=0
+			}
+			$el.css({
+				height: y2,
+				width: x2
+			})
+			
 		}
-		console.log(jg)
+	}).mouseup(function(e) {
+		elmove=false;
+		$el.attr('style','');
+			// 右下
+			if (jg_num==0) {
+				jg={
+					min_x:x,
+					max_x:x+x2,
+					min_y:y,
+					max_y:y+y2,
+				}
+			}
+			// 右上
+			else if (jg_num==1) {
+				jg={
+					min_x:x,
+					max_x:x+x2,
+					min_y:(y-y2) < 0 ? 0:(y-y2),
+					max_y:y,
+				}
+			}
+			// 左下
+			else if (jg_num==2) {
+				jg={
+					min_x:(x-x2) < 0 ? 0:(x-x2),
+					max_x:x,
+					min_y:y,
+					max_y:y2+y,
+				}
+			}
+			// 左上
+			else if (jg_num==3) {
+				jg={
+					min_x:(x-x2) < 0 ? 0:(x-x2),
+					max_x:x,
+					min_y:(y-y2) < 0 ? 0:(y-y2),
+					max_y:y
+				}
+		}
+		console.log(jg.min_x,jg.max_x,'----',jg.min_y,jg.max_y,'----',el_position.x,el_position.y)
+
+
+		$(move_el).find(children_el).each(function(index, val) {
+			var o = $(this).offset();
+
+			var y = isIntersect({
+				A_minX:o.left,
+				A_maxX:o.left+$(this).width(),
+				A_minY:o.top,
+				A_maxY:o.top+$(this).height(),
+				B_minX:jg.min_x,
+				B_maxX:jg.max_x,
+				B_minY:jg.min_y,
+				B_maxY:jg.max_y
+			})
+			if(y) { 
+				$(this).addClass(add_class)
+			}
+			else{
+				$(this).removeClass(add_class)
+			}
+			
+		});
+		x=0;x2=0;y=0;y2=0;
+	});
+	//判断元素是否相交
+	function isIntersect (obj){
+		if ( (obj.A_maxX > obj.B_minX && obj.A_minX < obj.B_maxX) && (obj.A_maxY > obj.B_minY && obj.A_minY < obj.B_maxY) ) { return true }
+		else { return false }
 	}
-	// console.log(`左上角:${$el.css('left')}/${$el.css('top')}\n`)	
-	$el.attr('style','');
-	
-	// return 
-	
-});
+}
 
-
-
-
-
-// //可选元素的位置信息
-// function selectElement (classname) {
-// 	var ele_array = [] 
-// 	var $ele_classname = $(classname) //可选元素
-// 	let ele_offset //位置
-// 	for (var i = 0; i < $ele_classname.size(); i++) {
-// 		ele_offset =$ele_classname.eq(i).offset()
-// 		ele_array.push({index:i,top:ele_offset.top,left:ele_offset.left})
-// 	}
-// 	return console.log(ele_array)
-// }
-// selectElement ("li")
 </script> 
 </body>
 </html>
