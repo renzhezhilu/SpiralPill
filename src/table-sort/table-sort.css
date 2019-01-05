@@ -1,0 +1,89 @@
+@charset "utf-8";
+.bold {
+  font-weight: bold;
+}
+body {
+  background-color: #f0f5fa;
+  color: #212b42;
+}
+.SP_tableContent {
+  line-height: 24px;
+  font-size: 14.399999999999999px;
+  position: relative;
+  height: 500px;
+  overflow: auto;
+  margin: 30px;
+  text-align: center;
+}
+.SP_tableContent table {
+  width: 100%;
+  overflow: auto;
+}
+.SP_tableContent table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+.SP_tableContent table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+.SP_tableContent table tr:nth-child(1) {
+  position: relative;
+  z-index: 100;
+  bottom: -200px;
+  -webkit-transform: translateY(100px);
+  -moz-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  -o-transform: translateY(100px);
+  transform: translateY(100px);
+  background-color: #397dff;
+  color: #fff;
+}
+.SP_tableContent table tr:nth-child(1) th {
+  border: 1px solid #6c9eff;
+}
+.SP_tableContent table tr:nth-child(1) .tbcheckbox {
+  background-color: #d2e1ff;
+}
+.SP_tableContent table tr:nth-child(1) .tbcheckbox.on {
+  background-color: #d2e1ff;
+}
+.SP_tableContent table tr:nth-child(1) .tbcheckbox:after {
+  color: #397dff;
+}
+.SP_tableContent table tr:not(:nth-child(1)):hover,
+.SP_tableContent table tr.select {
+  background-color: #e1ecff;
+}
+.SP_tableContent table tr .tbcheckbox {
+  font-size: 7.199999999999999px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #dbe0ed;
+  text-indent: 24px;
+  overflow: hidden;
+}
+.SP_tableContent table tr .tbcheckbox.on {
+  font-size: 19.200000000000003px;
+  background-color: #397dff;
+  text-indent: 0;
+  opacity: 1;
+}
+.SP_tableContent table tr .tbcheckbox:after {
+  content: "✓";
+  color: #fff;
+}
+.SP_tableContent table th,
+.SP_tableContent table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+.SP_tableContent table th {
+  font-weight: 600;
+}

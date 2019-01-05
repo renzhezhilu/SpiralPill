@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>table-sort</title>
+<link rel="stylesheet/less" type="text/css" href="table-sort.less">
+<script type="text/javascript" src="../PUBLIC/PUBLIC.js"></script>
+<script type="text/javascript" src="table-sort.js"></script>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+var tablehtml = [
+					['22','2018-07-22','鼻子'],
+					['11','2018-04-09','啊'],
+					['101','2018-01-2','闭'],
+					['202','2018-10-28','吃'],
+					['1033','2018-03-20','地'],
+					['33','2018-03-19','迟到']
+				];
+
+
+//字符串分类
+function whatStringType (val) {
+	if (!val) { return 'null'}										// 无效值
+	if (!isNaN(+val)) { return 'number' }							// 数字
+	else if ( !isNaN(new Date(val).getTime())){  return 'date' }    // 时间
+	else { return 'other' } 										// 其他值
+}
+//数组字段排序
+function tableDataSort (data,ind,isreverse) {
+	var newdata = data.slice();
+	var datatype = whatStringType(newdata[0][ind]);
+	//原始值
+	if (ind===null) { return data;}
+	else {
+		if (datatype == 'number') {
+			newdata.sort(function(a,b){
+				return a[ind]-b[ind]
+			})
+		}
+		else if (datatype == 'date') {
+			newdata.sort(function(a,b){
+				return a[ind]<b[ind] ? 1:-1;
+			})
+		}
+		else if (datatype == 'other') {
+			newdata.sort(function(a,b){
+				return a[ind].localeCompare(b[ind])
+			})
+		}
+		else {
+			return console.warn('无效值/空值')
+		}
+		// 是否相反排序
+		if (isreverse){ newdata.reverse() }
+		return newdata;
+	}
+}
+
+</script>
+</body>
+</html>
