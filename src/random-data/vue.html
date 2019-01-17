@@ -129,6 +129,7 @@
             name:null,          //名字
             idCard:null,        //身份证号码
             age:null,           //年龄
+            birth:null,         //出生年夜日
             ethnic:null,        //民族
             census:null,        //户籍
             address:null,       //住址
@@ -176,6 +177,10 @@
         //////////年龄
         newData.age =  new Date().getFullYear()-(idday.slice(0,4))
 
+        /////////出生时间
+        newData.birth =  1950+ ~~(Math.random(10)*60) +'-'+ (1+~~(Math.random(10)*11))+ '-'+ ( 1+ ~~(Math.random(10)*30) )
+
+        
         //////////民族
         var ethnicgl = getScope(0,100)
         if (ethnicgl<90) newData.ethnic = _t.ethnic[0]
@@ -280,7 +285,7 @@
     var conteneObj=[];
     var datastring='';
     var ram;
-    for (let r = 0; r < 10000; r++) {
+    for (let r = 0; r < 20000; r++) {
         conteneObj.push(peopleDate())
     }
     new Vue({
@@ -289,7 +294,7 @@
         object: conteneObj
       }
     })
-
+    console.log(JSON.stringify(conteneObj))
   
     console.timeEnd("data")
 

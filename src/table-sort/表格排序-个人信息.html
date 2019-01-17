@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>表格排序-性能</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/pure-min.css">
+<link rel="stylesheet" type="text/css" href="css/page.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/page2.js"></script>
+
+
+
+</head>
+<style type="text/css">
+body { font-size: 14px; height: 100%; overflow: hidden; }
+.fixed_box { position: fixed; z-index: 20; width: 100%; left: 0; top: 0; height: 100px; background-color: #f4f8fb; }
+.fixed_box_con { padding:20px; width: 100% }
+
+</style>
+<body class="page">
+
+<div class="pure-g">
+
+	<style type="text/css">
+		.SP_tableContent .true_table tr td:nth-child(1){ color: #454f61; font-weight: bold; font-size: 16px; }
+	</style>
+
+
+    <div class="pure-u-1" style="position: relative;">
+    	<div class="SP_tableContent SP_tableContent01" id="SP_tableContent01">
+    		<table id="data_table" >
+                <thead>
+                    <tr>
+                        <th><div class='tbcheckbox'></div><input  type="checkbox"></th>
+                        <th>id</th>
+                        <th>性别</th>
+                        <th>姓名</th>
+                        <th>身份证号码</th>
+                        <th>年龄</th>
+                        <th>出生日期</th>
+                        <th>民族</th>
+                        <th>户籍</th>
+                        <th>出生地址</th>
+                        <th>手机号码</th>
+                        <th>家庭电话</th>
+                        <th>邮箱</th>
+                        <th>银行卡类型</th>
+                        <th>银行卡卡号</th>
+                        <th>学历</th>
+                        <th>学历类型</th>
+                        <th>专业</th>
+                        <th>证书类型</th>
+                        <th>证书级别</th>
+                        <th>婚姻状况</th>
+                        <th>子女人数</th>
+                    </tr>
+                 </thead>
+
+                <tbody></tbody>
+            </table>
+    	</div>
+
+    	<div class="page123">
+            <div class="page123_con">
+                <div class="tableset" title="设置表格">
+                    <i class="fa fa-cog"></i>
+                    <div class="conbox">
+                        <p>表头移动 <span>修改</span></p>
+                    </div>
+                </div>
+                <div class="pagebox">
+                    共<b>13</b>页 
+                    <input type="text" value="1" style="text-align: left;" ></input>
+                    <input class="go" type="button" value="跳转" ></input>
+                    <input class="start" type="button" value="<<" ></input>
+                    <input class="prev" type="button" value="上一页" ></input>
+                    <input class="next" type="button" value="下一页" ></input>
+                    <input class="end" type="button" value=">> " ></input>
+                </div>
+                <div class="pagenum">
+                    <select name="pagenum">
+                        <option value="15">30</option>
+                        <option value="30">30</option>
+                        <option value="100">100</option>
+                        <option value="300">300</option>
+                    </select>
+                    <span>共<b>188</b>条数据</span>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<script type="text/javascript">
+   
+</script>
+<script type="text/javascript">
+    ///////////// 输入json信息
+    console.time('data')
+   
+    // api/getdata/biaoming?page=2pagesize=100
+    // api/del/biaoming?id=11,233,443name=12,323,234
+    // api/del/biaoming?id=11,233,443name=12,323,234
+
+    function kkk (ageo,pagesize) {
+        var arr=[];
+        $.getJSON("js/data500.json",function(result){
+        for (var kk in result) {
+
+            if (kk<ageo) continue;
+            arr.push("<tr><td><div class='tbcheckbox'></div><input name='radiobut' type='checkbox'></td><td>"+kk+"</td>")
+            for( var x in result[kk]){
+                    arr.push("<td >"+result[kk][x]+"</td>")
+            }
+            arr.push("</tr>")
+
+            if (kk== pagesize) {
+                getEndRun ();
+                break
+            }
+        }
+    });
+    
+   function getEndRun () {
+
+        $("#data_table").find('tbody').html(arr.join('')); 
+        tableBox (".SP_tableContent01")
+        taleAutoHeight(null,null,-100)
+
+            console.timeEnd('data')
+       }
+    }
+
+    kkk(0,100)
+</script>
+
+
+</body>
+</html>
